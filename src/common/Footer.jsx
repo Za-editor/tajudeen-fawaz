@@ -50,7 +50,7 @@ const Footer = () => {
       </div>
       <div className="flex items-center gap-2 group relative overflow-hidden cursor-pointer">
         <span className="uppercase tracking-wider font-light">
-          Created by
+          Creator
           <span className="text-[#192f3d] text-[18px] font-medium hover:text-[#005f64] ml-2">
             FAWAZ
           </span>
