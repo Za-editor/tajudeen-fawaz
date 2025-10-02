@@ -5,5 +5,10 @@ body {
 font-family: "Inter", sans-serif;
 }
 
-
+@utility text-gradient {
+    background: linear-gradient(to right, #005f64, #192f3d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
 

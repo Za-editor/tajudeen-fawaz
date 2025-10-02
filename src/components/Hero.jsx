@@ -2,9 +2,21 @@ import React from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { HiArrowDown } from "react-icons/hi";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/all";
 
 const Hero = () => {
+  gsap.registerPlugin(ScrollTrigger);
   useGSAP(() => {
+    const heroSplit = new SplitText(".title", { type: "chars, words" });
+    heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+    gsap.from(heroSplit.chars, {
+      yPercent: 100,
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.05,
+    });
+
     gsap.from("p", {
       opacity: 0,
       yPercent: 100,
@@ -38,13 +50,36 @@ const Hero = () => {
       duration: 3,
       ease: "power2.inOut",
     });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      })
+      .to(
+        "#diamond",
+        { rotate: 45, scale: 1.4, transformOrigin: "center center" },
+        0
+      );
   });
 
   return (
-    <div className="min-h-[90vh] container mx-auto flex items-center justify-center relative overflow-hidden">
+    <div
+      id="hero"
+      className="h-screen container mx-auto flex items-center justify-center relative top-0 overflow-hidden"
+    >
       <div className=" flex justify-center items-center">
         <svg
-          className="absolute top-[15%] md:top-[10%]    w-[716px] h-[716px] md:w-[1000px] md:h-[1000px]"
+          className="diamond absolute 
+             top-[20%] md:top-[15%] lg:top-[10%] 
+             w-[716px] h-[716px] 
+             md:w-[1000px] md:h-[1000px] 
+             
+             "
           viewBox="0 0 716 716"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -60,7 +95,7 @@ const Hero = () => {
 
         <div className="relative z-10 text-center text-[#192f3d]">
           <p className="text-[19px]">Hi, I'm Fawaz </p>
-          <p className="text-[30px] md:text-[35px] font-bold">
+          <p className="title text-[30px] md:text-[35px] font-bold">
             A Frontend Developer <br />
             driven by Creativity and Precision.
           </p>
@@ -76,7 +111,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className=" arrowBtn absolute bottom-5 right-0 mx-auto mt-5 md:mt-10  w-10 h-10 flex items-center justify-center border border-[#192f3d] hover:border-none rounded-full overflow-hidden group cursor-pointer">
+      <div className=" arrowBtn absolute bottom-30 md:bottom-40 xl:bottom-30 right-0 mx-auto mt-5 md:mt-10  w-10 h-10 flex items-center justify-center border border-[#192f3d] hover:border-none rounded-full overflow-hidden group cursor-pointer">
         <div className="absolute inset-0 bg-[#005764] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]" />
 
         <HiArrowDown className="relative z-10 text-black group-hover:text-[#e9e9e9] transition-colors duration-500" />
