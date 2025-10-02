@@ -75,7 +75,7 @@ const Hero = () => {
       <div className=" flex justify-center items-center">
         <svg
           className="diamond absolute 
-             top-[20%] md:top-[15%] lg:top-[10%] 
+             top-[20%] md:top-[12%] lg:top-[10%] 
              w-[716px] h-[716px] 
              md:w-[1000px] md:h-[1000px] 
              
