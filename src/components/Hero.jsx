@@ -10,7 +10,7 @@ const Hero = () => {
   useGSAP(() => {
     const heroSplit = new SplitText(".title", { type: "chars, words" });
     heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
-    gsap.from(heroSplit.chars, {
+    gsap.from(heroSplit.words, {
       yPercent: 100,
       duration: 1,
       ease: "expo.out",
@@ -99,7 +99,7 @@ const Hero = () => {
             A Frontend Developer <br />
             driven by Creativity and Precision.
           </p>
-          <p className="mt-4 text-sm">
+          <p className="text-gradient mt-4 text-sm">
             Love turning ideas into scalable solutions <br />
             that people enjoy using.
           </p>

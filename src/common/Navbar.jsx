@@ -41,7 +41,7 @@ const Navbar = () => {
       <nav className=" container mx-auto flex items-center justify-between py-[14px] md:py-[26px]">
         <div id="logo" className="flex items-center">
           <a href="/">
-            <h1 className="font-bold text-3xl tracking-wide text-[#192f3d]">
+            <h1 className="text-gradient font-bold text-3xl tracking-wide">
               Za_editor
             </h1>
           </a>
