@@ -93,8 +93,8 @@ const Hero = () => {
           />
         </svg>
 
-        <div className="relative z-10 text-center text-[#192f3d]">
-          <p className="text-[19px]">Hi, I'm Fawaz </p>
+        <div className="relative z-10 text-center font-semibold text-[#192f3d]">
+          <p className="title text-[19px]">Hi, I'm Fawaz </p>
           <p className="title text-[30px] md:text-[35px] font-bold">
             A Frontend Developer <br />
             driven by Creativity and Precision.
