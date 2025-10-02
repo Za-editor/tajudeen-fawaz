@@ -55,7 +55,7 @@ const Hero = () => {
     <div className="min-h-[90vh] container mx-auto flex items-center justify-center relative">
       <div className=" flex justify-center items-center">
         <svg
-          className="absolute top-[8%] md:top-[10%]    w-[716px] h-[716px] md:w-[1000px] md:h-[1000px]"
+          className="absolute top-[10%] md:top-[10%]    w-[716px] h-[716px] md:w-[1000px] md:h-[1000px]"
           viewBox="0 0 716 716"
           xmlns="http://www.w3.org/2000/svg"
         >
