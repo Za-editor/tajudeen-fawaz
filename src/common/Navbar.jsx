@@ -3,8 +3,23 @@ import { MdClose, MdNorthEast } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Button from "../components/Button";
 import ToggleSwitch from "../components/ToggleSwitch";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Navbar = () => {
+
+  useGSAP(() => {
+    gsap.from("#logo", {
+    opacity: 0,
+      yPercent: 100,
+      duration: 1.8,
+      ease: "expo.out",
+      stagger: 0.06,
+      delay: 1,
+    });
+})
+
+
   const navitems = [
     "Home",
     "Projects",
@@ -32,15 +47,16 @@ const Navbar = () => {
           </a>
         </div>
 
-        <ToggleSwitch
-          onToggle={toggleSideBar}
-          label="Enable Notifications"
-          onText="ON"
-          offText="OFF"
-        />
+          <ToggleSwitch
+            onToggle={toggleSideBar}
+            label="Enable Notifications"
+            onText="ON"
+            offText="OFF"
+          />
+
       </nav>
       {isOpen && (
-        <div className="fixed inset-0 z-40 blur-lg" ></div>
+        <div className="fixed inset-0 z-40 blur-lg pointer-events-auto"></div>
       )}
       <div
         className={`fixed z-40 w-full md:w-3/4  lg:w-2/4 top-0 right-0 bg-gray-400 md:rounded-l-[50px] backdrop-blur-sm h-full border-l border-white/20  transition-all duration-700 delay-400 ${
@@ -50,7 +66,6 @@ const Navbar = () => {
         }`}
       >
         <ul className="flex flex-col gap-8 p-10 mt-30">
-
           {navitems.map((item, index) => (
             <a
               key={index}
