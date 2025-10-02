@@ -1,55 +1,44 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { HiArrowDown } from "react-icons/hi";
 
 const Hero = () => {
+  useGSAP(() => {
+    gsap.from("p", {
+      opacity: 0,
+      yPercent: 100,
+      duration: 1.8,
+      ease: "expo.out",
+      stagger: 0.06,
+      delay: 2,
+    });
 
-      useGSAP(() => {
-        gsap.from("p", {
-          opacity: 0,
-          yPercent: 100,
-          duration: 1.8,
-          ease: "expo.out",
-          stagger: 0.06,
-          delay: 2,
-        });
+    gsap.from(".arrowBtn ", {
+      opacity: 0,
+      yPercent: 100,
+      duration: 1.8,
+      ease: "expo.out",
+      stagger: 0.06,
+      delay: 3,
+    });
 
-        gsap.from(".arrowBtn ", {
-          opacity: 0,
-          yPercent: 100,
-          duration: 1.8,
-          ease: "expo.out",
-          stagger: 0.06,
-          delay: 3,
-        });
-      });
-  useEffect(() => {
     const path = document.querySelector("#diamond");
     const length = path.getTotalLength();
 
-
-
- 
     gsap.set(path, {
       strokeDasharray: length,
-      strokeDashoffset: length, 
+      strokeDashoffset: length,
     });
 
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
 
     tl.to(path, {
       strokeDashoffset: 0,
       duration: 3,
       ease: "power2.inOut",
-    })
-      .to(path, { duration: 1 }) 
-      .to(path, {
-        strokeDashoffset: -length,
-        duration: 3,
-        ease: "power2.inOut",
-      });
-  }, []);
+    });
+  });
 
   return (
     <div className="min-h-[90vh] container mx-auto flex items-center justify-center relative overflow-hidden">
