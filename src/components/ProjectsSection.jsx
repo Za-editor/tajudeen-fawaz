@@ -62,6 +62,7 @@ const ProjectsSection = () => {
   const progressRef = useRef(null);
   const circleRef = useRef(null);
 
+  // Stroke animation for big FAWAZ text
   useGSAP(() => {
     const text = textRef.current;
     if (!text) return;
@@ -85,13 +86,14 @@ const ProjectsSection = () => {
     });
   });
 
+  // Scroll progress line + circle animation
   useGSAP(() => {
     const line = timelineLineRef.current;
     const progressLine = progressRef.current;
     const circle = circleRef.current;
 
     if (line && progressLine && circle) {
-      const lineHeight = line.offsetHeight;
+      const lineHeight = line.scrollHeight;
 
       gsap.set(progressLine, { height: 0 });
       gsap.set(circle, { y: 0 });
@@ -99,7 +101,7 @@ const ProjectsSection = () => {
       ScrollTrigger.create({
         trigger: line,
         start: "top center",
-        end: "bottom center",
+        end: "bottom bottom",
         scrub: true,
         onUpdate: (self) => {
           const progress = self.progress;
@@ -122,6 +124,7 @@ const ProjectsSection = () => {
 
   return (
     <section className="min-h-[100vh] relative">
+      {/* Background stroke text */}
       <svg
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto"
         viewBox="0 0 1400 400"
@@ -145,8 +148,9 @@ const ProjectsSection = () => {
         </text>
       </svg>
 
+      {/* Section Header */}
       <div className="text-center text-[#192f3d]">
-        <p className="text-[3.21em] md:text-[5.21em] font-bold text-[#192f3d] leading-[1.4] ">
+        <p className="text-[3.21em] md:text-[5.21em] font-bold text-gradient leading-[1.4] ">
           Works.
         </p>
         <p className="text-[1.25em] md:text-[1.39em] text-[#192f3d] leading-[1.5]">
@@ -157,38 +161,44 @@ const ProjectsSection = () => {
         </p>
       </div>
 
+      {/* Timeline Container */}
       <div className="w-full max-w-6xl mx-auto px-4 py-16">
         <div className="relative">
+          {/* Timeline line */}
           <div
             ref={timelineLineRef}
             className="absolute left-0 md:left-1/2 top-0 h-full w-1 bg-gray-300 -translate-x-1/2"
           ></div>
 
+          {/* Progress line */}
           <div
             ref={progressRef}
             className="absolute left-0 md:left-1/2 top-0 w-1 bg-gradient -translate-x-1/2"
           ></div>
 
+          {/* Circle */}
           <div
             ref={circleRef}
             className="absolute left-0 md:left-1/2 w-6 h-6 rounded-full border-4 border-[#e9e9e9] bg-gradient -translate-x-1/2"
           ></div>
 
+          {/* Timeline Items */}
           <div className="space-y-20 py-20 px-4">
             {timelineData.map((item, index) => (
               <div
                 key={index}
-                className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                className="grid grid-cols-1 md:grid-cols-2 gap-x-50 gap-y-6"
               >
-                <div className="md:col-span-1 text-left pr-6 timeline-text">
-                  <h3 className={`text-[2.5em] font-bold text-gradient `}>
+                {/* Text Section */}
+                <div className="text-left pr-4 timeline-text">
+                  <h3 className="text-[2.5em] font-bold text-gradient">
                     {item.title}
                   </h3>
                   <div className="flex flex-wrap justify-start gap-2 my-3">
                     {item.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="text-sm bg-gray-200 text-gradient px-3 py-1 "
+                        className="text-sm bg-gray-200 text-gradient px-3 py-1"
                       >
                         {tag}
                       </span>
@@ -196,15 +206,14 @@ const ProjectsSection = () => {
                   </div>
                   <a
                     href={item.link}
-                    className={`inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-indigo-700 `}
+                    className="inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-indigo-700"
                   >
                     See This Project
                   </a>
                 </div>
 
-                <div className="md:col-span-1"></div>
-
-                <div className="md:col-span-1 hover:scale-105 transition-transform duration-300 cursor-pointer">
+                {/* Image Section */}
+                <div className="hover:scale-105 transition-transform duration-300 cursor-pointer">
                   <img
                     src={item.image}
                     alt={item.title}
