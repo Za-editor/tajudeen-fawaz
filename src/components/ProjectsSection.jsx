@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaArrowRight } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import Button from "./Button";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom"
 import {
   SiHtml5,
   SiCss3,
@@ -91,9 +91,9 @@ const ProjectsSection = () => {
       ],
     },
     {
-      title: "https://za-editor.github.io/Furnico/",
+      title: "Furnico",
       tags: ["Website Design", "Webflow Development", "Furniture"],
-      link: "#",
+      link: "https://za-editor.github.io/Furnico/",
       image: "/assets/furnico.png",
       circleColor: "bg-purple-400",
       active: false,
@@ -169,7 +169,7 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section className="min-h-[100vh] relative mx-auto container">
+    <section className="min-h-[100vh] relative mx-auto container overflow-hidden">
       <svg
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto"
         viewBox="0 0 1400 400"
@@ -267,6 +267,7 @@ const ProjectsSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
+                      
                       <Button
                         text={"Live Version"}
                         className={
@@ -289,7 +290,7 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-end text-2xl justify-end text-[#192f3d] my-4">
+      <div className="flex items-end text-2xl justify-end text-[#192f3d] mr-10">
         <a href="#" className="group flex items-center ">
           View More <FaArrowRight className="inline-block ml-2 bounce-arrow" />
         </a>
@@ -298,7 +299,7 @@ const ProjectsSection = () => {
           {`
       @keyframes bounceX {
         0%, 20%, 50%, 80%, 100% { transform: translateX(0);  }
-        40% { transform: translateX(10px); transform: scale(1.5) }
+        40% { transform: translateX(7px); transform: scale(1.3) }
         60% { transform: translateX(5px); }
       }
       .bounce-arrow {
