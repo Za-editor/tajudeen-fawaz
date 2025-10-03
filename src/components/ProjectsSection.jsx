@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaArrowRight } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 import {
   SiHtml5,
   SiCss3,
@@ -35,7 +36,7 @@ const ProjectsSection = () => {
     {
       title: "AudioPhile",
       tags: ["Website Design", "Webflow Development", "Ecommerce"],
-      link: "#",
+      link: "https://audiophile-seven-beryl.vercel.app/",
       image: "/assets/audioPhile.png",
       circleColor: "bg-purple-400",
       active: false,
@@ -49,7 +50,7 @@ const ProjectsSection = () => {
     {
       title: "Silque",
       tags: ["Website Design", "Webflow Development", "Ecommerce"],
-      link: "#",
+      link: "https://silque-9zns.vercel.app/",
       image: "/assets/silque.png",
       circleColor: "bg-purple-400",
       active: false,
@@ -64,7 +65,7 @@ const ProjectsSection = () => {
     {
       title: "Prime Haven",
       tags: ["Website Design", "Webflow Development", "Real Estate"],
-      link: "#",
+      link: "https://prime-haven-gamma.vercel.app/",
       image: "/assets/primehaven.png",
       circleColor: "bg-purple-400",
       active: false,
@@ -78,7 +79,7 @@ const ProjectsSection = () => {
     {
       title: "Flylo",
       tags: ["Website Design", "Webflow Development", "File Management"],
-      link: "#",
+      link: "https://flylo-landing-page.vercel.app/",
       image: "/assets/flylo.png",
       circleColor: "bg-purple-400",
       active: false,
@@ -90,7 +91,7 @@ const ProjectsSection = () => {
       ],
     },
     {
-      title: "Furnico",
+      title: "https://za-editor.github.io/Furnico/",
       tags: ["Website Design", "Webflow Development", "Furniture"],
       link: "#",
       image: "/assets/furnico.png",
@@ -194,7 +195,7 @@ const ProjectsSection = () => {
       </svg>
 
       <div className="text-center text-[#192f3d]">
-        <p className="text-[3.21em] md:text-[5.21em] font-bold text-gradient leading-[1.4] ">
+        <p className="text-[2.9em] my-4 md:text-[5.21em] font-bold text-gradient leading-[1.4] ">
           Featured Projects
         </p>
         <p className="text-[1.25em] md:text-[1.39em] text-[#192f3d] leading-[1.5]">
@@ -261,12 +262,18 @@ const ProjectsSection = () => {
                         "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
                       }
                     />
-                    <Button
-                      text={"Live Version"}
-                      className={
-                        "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
-                      }
-                    />
+                    <Link
+                      to={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button
+                        text={"Live Version"}
+                        className={
+                          "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+                        }
+                      />
+                    </Link>
                   </div>
                 </div>
 
