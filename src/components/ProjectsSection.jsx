@@ -290,7 +290,7 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-end text-2xl justify-end text-[#192f3d] mr-10">
+      <div className="flex items-end text-2xl justify-end text-[#192f3d] mr-5">
         <a href="#" className="group flex items-center ">
           View More <FaArrowRight className="inline-block ml-2 bounce-arrow" />
         </a>
