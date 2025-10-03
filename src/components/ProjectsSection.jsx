@@ -1,7 +1,19 @@
 import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { FaArrowRight } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
+import Button from "./Button";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiTailwindcss,
+  SiMongodb,
+  SiGit,
+  SiGithub,
+} from "react-icons/si";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +26,11 @@ const ProjectsSection = () => {
       image: "/assets/zentrip.png",
       circleColor: "bg-indigo-900",
       active: true,
+      techstack: [
+        { icon: SiHtml5, color: "#E34F26" },
+        { icon: SiTailwindcss, color: "#06B6D4" },
+        { icon: SiJavascript, color: "#F7DF1E" },
+      ],
     },
     {
       title: "AudioPhile",
@@ -22,6 +39,12 @@ const ProjectsSection = () => {
       image: "/assets/audioPhile.png",
       circleColor: "bg-purple-400",
       active: false,
+      techstack: [
+        { icon: SiHtml5, color: "#E34F26" },
+        { icon: SiTailwindcss, color: "#06B6D4" },
+        { icon: SiJavascript, color: "#F7DF1E" },
+        { icon: SiReact, color: "#61DAFB" },
+      ],
     },
     {
       title: "Silque",
@@ -30,6 +53,13 @@ const ProjectsSection = () => {
       image: "/assets/silque.png",
       circleColor: "bg-purple-400",
       active: false,
+      techstack: [
+        { icon: SiHtml5, color: "#E34F26" },
+        { icon: SiTailwindcss, color: "#06B6D4" },
+        { icon: SiJavascript, color: "#F7DF1E" },
+        { icon: SiReact, color: "#61DAFB" },
+        { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      ],
     },
     {
       title: "Prime Haven",
@@ -38,6 +68,12 @@ const ProjectsSection = () => {
       image: "/assets/primehaven.png",
       circleColor: "bg-purple-400",
       active: false,
+      techstack: [
+        { icon: SiHtml5, color: "#E34F26" },
+        { icon: SiTailwindcss, color: "#06B6D4" },
+        { icon: SiJavascript, color: "#F7DF1E" },
+        { icon: SiReact, color: "#61DAFB" },
+      ],
     },
     {
       title: "Flylo",
@@ -46,6 +82,12 @@ const ProjectsSection = () => {
       image: "/assets/flylo.png",
       circleColor: "bg-purple-400",
       active: false,
+      techstack: [
+        { icon: SiHtml5, color: "#E34F26" },
+        { icon: SiTailwindcss, color: "#06B6D4" },
+        { icon: SiJavascript, color: "#F7DF1E" },
+        { icon: SiCss3, color: "#1572B6" },
+      ],
     },
     {
       title: "Furnico",
@@ -54,6 +96,11 @@ const ProjectsSection = () => {
       image: "/assets/furnico.png",
       circleColor: "bg-purple-400",
       active: false,
+      techstack: [
+        { icon: SiHtml5, color: "#E34F26" },
+        { icon: SiTailwindcss, color: "#06B6D4" },
+        { icon: SiJavascript, color: "#F7DF1E" },
+      ],
     },
   ];
 
@@ -62,7 +109,6 @@ const ProjectsSection = () => {
   const progressRef = useRef(null);
   const circleRef = useRef(null);
 
- 
   useGSAP(() => {
     const text = textRef.current;
     if (!text) return;
@@ -85,7 +131,6 @@ const ProjectsSection = () => {
       repeat: -1,
     });
   });
-
 
   useGSAP(() => {
     const line = timelineLineRef.current;
@@ -123,8 +168,7 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section className="min-h-[100vh] relative">
-      
+    <section className="min-h-[100vh] relative mx-auto container">
       <svg
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto"
         viewBox="0 0 1400 400"
@@ -137,6 +181,7 @@ const ProjectsSection = () => {
           textAnchor="middle"
           className="fill-none stroke-[#192f3d] stroke-[0.25px] font-extrabold text-[18rem]"
           vectorEffect="non-scaling-stroke"
+          s
           style={{
             paintOrder: "stroke",
             strokeLinejoin: "round",
@@ -150,37 +195,32 @@ const ProjectsSection = () => {
 
       <div className="text-center text-[#192f3d]">
         <p className="text-[3.21em] md:text-[5.21em] font-bold text-gradient leading-[1.4] ">
-          Works.
+          Featured Projects
         </p>
         <p className="text-[1.25em] md:text-[1.39em] text-[#192f3d] leading-[1.5]">
-          Overview of Projects I have Worked on
+          A collection of solutions crafted with creativity and precision.
         </p>
-        <p className="text-[1.25em] md:text-[1.39em] leading-[1.5] text-gradient">
-          What do you Think
+        <p className="text-[1.25em] md:text-[1.39em] leading-[1.5] mt-5 text-gradient">
+          Design. Develop. Deliver.
         </p>
       </div>
 
-
       <div className="w-full max-w-6xl mx-auto px-4 py-16">
         <div className="relative">
-
           <div
             ref={timelineLineRef}
             className="absolute left-0 md:left-1/2 top-0 h-full w-1 bg-gray-300 -translate-x-1/2"
           ></div>
-
 
           <div
             ref={progressRef}
             className="absolute left-0 md:left-1/2 top-0 w-1 bg-gradient -translate-x-1/2"
           ></div>
 
-
           <div
             ref={circleRef}
             className="absolute left-0 md:left-1/2 w-6 h-6 rounded-full border-4 border-[#e9e9e9] bg-gradient -translate-x-1/2"
           ></div>
-
 
           <div className="space-y-20 py-20 px-4">
             {timelineData.map((item, index) => (
@@ -188,7 +228,6 @@ const ProjectsSection = () => {
                 key={index}
                 className="grid grid-cols-1 md:grid-cols-2 gap-x-15 md:gap-x-30 gap-y-6"
               >
-
                 <div className="text-left pr-4 timeline-text">
                   <h3 className="text-[2.5em] font-bold text-gradient">
                     {item.title}
@@ -203,14 +242,33 @@ const ProjectsSection = () => {
                       </span>
                     ))}
                   </div>
-                  <a
-                    href={item.link}
-                    className="inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-indigo-700"
-                  >
-                    See This Project
-                  </a>
+                  <div className="flex gap-6 text-3xl my-4">
+                    {item.techstack.map((tech, index) => {
+                      const Icon = tech.icon;
+                      return (
+                        <Icon
+                          key={index}
+                          className="transition-transform duration-700 hover:scale-110 hover:-rotate-360 ease-in-out cursor-pointer"
+                          style={{ color: tech.color }}
+                        />
+                      );
+                    })}
+                  </div>
+                  <div className=" flex flex-wrap gap-4">
+                    <Button
+                      text={"About Project"}
+                      className={
+                        "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+                      }
+                    />
+                    <Button
+                      text={"Live Version"}
+                      className={
+                        "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+                      }
+                    />
+                  </div>
                 </div>
-
 
                 <div className="hover:scale-105 transition-transform duration-300 cursor-pointer">
                   <img
@@ -223,6 +281,24 @@ const ProjectsSection = () => {
             ))}
           </div>
         </div>
+      </div>
+      <div className="flex items-end text-2xl justify-end text-[#192f3d] my-4">
+        <a href="#" className="group flex items-center ">
+          View More <FaArrowRight className="inline-block ml-2 bounce-arrow" />
+        </a>
+
+        <style>
+          {`
+      @keyframes bounceX {
+        0%, 20%, 50%, 80%, 100% { transform: translateX(0);  }
+        40% { transform: translateX(10px); transform: scale(1.5) }
+        60% { transform: translateX(5px); }
+      }
+      .bounce-arrow {
+        animation: bounceX 4s ease-in-out infinite;
+      }
+    `}
+        </style>
       </div>
     </section>
   );
