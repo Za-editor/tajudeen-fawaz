@@ -12,3 +12,6 @@ font-family: "Inter", sans-serif;
     color: transparent;
 }
 
+@utility bg-gradient{
+  background: linear-gradient(to bottom, #005f64, #192f3d);
+}
