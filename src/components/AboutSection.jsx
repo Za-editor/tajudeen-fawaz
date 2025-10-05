@@ -22,28 +22,29 @@ export default function AboutSection() {
   const sectionsRef = useRef([]);
   const lineRef = useRef(null);
 
-  const about = [
-    {
-      title: "Hi, Fawaz here!",
-      text: "I’m a passionate frontend developer who enjoys turning complex problems into clean, elegant interfaces.",
-    },
-    {
-      title: "Professional Background",
-      text: "Started my journey with HTML and CSS, now building scalable apps using React, TypeScript, and Next.js.",
-    },
-    {
-      title: "Relevant Skills",
-      text: "Proficient in JavaScript, React, GSAP, TailwindCSS, Node.js, and API integration.",
-    },
-    {
-      title: "Values",
-      text: "Clean code, accessibility, performance, and creating experiences that delight users.",
-    },
-    {
-      title: "Conclusion",
-      text: "I’m constantly learning and exploring new technologies to improve how users experience the web.",
-    },
-  ];
+ const about = [
+   {
+     title: "Who is Fawaz?",
+     text: "I’m a self-taught frontend developer and problem solver with a passion for creating clean, intuitive digital experiences. My journey started from curiosity wanting to understand how the web works and has grown into a love for building products that feel effortless to use.",
+   },
+   {
+     title: "Professional Background",
+     text: "I began my journey experimenting with HTML and CSS, gradually mastering JavaScript and diving deep into modern frameworks like React, Next.js, and TypeScript. Over time, I’ve built projects that focus on performance, accessibility, and scalability.",
+   },
+   {
+     title: "Relevant Skills",
+     text: "I’m skilled in JavaScript, React, GSAP animations, TailwindCSS, Node.js, Express, MongoDB, and PostgreSQL. I also have experience integrating APIs and optimizing frontend performance for smooth user experiences.",
+   },
+   {
+     title: "Values",
+     text: "I believe in writing clean, maintainable code and building interfaces that respect both form and function. Collaboration, continuous learning, and empathy for the end-user drive my work every day.",
+   },
+   {
+     title: "Conclusion",
+     text: "Every project I take on is an opportunity to learn something new and push my creative and technical boundaries. My goal is simple: to build meaningful, performant digital experiences that leave a lasting impression.",
+   },
+ ];
+
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
@@ -116,23 +117,19 @@ export default function AboutSection() {
   return (
     <section className="container mx-auto py-16 overflow-y-hidden">
       <div ref={containerRef} className="relative overflow-hidden">
-     
         <div className="flex flex-col items-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center">
-            First, a bit about me
+          <h2 className="text-[2.9em] my-4 md:text-[5.21em] font-bold text-gradient leading-[1.4] text-center">
+            Get to Know me
           </h2>
-          <p className="text-lg text-gray-600 text-center max-w-2xl">
+          <p className="text-[1.25em] md:text-[1.39em] text-[#192f3d] leading-[1.5] text-center max-w-2xl">
             I’m a frontend developer driven to build intuitive and efficient
             digital products.
           </p>
         </div>
 
-       
-        <div className="flex flex-col-reverse md:flex-row items-center justify-center px-4 lg:px-20">
-        
+        <div className="flex flex-col-reverse md:flex-row items-center justify-center  lg:px-20">
           <div className="w-full md:w-1/2 flex flex-col justify-center text-gray-800 relative mt-10 md:mt-0">
             <div className="relative w-full md:h-[600px]">
-           
               <div className="absolute left-2 md:left-10 top-0 bottom-0 w-[2px] bg-gray-200 min-h-full">
                 <div
                   ref={lineRef}
@@ -140,7 +137,6 @@ export default function AboutSection() {
                 ></div>
               </div>
 
-             
               <div className="relative h-auto md:h-full md:overflow-hidden">
                 {about.map((item, i) => (
                   <div
@@ -151,11 +147,10 @@ export default function AboutSection() {
                       "relative md:absolute md:left-16 md:right-0 md:top-1/2 md:-translate-y-1/2"
                     } pl-10 md:pl-14 mb-10 md:mb-0`}
                   >
-                
-                    <div className="absolute left-0 md:-left-[1.9rem] w-4 h-4 rounded-full bg-gradient shadow-md top-2 md:top-auto"></div>
+                    <div className="absolute left-1 md:-left-[1.8rem] w-3 h-3 rounded-full bg-gradient shadow-md top-2 md:top-auto"></div>
 
-                    {/* Text */}        <div className="ml-0 md:ml-4">
-                      <h3 className="text-2xl font-semibold mb-3">
+                    <div className="ml-0 md:ml-4">
+                      <h3 className="text-lg md:text-2xl text-gradient font-semibold mb-3">
                         {item.title}
                       </h3>
                       <p className="text-gray-600 text-base md:text-lg max-w-md leading-relaxed">
@@ -174,36 +169,35 @@ export default function AboutSection() {
                 <img src="/assets/avatar.png" alt="avatar" />
               </div>
 
-          
-              <span className="tech-icon absolute -top-20 left-1 md:-top-15 md:left-0 bg-yellow-100 text-yellow-500 p-2 rounded-md text-xl shadow-sm">
-                <SiJavascript />
+              <span className="tech-icon absolute -top-20 left-1 md:-top-15 md:left-0 bg-yellow-100 text-yellow-500 p-2 rounded-md text-xl shadow-sm ">
+                <SiJavascript className="hover:scale-120 transition-all duration-500 ease-in-out hover:-rotate-360" />
               </span>
               <span className="tech-icon absolute -top-25 left-1/2 bg-cyan-100 text-cyan-500 p-2 rounded-md text-xl shadow-sm">
-                <SiTailwindcss />
+                <SiTailwindcss className="hover:scale-120 transition-all duration-500 ease-in-out hover:-rotate-360" />
               </span>
               <span className="tech-icon absolute top-10 -right-16 bg-sky-100 text-sky-500 p-2 rounded-md text-xl shadow-sm">
-                <SiReact />
+                <SiReact className="hover:scale-120 transition-all duration-500 ease-in-out hover:-rotate-360" />
               </span>
               <span className="tech-icon absolute -bottom-5 left-5 md:-bottom-10 md:left-10 bg-green-100 text-green-600 p-2 rounded-md text-xl shadow-sm">
-                <SiNodedotjs />
+                <SiNodedotjs className="hover:scale-120 transition-all duration-500 ease-in-out hover:-rotate-360" />
               </span>
               <span className="tech-icon absolute bottom-10 right-0 bg-blue-100 text-blue-600 p-2 rounded-md text-xl shadow-sm">
-                <SiCss3 />
+                <SiCss3 className="hover:scale-120 transition-all duration-500 ease-in-out hover:-rotate-360" />
               </span>
               <span className="tech-icon absolute bottom-40 -right-20 bg-purple-100 text-purple-500 p-2 rounded-md text-xl shadow-sm">
-                <SiRedux />
+                <SiRedux className="hover:scale-120 transition-all duration-500 ease-in-out hover:-rotate-360" />
               </span>
               <span className="tech-icon absolute bottom-25 -left-20 md:bottom-40 md:-left-30 bg-pink-100 text-pink-500 p-2 rounded-md text-xl shadow-sm">
-                <SiSass />
+                <SiSass className="hover:scale-120 transition-all duration-500 ease-in-out hover:-rotate-360" />
               </span>
               <span className="tech-icon absolute bottom-10 -left-20 bg-indigo-100 text-indigo-600 p-2 rounded-md text-xl shadow-sm">
-                <SiPostgresql />
+                <SiPostgresql className="hover:scale-120 transition-all duration-500 ease-in-out hover:-rotate-360" />
               </span>
               <span className="tech-icon absolute bottom-40 -left-10 md:bottom-70 md:-left-20 bg-green-100 text-green-500 p-2 rounded-md text-xl shadow-sm">
-                <SiMongodb />
+                <SiMongodb className="hover:scale-120 transition-all duration-500 ease-in-out hover:-rotate-360" />
               </span>
               <span className="tech-icon absolute -top-10 -right-0 bg-gray-100 text-gray-700 p-2 rounded-md text-xl shadow-sm">
-                <SiExpress />
+                <SiExpress className="hover:scale-120 transition-all duration-500 ease-in-out hover:-rotate-360" />
               </span>
             </div>
           </div>
