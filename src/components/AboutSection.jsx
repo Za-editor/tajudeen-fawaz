@@ -47,7 +47,7 @@ export default function AboutSection() {
 
   useGSAP(() => {
   
-    if (window.innerWidth < 768) return;
+
 
     const ctx = gsap.context(() => {
       const panels = sectionsRef.current.filter(Boolean);
