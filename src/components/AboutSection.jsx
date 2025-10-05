@@ -175,7 +175,7 @@ export default function AboutSection() {
               </div>
 
           
-              <span className="tech-icon absolute -top-15 left-0 bg-yellow-100 text-yellow-500 p-2 rounded-md text-xl shadow-sm">
+              <span className="tech-icon absolute -top-20 left-1 md:-top-15 md:left-0 bg-yellow-100 text-yellow-500 p-2 rounded-md text-xl shadow-sm">
                 <SiJavascript />
               </span>
               <span className="tech-icon absolute -top-25 left-1/2 bg-cyan-100 text-cyan-500 p-2 rounded-md text-xl shadow-sm">
@@ -184,7 +184,7 @@ export default function AboutSection() {
               <span className="tech-icon absolute top-10 -right-16 bg-sky-100 text-sky-500 p-2 rounded-md text-xl shadow-sm">
                 <SiReact />
               </span>
-              <span className="tech-icon absolute -bottom-10 left-10 bg-green-100 text-green-600 p-2 rounded-md text-xl shadow-sm">
+              <span className="tech-icon absolute -bottom-5 left-5 md:-bottom-10 md:left-10 bg-green-100 text-green-600 p-2 rounded-md text-xl shadow-sm">
                 <SiNodedotjs />
               </span>
               <span className="tech-icon absolute bottom-10 right-0 bg-blue-100 text-blue-600 p-2 rounded-md text-xl shadow-sm">
@@ -193,13 +193,13 @@ export default function AboutSection() {
               <span className="tech-icon absolute bottom-40 -right-20 bg-purple-100 text-purple-500 p-2 rounded-md text-xl shadow-sm">
                 <SiRedux />
               </span>
-              <span className="tech-icon absolute bottom-40 -left-30 bg-pink-100 text-pink-500 p-2 rounded-md text-xl shadow-sm">
+              <span className="tech-icon absolute bottom-25 -left-20 md:bottom-40 md:-left-30 bg-pink-100 text-pink-500 p-2 rounded-md text-xl shadow-sm">
                 <SiSass />
               </span>
               <span className="tech-icon absolute bottom-10 -left-20 bg-indigo-100 text-indigo-600 p-2 rounded-md text-xl shadow-sm">
                 <SiPostgresql />
               </span>
-              <span className="tech-icon absolute bottom-70 -left-20 bg-green-100 text-green-500 p-2 rounded-md text-xl shadow-sm">
+              <span className="tech-icon absolute bottom-40 -left-10 md:bottom-70 md:-left-20 bg-green-100 text-green-500 p-2 rounded-md text-xl shadow-sm">
                 <SiMongodb />
               </span>
               <span className="tech-icon absolute -top-10 -right-0 bg-gray-100 text-gray-700 p-2 rounded-md text-xl shadow-sm">
