@@ -1,4 +1,4 @@
-import { useRef} from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -46,51 +46,60 @@ export default function AboutSection() {
   ];
 
   useGSAP(() => {
-  
-
-
     const ctx = gsap.context(() => {
       const panels = sectionsRef.current.filter(Boolean);
 
-      gsap.set(panels, { yPercent: 100, autoAlpha: 0 });
+      ScrollTrigger.matchMedia({
+       
+        "(min-width: 768px)": function () {
+          gsap.set(panels, { yPercent: 100, autoAlpha: 0 });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: `+=${panels.length * 1000}`,
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
-        },
-      });
-
-      panels.forEach((panel) => {
-        tl.to(panel, {
-          yPercent: 0,
-          autoAlpha: 1,
-          duration: 0.8,
-          ease: "power2.out",
-        })
-          .to({}, { duration: 0.5 })
-          .to(panel, {
-            yPercent: -200,
-            autoAlpha: 0,
-            duration: 0.8,
-            ease: "power2.in",
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top top",
+              end: `+=${panels.length * 1000}`,
+              scrub: true,
+              pin: true,
+              anticipatePin: 1,
+            },
           });
-      });
 
-      gsap.to(lineRef.current, {
-        height: "100%",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true,
+          panels.forEach((panel) => {
+            tl.to(panel, {
+              yPercent: 0,
+              autoAlpha: 1,
+              duration: 0.8,
+              ease: "power2.out",
+            })
+              .to({}, { duration: 0.5 })
+              .to(panel, {
+                yPercent: -200,
+                autoAlpha: 0,
+                duration: 0.8,
+                ease: "power2.in",
+              });
+          });
+
+          gsap.to(lineRef.current, {
+            height: "100%",
+            scrollTrigger: {
+              trigger: containerRef.current,
+              start: "top top",
+              end: "bottom bottom",
+              scrub: true,
+            },
+          });
+        },
+
+    
+        "(max-width: 767px)": function () {
+          gsap.set(panels, { clearProps: "all" });
+          gsap.set(lineRef.current, { clearProps: "all" });
         },
       });
 
+      
       gsap.to(".tech-icon", {
         y: 25,
         repeat: -1,
@@ -105,8 +114,9 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section className="container mx-auto py-16 min-h-content overfloy-y-hidden">
-      <div ref={containerRef} className="relative overflow-hidden ">
+    <section className="container mx-auto py-16 overflow-y-hidden">
+      <div ref={containerRef} className="relative overflow-hidden">
+     
         <div className="flex flex-col items-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center">
             First, a bit about me
@@ -117,27 +127,34 @@ export default function AboutSection() {
           </p>
         </div>
 
-   
+       
         <div className="flex flex-col-reverse md:flex-row items-center justify-center px-4 lg:px-20">
-   
+        
           <div className="w-full md:w-1/2 flex flex-col justify-center text-gray-800 relative mt-10 md:mt-0">
-            <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
-              <div className="absolute left-6 md:left-10 top-0 bottom-0 w-[2px] bg-gray-200">
+            <div className="relative w-full md:h-[600px]">
+           
+              <div className="absolute left-2 md:left-10 top-0 bottom-0 w-[2px] bg-gray-200 min-h-full">
                 <div
                   ref={lineRef}
-                  className="absolute left-0 top-0 w-[2px] bg-gradient"
+                  className="absolute left-0 top-0 w-[2px] bg-gradient h-full"
                 ></div>
               </div>
 
-              <div className="relative h-full">
+             
+              <div className="relative h-auto md:h-full md:overflow-hidden">
                 {about.map((item, i) => (
                   <div
                     key={i}
                     ref={(el) => (sectionsRef.current[i] = el)}
-                    className="absolute left-12 md:left-16 right-0 top-1/2 transform -translate-y-1/2"
+                    className={`${
+                      // relative for mobile stacked layout, absolute for desktop
+                      "relative md:absolute md:left-16 md:right-0 md:top-1/2 md:-translate-y-1/2"
+                    } pl-10 md:pl-14 mb-10 md:mb-0`}
                   >
-                    <div className="absolute -left-[2rem] w-4 h-4 rounded-full bg-gradient shadow-md"></div>
-                    <div className="ml-4">
+                
+                    <div className="absolute left-0 md:-left-[1.9rem] w-4 h-4 rounded-full bg-gradient shadow-md top-2 md:top-auto"></div>
+
+                    {/* Text */}        <div className="ml-0 md:ml-4">
                       <h3 className="text-2xl font-semibold mb-3">
                         {item.title}
                       </h3>
@@ -151,14 +168,13 @@ export default function AboutSection() {
             </div>
           </div>
 
-       
-          <div className="w-full md:w-1/2 flex items-center justify-center md:sticky md:top-0 md:h-screen mb-10 md:mb-0 mt-50 md:mt-0">
+          <div className="w-full mt-50 md:mt-0 md:w-1/2 flex items-center justify-center md:sticky md:top-0 md:h-screen mb-10 md:mb-0">
             <div className="relative flex items-center justify-center">
               <div className="w-48 h-48 md:w-58 md:h-58 lg:w-100 lg:h-100 rounded-full flex items-center justify-center shadow-inner">
-                <img src="/assets/avatar.png" alt="" />
+                <img src="/assets/avatar.png" alt="avatar" />
               </div>
 
-           
+          
               <span className="tech-icon absolute -top-15 left-0 bg-yellow-100 text-yellow-500 p-2 rounded-md text-xl shadow-sm">
                 <SiJavascript />
               </span>
