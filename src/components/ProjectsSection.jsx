@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaArrowRight } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import Button from "./Button";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import {
   SiHtml5,
   SiCss3,
@@ -225,10 +225,12 @@ const ProjectsSection = () => {
 
           <div className="space-y-20 py-20 px-4">
             {timelineData.map((item, index) => (
+              
               <div
                 key={index}
                 className="grid grid-cols-1 md:grid-cols-2 gap-x-15 md:gap-x-30 gap-y-6"
               >
+                
                 <div className="text-left pr-4 timeline-text">
                   <h3 className="text-[2.5em] font-bold text-gradient">
                     {item.title}
@@ -237,7 +239,7 @@ const ProjectsSection = () => {
                     {item.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="text-sm bg-gray-200 text-gradient px-3 py-1"
+                        className="text-sm bg-gray-200 text-gradient px-4 py-1 my-3 shadow-lg transition-all ease-in-out duration-300 cursor-pointer hover:scale-105"
                       >
                         {tag}
                       </span>
@@ -267,7 +269,6 @@ const ProjectsSection = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      
                       <Button
                         text={"Live Version"}
                         className={
@@ -290,8 +291,8 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-end text-2xl justify-end text-[#192f3d] mr-5">
-        <a href="#" className="group flex items-center ">
+      <div className="flex items-end text-2xl justify-end  mr-5">
+        <a href="#" className="group flex items-center  text-[#192f3d]">
           View More <FaArrowRight className="inline-block ml-2 bounce-arrow" />
         </a>
 

@@ -21,7 +21,7 @@ const ToggleSwitch = ({ onToggle }) => {
         htmlFor="toggle-switch"
         className={`flex items-center justify-between 
           w-24 h-10 sm:w-30 sm:h-12 
-          rounded-full cursor-pointer px-3 sm:px-4 transition-colors bg-[#192f3d]`}
+          rounded-full cursor-pointer px-3 sm:px-4 transition-colors bg-gradient`}
       >
         <span
           className={`text-[#e9e9e9] font-bold text-xs sm:text-sm transition-opacity ${
