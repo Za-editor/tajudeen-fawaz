@@ -169,135 +169,135 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section className="min-h-[100vh] relative mx-auto container overflow-hidden">
-      <svg
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto"
-        viewBox="0 0 1400 400"
-      >
-        <text
-          ref={textRef}
-          x="50%"
-          y="50%"
-          dy=".35em"
-          textAnchor="middle"
-          className="fill-none stroke-[#192f3d] stroke-[0.25px] font-extrabold text-[18rem]"
-          vectorEffect="non-scaling-stroke"
-          s
-          style={{
-            paintOrder: "stroke",
-            strokeLinejoin: "round",
-            strokeLinecap: "round",
-            strokeOpacity: 0.08,
-          }}
+    <section className="min-h-[100vh] mx-auto container overflow-hidden">
+      <div className="relative ">
+        <svg
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto"
+          viewBox="0 0 1400 400"
         >
-          FAWAZ
-        </text>
-      </svg>
+          <text
+            ref={textRef}
+            x="50%"
+            y="50%"
+            dy=".35em"
+            textAnchor="middle"
+            className="fill-none stroke-[#192f3d] stroke-[0.25px] font-extrabold text-[18rem]"
+            vectorEffect="non-scaling-stroke"
+            s
+            style={{
+              paintOrder: "stroke",
+              strokeLinejoin: "round",
+              strokeLinecap: "round",
+              strokeOpacity: 0.08,
+            }}
+          >
+            FAWAZ
+          </text>
+        </svg>
 
-      <div className="text-center text-[#192f3d]">
-        <p className="text-[2.9em] my-4 md:text-[5.21em] font-bold text-gradient leading-[1.4] ">
-          Featured Projects
-        </p>
-        <p className="text-[1.25em] md:text-[1.39em] text-[#192f3d] leading-[1.5]">
-          A collection of solutions crafted with creativity and precision.
-        </p>
-        <p className="text-[1.25em] md:text-[1.39em] leading-[1.5] mt-5 text-gradient">
-          Design. Develop. Deliver.
-        </p>
-      </div>
+        <div className="text-center text-[#192f3d]">
+          <p className="text-[2.9em] my-4 md:text-[5.21em] font-bold text-gradient leading-[1.4] ">
+            Featured Projects
+          </p>
+          <p className="text-[1.25em] md:text-[1.39em] text-[#192f3d] leading-[1.5]">
+            A collection of solutions crafted with creativity and precision.
+          </p>
+          <p className="text-[1.25em] md:text-[1.39em] leading-[1.5] mt-5 text-gradient">
+            Design. Develop. Deliver.
+          </p>
+        </div>
 
-      <div className="w-full max-w-6xl mx-auto px-4 py-16">
-        <div className="relative">
-          <div
-            ref={timelineLineRef}
-            className="absolute left-0 md:left-1/2 top-0 h-full w-1 bg-gray-300 -translate-x-1/2"
-          ></div>
+        <div className="w-full max-w-6xl mx-auto px-4 py-16">
+          <div className="relative">
+            <div
+              ref={timelineLineRef}
+              className="absolute left-0 md:left-1/2 top-0 h-full w-1 bg-gray-300 -translate-x-1/2"
+            ></div>
 
-          <div
-            ref={progressRef}
-            className="absolute left-0 md:left-1/2 top-0 w-1 bg-gradient -translate-x-1/2"
-          ></div>
+            <div
+              ref={progressRef}
+              className="absolute left-0 md:left-1/2 top-0 w-1 bg-gradient -translate-x-1/2"
+            ></div>
 
-          <div
-            ref={circleRef}
-            className="absolute left-0 md:left-1/2 w-6 h-6 rounded-full border-4 border-[#e9e9e9] bg-gradient -translate-x-1/2"
-          ></div>
+            <div
+              ref={circleRef}
+              className="absolute left-0 md:left-1/2 w-6 h-6 rounded-full border-4 border-[#e9e9e9] bg-gradient -translate-x-1/2"
+            ></div>
 
-          <div className="space-y-20 py-20 px-4">
-            {timelineData.map((item, index) => (
-              
-              <div
-                key={index}
-                className="grid grid-cols-1 md:grid-cols-2 gap-x-15 md:gap-x-30 gap-y-6"
-              >
-                
-                <div className="text-left pr-4 timeline-text">
-                  <h3 className="text-[2.5em] font-bold text-gradient">
-                    {item.title}
-                  </h3>
-                  <div className="flex flex-wrap justify-start gap-2 my-3">
-                    {item.tags.map((tag, i) => (
-                      <span
-                        key={i}
-                        className="text-sm bg-gray-200 text-gradient px-4 py-1 my-3 shadow-lg transition-all ease-in-out duration-300 cursor-pointer hover:scale-105"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-6 text-3xl my-4">
-                    {item.techstack.map((tech, index) => {
-                      const Icon = tech.icon;
-                      return (
-                        <Icon
-                          key={index}
-                          className="transition-transform duration-700 hover:scale-110 hover:-rotate-360 ease-in-out cursor-pointer"
-                          style={{ color: tech.color }}
-                        />
-                      );
-                    })}
-                  </div>
-                  <div className=" flex flex-wrap gap-4">
-                    <Button
-                      text={"About Project"}
-                      className={
-                        "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
-                      }
-                    />
-                    <Link
-                      to={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+            <div className="space-y-20 py-20 px-4">
+              {timelineData.map((item, index) => (
+                <div
+                  key={index}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-x-15 md:gap-x-30 gap-y-6"
+                >
+                  <div className="text-left pr-4 timeline-text">
+                    <h3 className="text-[2.5em] font-bold text-gradient">
+                      {item.title}
+                    </h3>
+                    <div className="flex flex-wrap justify-start gap-2 my-3">
+                      {item.tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className="text-sm bg-gray-200 text-gradient px-4 py-1 my-3 shadow-lg transition-all ease-in-out duration-300 cursor-pointer hover:scale-105"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex gap-6 text-3xl my-4">
+                      {item.techstack.map((tech, index) => {
+                        const Icon = tech.icon;
+                        return (
+                          <Icon
+                            key={index}
+                            className="transition-transform duration-700 hover:scale-110 hover:-rotate-360 ease-in-out cursor-pointer"
+                            style={{ color: tech.color }}
+                          />
+                        );
+                      })}
+                    </div>
+                    <div className=" flex flex-wrap gap-4">
                       <Button
-                        text={"Live Version"}
+                        text={"About Project"}
                         className={
                           "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
                         }
                       />
-                    </Link>
+                      <Link
+                        to={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button
+                          text={"Live Version"}
+                          className={
+                            "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+                          }
+                        />
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="hover:scale-105 transition-transform duration-300 cursor-pointer">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="rounded-lg shadow-md transition"
+                    />
                   </div>
                 </div>
-
-                <div className="hover:scale-105 transition-transform duration-300 cursor-pointer">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="rounded-lg shadow-md transition"
-                  />
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex items-end text-2xl justify-end  mr-5">
-        <a href="#" className="group flex items-center  text-[#192f3d]">
-          View More <FaArrowRight className="inline-block ml-2 bounce-arrow" />
-        </a>
+        <div className="flex items-end text-2xl justify-end  mr-5">
+          <a href="#" className="group flex items-center  text-[#192f3d]">
+            View More{" "}
+            <FaArrowRight className="inline-block ml-2 bounce-arrow" />
+          </a>
 
-        <style>
-          {`
+          <style>
+            {`
       @keyframes bounceX {
         0%, 20%, 50%, 80%, 100% { transform: translateX(0);  }
         40% { transform: translateX(7px); transform: scale(1.3) }
@@ -307,7 +307,8 @@ const ProjectsSection = () => {
         animation: bounceX 4s ease-in-out infinite;
       }
     `}
-        </style>
+          </style>
+        </div>
       </div>
     </section>
   );
