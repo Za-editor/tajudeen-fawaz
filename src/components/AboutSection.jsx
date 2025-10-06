@@ -165,7 +165,7 @@ const about = [
             </div>
           </div>
 
-          <div className="w-full mt-50 md:mt-0 md:w-1/2 flex items-center justify-center md:sticky md:top-0 md:h-screen mb-10 md:mb-0">
+          <div className="w-full mt-50 md:mt-0 md:w-1/2 flex items-center justify-center md:sticky md:top-0 md:h-fit mb-10 md:mb-0">
             <div className="relative flex items-center justify-center">
               <div className="w-48 h-48 md:w-58 md:h-58 lg:w-100 lg:h-100 rounded-full flex items-center justify-center shadow-inner">
                 <img src="/assets/avatar.png" alt="avatar" />
