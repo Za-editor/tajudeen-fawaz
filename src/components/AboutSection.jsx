@@ -22,28 +22,30 @@ export default function AboutSection() {
   const sectionsRef = useRef([]);
   const lineRef = useRef(null);
 
- const about = [
-   {
-     title: "Who is Fawaz?",
-     text: "I’m a self-taught frontend developer and problem solver with a passion for creating clean, intuitive digital experiences. My journey started from curiosity wanting to understand how the web works and has grown into a love for building products that feel effortless to use.",
-   },
-   {
-     title: "Professional Background",
-     text: "I began my journey experimenting with HTML and CSS, gradually mastering JavaScript and diving deep into modern frameworks like React, Next.js, and TypeScript. Over time, I’ve built projects that focus on performance, accessibility, and scalability.",
-   },
-   {
-     title: "Relevant Skills",
-     text: "I’m skilled in JavaScript, React, GSAP animations, TailwindCSS, Node.js, Express, MongoDB, and PostgreSQL. I also have experience integrating APIs and optimizing frontend performance for smooth user experiences.",
-   },
-   {
-     title: "Values",
-     text: "I believe in writing clean, maintainable code and building interfaces that respect both form and function. Collaboration, continuous learning, and empathy for the end-user drive my work every day.",
-   },
-   {
-     title: "Conclusion",
-     text: "Every project I take on is an opportunity to learn something new and push my creative and technical boundaries. My goal is simple: to build meaningful, performant digital experiences that leave a lasting impression.",
-   },
- ];
+const about = [
+  {
+    title: "Who is Fawaz?",
+    text: "A curious mind turned frontend developer. I love bringing ideas to life through clean, interactive designs and smooth user experiences. What started as simple curiosity about how websites worked has grown into a full-blown passion for creating them.",
+  },
+  {
+    title: "Professional Background",
+    text: "I kicked off my journey with HTML and CSS, then found my groove in JavaScript, React, and Next.js. Since then, I’ve built projects focused on performance, usability, and great design.",
+  },
+  {
+    title: "Relevant Skills",
+    text: "I work mainly with React, TailwindCSS, GSAP, and Node.js and I’m always up for learning tools that make building better and faster.",
+  },
+  {
+    title: "Values",
+    text: "I’m all about clean code, thoughtful design, and making the web feel a little more human. Collaboration and attention to detail keep me grounded.",
+  },
+  {
+    title: "Conclusion",
+    text: "I’m constantly exploring, experimenting, and refining my craft. For me, development is more than code it’s creating something people genuinely enjoy using.",
+  },
+];
+
+
 
 
   useGSAP(() => {
@@ -58,8 +60,8 @@ export default function AboutSection() {
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: containerRef.current,
-              start: "top top",
-              end: `+=${panels.length * 1000}`,
+              start: " top",
+              end: `+=5000`,
               scrub: true,
               pin: true,
               anticipatePin: 1,
@@ -68,7 +70,7 @@ export default function AboutSection() {
 
           panels.forEach((panel) => {
             tl.to(panel, {
-              yPercent: 0,
+              yPercent: -50,
               autoAlpha: 1,
               duration: 0.8,
               ease: "power2.out",
@@ -149,11 +151,11 @@ export default function AboutSection() {
                   >
                     <div className="absolute left-1 md:-left-[1.8rem] w-3 h-3 rounded-full bg-gradient shadow-md top-2 md:top-auto"></div>
 
-                    <div className="ml-0 md:ml-4">
+                    <div className="ml-0 md:ml-1">
                       <h3 className="text-lg md:text-2xl text-gradient font-semibold mb-3">
                         {item.title}
                       </h3>
-                      <p className="text-gray-600 text-base md:text-lg max-w-md leading-relaxed">
+                      <p className="text-gray-600 text-base md:text-lg md:w-full lg:max-w-md leading-relaxed">
                         {item.text}
                       </p>
                     </div>
