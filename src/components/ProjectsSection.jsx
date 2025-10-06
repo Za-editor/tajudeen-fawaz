@@ -196,7 +196,7 @@ const ProjectsSection = () => {
         </svg>
 
         <div className="text-center text-[#192f3d]">
-          <p className="text-[2.9em] my-4 md:text-[5.21em] font-bold text-gradient leading-[1.4] ">
+          <p className="text-[2.9em] md:text-[4em] lg:text-[5.21em] my-4 font-bold text-gradient leading-[1.4] ">
             Featured Projects
           </p>
           <p className="text-[1.25em] md:text-[1.39em] text-[#192f3d] leading-[1.5]">

@@ -120,7 +120,7 @@ const about = [
     <section className="container mx-auto py-16 overflow-y-hidden">
       <div ref={containerRef} className="relative overflow-hidden">
         <div className="flex flex-col items-center">
-          <h2 className="text-[2.9em] my-4 md:text-[5.21em] font-bold text-gradient leading-[1.4] text-center">
+          <h2 className="text-[2.9em] md:text-[4em] lg:text-[5.21em] my-4 font-bold text-gradient leading-[1.4] text-center">
             Get to Know me
           </h2>
           <p className="text-[1.25em] md:text-[1.39em] text-[#192f3d] leading-[1.5] text-center max-w-2xl">
