@@ -170,7 +170,7 @@ const Resume = () => {
                 <div
                   className={`
               shadow-sm p-5 md:w-5/12 lg:w-5/12 w-full
-              backdrop-blur-sm 
+              
               hover:scale-[1.03] transition-all duration-500 cursor-pointer
               ${index % 2 === 0 ? "md:ml-auto md:mr-0" : "md:mr-auto md:ml-0"}
             `}
