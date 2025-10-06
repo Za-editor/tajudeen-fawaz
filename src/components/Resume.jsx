@@ -97,15 +97,15 @@ const Resume = () => {
     }
 
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto overflow-hidden">
       <div className="">
-        <h2 className="text-[2.9em] my-4 md:text-[5.21em] font-bold text-gradient leading-[1.4] text-center">
+        <h2 className=" text-[2.9em] md:text-[4em] lg:text-[5.21em] my-4  font-bold text-gradient leading-[1.4] text-center">
           Resume
         </h2>
-        <ul className="flex gap-10 justify-center mx-4 text-xl text-gradient  ">
+        <ul className="flex gap-2 md:gap-3 lg:gap-10 justify-center mx-4 text-xs md:text-lg lg:text-xl text-gradient  ">
           <li
             onClick={() => handleClick("Skills")}
-            className={`px-10 py-3 border-x border-b border-gray-300 rounded-lg cursor-pointer transition-all duration-500 
+            className={`px-2 py-2 md:px-5 lg:px-10 lg:py-3 border-x border-b border-gray-300 rounded-lg cursor-pointer transition-all duration-500 
       ${
         activeTab === "Skills"
           ? "bg-gradient text-white"
@@ -117,7 +117,7 @@ const Resume = () => {
 
           <li
             onClick={() => handleClick("Experience")}
-            className={`px-10 py-3 border-x border-b border-gray-300 rounded-lg cursor-pointer transition-all duration-500 
+            className={`px-2 py-2 md:px-5 lg:px-10 lg:py-3 border-x border-b border-gray-300 rounded-lg cursor-pointer transition-all duration-500 
       ${
         activeTab === "Experience"
           ? "bg-gradient text-white"
@@ -129,9 +129,10 @@ const Resume = () => {
 
           <li
             onClick={() => handleClick("Education")}
-            className={`px-10 py-3 border-x border-b border-gray-300 rounded-lg cursor-pointer transition-all duration-500 
+            className={`px-2 py-2 md:px-5 lg:px-10 lg:py-3 border-x border-b border-gray-300 rounded-lg cursor-pointer transition-all duration-500 
       ${
-        activeTab === "Education" ? "bg-gradient text-white"
+        activeTab === "Education"
+          ? "bg-gradient text-white"
           : "hover:bg-gradient hover:text-white"
       }`}
           >
@@ -140,60 +141,78 @@ const Resume = () => {
           <a
             href="/assets/fawaz.pdf"
             download="Fawaz"
-            className="px-10 py-3  border-x-1 border-gray-300 rounded-lg border-b-1 hover:bg-gradient hover:text-white duration-500 cursor-pointer flex items-center gap-2"
+            className=" px-2 py-2 md:px-5 lg:px-10 lg:py-3  border-x-1 border-gray-300 rounded-lg border-b-1 hover:bg-gradient hover:text-white duration-500 cursor-pointer flex items-center gap-2"
           >
-            Download CV <MdDownload className="text-xl" />
+            Download CV
           </a>
         </ul>
       </div>
-      <div class="my-20 px-50">
-        <div class="relative">
-          <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-gray-300"></div>
-          {data.map((data, index) => {
-            const Icons = data.icon;
+      <div className="my-20 px-4 md:px-10 lg:px-50">
+        <div className="relative">
+
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-gray-300"></div>
+          
+
+          {data.map((item, index) => {
+            const Icons = item.icon;
             return (
               <div
-                class={`mb-12 flex ${
-                  index % 2 === 0 ? "justify-end" : "justify-start"
-                }  w-full relative `}
+                key={index}
+                className={`mb-6 md:mb-12 flex w-full relative ${
+                  index % 2 === 0 ? "md:justify-end" : "md:justify-start"
+                } md:items-center`}
               >
-                <div class="absolute left-1/2 transform -translate-x-1/2 top-5 w-5 h-5 bg-gradient rounded-full border-4 border-[#e9e9e9]"></div>
-                <div class="shadow-sm p-5 w-5/12 hover:scale-110 transition-all duration-500 cursor-pointer">
-                  {data.name && (
-                    <p class="text-xl font-bold text-gradient ">{data.name}</p>
+
+                <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-5 w-5 h-5 bg-gradient rounded-full border-4 border-[#e9e9e9]"></div>
+                
+
+
+                <div
+                  className={`
+              shadow-sm p-5 md:w-5/12 lg:w-5/12 w-full
+              backdrop-blur-sm 
+              hover:scale-[1.03] transition-all duration-500 cursor-pointer
+              ${index % 2 === 0 ? "md:ml-auto md:mr-0" : "md:mr-auto md:ml-0"}
+            `}
+                >
+                  {item.name && (
+                    <p className="text-xl font-bold text-gradient">
+                      {item.name}
+                    </p>
                   )}
-                  {data.icon && (
+                  {item.icon && (
                     <Icons
-                      class={`text-xl mt-2 mb-2`}
-                      style={{ color: data.color }}
+                      className="text-xl mt-2 mb-2"
+                      style={{ color: item.color }}
                     />
                   )}
-                  {data.proficiency && (
-                    <p class="text-lg text-gray-600">{data.proficiency}</p>
-                  )}
-                  {data.role && (
-                    <div className="">
-                      <div className="flex justify-between font-xl font-bold text-gradient">
-                        <p>{data.role}</p>
-                        <p>{data.duration}</p>
-                      </div>
-                      <p className="text-sm text-gradient italic my-2">
-                        {data.company}
-                      </p>
-                      <p className="text-gray-500">{data.description}</p>
-                    </div>
+                  {item.proficiency && (
+                    <p className="text-lg text-gray-600">{item.proficiency}</p>
                   )}
 
-                  {data.degree && (
-                    <div className="">
+                  {item.role && (
+                    <>
                       <div className="flex justify-between font-xl font-bold text-gradient">
-                        <p>{data.degree}</p>
-                        <p>{data.duration}</p>
+                        <p>{item.role}</p>
+                        <p>{item.duration}</p>
                       </div>
                       <p className="text-sm text-gradient italic my-2">
-                        {data.institution}
+                        {item.company}
                       </p>
-                    </div>
+                      <p className="text-gray-500">{item.description}</p>
+                    </>
+                  )}
+
+                  {item.degree && (
+                    <>
+                      <div className="flex justify-between font-xl font-bold text-gradient">
+                        <p>{item.degree}</p>
+                        <p>{item.duration}</p>
+                      </div>
+                      <p className="text-sm text-gradient italic my-2">
+                        {item.institution}
+                      </p>
+                    </>
                   )}
                 </div>
               </div>
