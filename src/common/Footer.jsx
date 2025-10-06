@@ -8,7 +8,7 @@ const Footer = () => {
   const socials = ["Github", "Linkedin", "Twitter", "Instagram"];
 
   return (
-    <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-y-6 md:gap-y-0 py-6 px-4">
+    <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-y-6 md:gap-y-0 py-6 px-4 border-t-2 border-gray-300">
       {/* Navigation Links */}
       <div id="nav-links" className="text-center md:text-left">
         <ul className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6">
