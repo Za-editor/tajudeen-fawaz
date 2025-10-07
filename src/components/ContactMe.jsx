@@ -4,6 +4,8 @@ import React, { useRef, useState } from "react";
 import Button from "./Button";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EmailModal from "./EmailModal";
+import { FaGithub, FaInstagram, FaLinkedin, } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -112,7 +114,14 @@ const toggleModal = () => {
         <p className="mt-6 text-[1.25em] md:text-[1.39em] text-gradient leading-[1.5] max-w-2xl tracking-wider">
           Or hit my socials
         </p>
+        <div className="text-2xl md:text-3xl lg:text-4xl flex gap-3 md:gap-4 mt-6">
+          <FaGithub className="transition ease-in-out cursor-pointer duration-300 hover:scale-130" />
+          <FaLinkedin className="transition ease-in-out cursor-pointer duration-300 hover:scale-130 text-[#0A66C2]" />
+          <FaXTwitter className="transition ease-in-out cursor-pointer duration-300 hover:scale-130" />
+          <FaInstagram className="transition ease-in-out cursor-pointer duration-300 hover:scale-130 text-[#E1306C]" />
+        </div>
       </div>
+
       <EmailModal toggleModal={toggleModal} isOpen={isOpen} />
     </section>
   );
