@@ -64,7 +64,7 @@ const toggleModal = () => {
   return (
     <section className="relative container mx-auto h-screen overflow-hidden flex flex-col">
       <svg
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-auto z-0"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-auto  pointer-events-none -z-40"
         viewBox="0 0 1000 300"
         preserveAspectRatio="xMidYMid meet"
       >
@@ -102,11 +102,13 @@ const toggleModal = () => {
           Looking for a modern, powerful website for your business or yourself?
           I’d love to help you create it.
         </p>
-        <Button
-          onClick={toggleModal}
-          text={"Email Me"}
-          className="inline-block mt-2 px-6 py-3 rounded-2xl text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
-        />
+        <div onClick={toggleModal}>
+          <Button
+            text={"Email Me"}
+            className="inline-block mt-2 px-6 py-3 rounded-2xl text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+          />
+        </div>
+
         <p className="mt-6 text-[1.25em] md:text-[1.39em] text-gradient leading-[1.5] max-w-2xl tracking-wider">
           Or hit my socials
         </p>
