@@ -82,7 +82,7 @@ const toggleModal = () => {
             paintOrder: "stroke",
             strokeLinejoin: "round",
             strokeLinecap: "round",
-            strokeOpacity: 0.2,
+            strokeOpacity: 0.15,
           }}
         >
           FAWAZ

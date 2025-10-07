@@ -278,11 +278,11 @@ const ProjectsSection = () => {
                     </div>
                   </div>
 
-                  <div className="hover:scale-105 transition-transform duration-300 cursor-pointer">
+                  <div className="overflow-hidden rounded-lg w-fit cursor-pointer">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="rounded-lg shadow-md transition"
+                      className="transition-transform duration-700 scale-107 hover:scale-100"
                     />
                   </div>
                 </div>

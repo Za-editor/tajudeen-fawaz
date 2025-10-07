@@ -6,7 +6,7 @@ import CursorFollower from "../components/CursorFollower";
 
 const Layout = () => {
   return (
-    <div className="px-[15px] md:px-0">
+    <div className="">
       <CursorFollower />
       <Navbar />
       <main>

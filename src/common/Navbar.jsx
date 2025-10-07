@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdClose, MdNorthEast } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Button from "../components/Button";
@@ -36,9 +36,20 @@ const Navbar = () => {
     setIsOpen((prev) => !prev)
   }
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0); 
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="overflow-hidden w-full">
-      <nav className=" container mx-auto flex items-center justify-between py-[14px] md:py-[26px]">
+    <div className={`overflow-x-hidden w-full fixed z-1000 ${isScrolled? "backdrop-blur-[3px]" : ""}`}>
+      <nav className="container mx-auto flex items-center justify-between py-[14px] md:py-[26px] px-4 md:px-0 ">
         <div id="logo" className="flex items-center">
           <a href="/">
             <h1 className="text-gradient font-bold text-3xl tracking-wide">
@@ -47,13 +58,12 @@ const Navbar = () => {
           </a>
         </div>
 
-          <ToggleSwitch
-            onToggle={toggleSideBar}
-            label="Enable Notifications"
-            onText="ON"
-            offText="OFF"
-          />
-
+        <ToggleSwitch
+          onToggle={toggleSideBar}
+          label="Enable Notifications"
+          onText="ON"
+          offText="OFF"
+        />
       </nav>
       {isOpen && (
         <div className="fixed inset-0 z-40 blur-lg pointer-events-auto"></div>
