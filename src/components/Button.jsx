@@ -1,8 +1,9 @@
 import React from "react";
 
-const Button = ({ text, className }) => {
+const Button = ({ text, className, onClick }) => {
   return (
     <button
+      onClick={onClick}
       className={`relative overflow-hidden ${className} group  flex items-center justify-center`}
     >
       <span className="block transition-transform duration-900 ease-in-out group-hover:-translate-y-[150%]">

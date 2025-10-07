@@ -1,8 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Button from "./Button";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import EmailModal from "./EmailModal";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,6 +56,11 @@ tl.to(headerRef.current, {
 });
   });
 
+const [isOpen, setIsOpen] = useState(false);
+
+const toggleModal = () => {
+  setIsOpen((prev) => !prev);
+};
   return (
     <section className="relative container mx-auto h-screen overflow-hidden flex flex-col">
       <svg
@@ -97,6 +103,7 @@ tl.to(headerRef.current, {
           I’d love to help you create it.
         </p>
         <Button
+          onClick={toggleModal}
           text={"Email Me"}
           className="inline-block mt-2 px-6 py-3 rounded-2xl text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
         />
@@ -104,6 +111,7 @@ tl.to(headerRef.current, {
           Or hit my socials
         </p>
       </div>
+      <EmailModal toggleModal={toggleModal} isOpen={isOpen} />
     </section>
   );
 };
