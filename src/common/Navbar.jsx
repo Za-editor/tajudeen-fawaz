@@ -7,40 +7,30 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Navbar = () => {
-
   useGSAP(() => {
     gsap.from("#logo", {
-    opacity: 0,
+      opacity: 0,
       yPercent: 100,
       duration: 1.8,
       ease: "expo.out",
       stagger: 0.06,
       delay: 1,
     });
-})
+  });
 
-
-  const navitems = [
-    "Home",
-    "Projects",
-    "About Me",
-    "Contact Me",
-    "Resume",
-
-  ];
+  const navitems = ["Home", "Projects", "About Me", "Contact Me", "Resume"];
 
   const [isOpen, setIsOpen] = useState(false);
 
-
   const toggleSideBar = () => {
-    setIsOpen((prev) => !prev)
-  }
+    setIsOpen((prev) => !prev);
+  };
 
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0); 
+      setIsScrolled(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -48,23 +38,29 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`overflow-x-hidden w-full fixed z-1000 ${isScrolled? "backdrop-blur-[3px]" : ""}`}>
-      <nav className="container mx-auto flex items-center justify-between py-[14px] md:py-[26px] px-4 md:px-0 ">
-        <div id="logo" className="flex items-center">
-          <a href="/">
-            <h1 className="text-gradient font-bold text-3xl tracking-wide">
-              Za_editor
-            </h1>
-          </a>
-        </div>
+    <div>
+      <div
+        className={` w-full fixed z-1000 ${
+          isScrolled ? "backdrop-blur-[3px] fixed" : ""
+        }`}
+      >
+        <nav className="container mx-auto flex items-center justify-between py-[14px] md:py-[26px] px-4 md:px-0 ">
+          <div id="logo" className="flex items-center">
+            <a href="/">
+              <h1 className="text-gradient font-bold text-3xl tracking-wide">
+                Za_editor
+              </h1>
+            </a>
+          </div>
 
-        <ToggleSwitch
-          onToggle={toggleSideBar}
-          label="Enable Notifications"
-          onText="ON"
-          offText="OFF"
-        />
-      </nav>
+          <ToggleSwitch
+            onToggle={toggleSideBar}
+            label="Enable Notifications"
+            onText="ON"
+            offText="OFF"
+          />
+        </nav>
+      </div>
       {isOpen && (
         <div className="fixed inset-0 z-40 blur-lg pointer-events-auto"></div>
       )}
