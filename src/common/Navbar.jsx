@@ -48,7 +48,7 @@ const Navbar = () => {
           <div id="logo" className="flex items-center">
             <a href="/">
               <h1 className="text-gradient font-bold text-3xl tracking-wide">
-                Za_editor
+                Xa_Plug
               </h1>
             </a>
           </div>

@@ -64,7 +64,7 @@ const toggleModal = () => {
   setIsOpen((prev) => !prev);
 };
   return (
-    <section className="relative container mx-auto h-screen overflow-hidden flex flex-col">
+    <section className="relative container mx-auto h-screen overflow-hidden flex flex-col px-4 md:px-0">
       <svg
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-auto  pointer-events-none -z-40"
         viewBox="0 0 1000 300"

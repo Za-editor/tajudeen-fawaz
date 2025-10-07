@@ -1,9 +1,14 @@
 import React from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { HiArrowDown } from "react-icons/hi";
+import {
+  HiArrowDown,
+  HiDotsCircleHorizontal,
+  HiPlusCircle,
+} from "react-icons/hi";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/all";
+import { FaDotCircle } from "react-icons/fa";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -111,10 +116,10 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className=" arrowBtn absolute bottom-30 md:bottom-40 xl:bottom-30 right-0 mx-auto mt-5 md:mt-10  w-10 h-10 flex items-center justify-center border border-[#192f3d] hover:border-none rounded-full overflow-hidden group cursor-pointer">
+      <div className="arrowBtn absolute bottom-30 md:bottom-40 xl:bottom-30 right-0  mx-auto w-[35px] h-[55px] flex items-start justify-center border-1 border-[#192f3d] hover:border-none rounded-[50px] overflow-hidden group cursor-pointer">
         <div className="absolute inset-0 bg-[#005764] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]" />
 
-        <HiArrowDown className="relative z-10 text-black group-hover:text-[#e9e9e9] transition-colors duration-500" />
+        <div className="relative z-10 w-[6px] h-[6px] bg-[#192f3d] rounded-full mt-3 animate-scroll group-hover:bg-[#e9e9e9] transition-colors duration-500" />
       </div>
     </div>
   );
