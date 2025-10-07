@@ -75,7 +75,7 @@ const Hero = () => {
   return (
     <div
       id="hero"
-      className="h-screen container mx-auto flex items-center justify-center relative top-0 overflow-hidden"
+      className="h-screen container mx-auto flex items-center justify-center relative top-0 overflow-hidden px-4 md:px-0"
     >
       <div className=" flex justify-center items-center">
         <svg
@@ -118,7 +118,6 @@ const Hero = () => {
       </div>
       <div className="arrowBtn absolute bottom-30 md:bottom-40 xl:bottom-30 right-0  mx-auto w-[35px] h-[55px] flex items-start justify-center border-1 border-[#192f3d] hover:border-none rounded-[50px] overflow-hidden group cursor-pointer">
         <div className="absolute inset-0 bg-[#005764] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]" />
-
         <div className="relative z-10 w-[6px] h-[6px] bg-[#192f3d] rounded-full mt-3 animate-scroll group-hover:bg-[#e9e9e9] transition-colors duration-500" />
       </div>
     </div>

@@ -97,7 +97,7 @@ const Resume = () => {
     }
 
   return (
-    <section className="container mx-auto overflow-hidden">
+    <section className="container mx-auto overflow-hidden px-4 md:px-0">
       <div className="">
         <h2 className=" text-[2.9em] md:text-[4em] lg:text-[5.21em] my-4  font-bold text-gradient leading-[1.4] text-center">
           Resume

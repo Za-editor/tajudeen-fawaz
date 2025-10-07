@@ -169,7 +169,7 @@ const ProjectsSection = () => {
   }, []);
 
   return (
-    <section className="min-h-[100vh] mx-auto container overflow-hidden">
+    <section className="min-h-[100vh] mx-auto container overflow-hidden px-4 md:px-0">
       <div className="relative ">
         <svg
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto"

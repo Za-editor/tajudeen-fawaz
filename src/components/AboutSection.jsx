@@ -117,7 +117,7 @@ const about = [
   }, []);
 
   return (
-    <section className="container mx-auto py-16 overflow-y-hidden">
+    <section className="container mx-auto py-16 overflow-y-hidden px-4 md:px-0">
       <div ref={containerRef} className="relative overflow-hidden">
         <div className="flex flex-col items-center">
           <h2 className="text-[2.9em] md:text-[4em] lg:text-[5.21em] my-4 font-bold text-gradient leading-[1.4] text-center">
