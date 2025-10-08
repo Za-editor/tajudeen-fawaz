@@ -6,20 +6,26 @@ import Loader from "./components/Loader";
 function App() {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const hasVisited = localStorage.getItem("hasVisited");
+ useEffect(() => {
+   const visitData = JSON.parse(localStorage.getItem("visitData"));
+   const now = Date.now();
+   const twoHours = 2 * 60 * 60 * 1000; 
 
-    if (hasVisited) {
-      setLoading(false);
-    } else {
-      const timer = setTimeout(() => {
-        localStorage.setItem("hasVisited", "true");
-        setLoading(false);
-      }, 9000);
-
-      return () => clearTimeout(timer);
-    }
-  }, []);
+   
+   if (visitData && now - visitData.timestamp < twoHours) {
+     setLoading(false);
+   } else {
+     
+     const timer = setTimeout(() => {
+       localStorage.setItem(
+         "visitData",
+         JSON.stringify({ hasVisited: true, timestamp: Date.now() })
+       );
+       setLoading(false);
+     }, 4000); 
+     return () => clearTimeout(timer);
+   }
+ }, []);
   return (
     <>
       {loading ? (
