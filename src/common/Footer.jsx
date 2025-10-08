@@ -3,7 +3,7 @@ import { MdNorthEast } from "react-icons/md";
 import { FaCog } from "react-icons/fa";
 
 const Footer = () => {
-  const navitems = ["Home", "Projects", "About Me", "Contact Me", "Resume"];
+  const navitems = ["Home", "Projects", "About Me",  "Resume","Contact Me"];
 
   const socials = ["Github", "Linkedin", "Twitter", "Instagram"];
 

@@ -12,7 +12,9 @@ import {
   SiPostgresql,
   SiExpress,
   SiHtml5,
+  SiGithub
 } from "react-icons/si";
+import ProgressBar from "./ProgressBar";
 
 const Resume = () => {
   const education = [
@@ -63,27 +65,50 @@ const Resume = () => {
       proficiency: "Advanced",
       icon: SiJavascript,
       color: "#F7DF1E",
+      progress: 80,
     },
-    { name: "React", proficiency: "Advanced", icon: SiReact, color: "#61DAFB" },
+    {
+      name: "React",
+      proficiency: "Advanced",
+      icon: SiReact,
+      color: "#61DAFB",
+      progress: 80,
+    },
     {
       name: "Node.js",
       proficiency: "Intermediate",
       icon: SiNodedotjs,
       color: "#68A063",
+      progress: 69,
     },
     {
       name: "Express.js",
       proficiency: "Intermediate",
       icon: SiExpress,
       color: "#000000",
+      progress: 83,
     },
     {
       name: "Tailwind CSS",
       proficiency: "Advanced",
       icon: SiTailwindcss,
       color: "#38BDF8",
+      progress: 85,
     },
-    { name: "HTML5", proficiency: "Advanced", icon: SiHtml5, color: "#E34F26" },
+    {
+      name: "HTML5",
+      proficiency: "Advanced",
+      icon: SiHtml5,
+      color: "#E34F26",
+      progress: 89,
+    },
+    {
+      name: "Github",
+      proficiency: "Advanced",
+      icon: SiGithub,
+      color: "black",
+      progress: 80,
+    },
   ];
 
     const [data, setData] = useState(skills);
@@ -162,10 +187,7 @@ const Resume = () => {
                   index % 2 === 0 ? "md:justify-end" : "md:justify-start"
                 } md:items-center`}
               >
-
                 <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 top-5 w-5 h-5 bg-gradient rounded-full border-4 border-[#e9e9e9]"></div>
-                
-
 
                 <div
                   className={`
@@ -187,7 +209,12 @@ const Resume = () => {
                     />
                   )}
                   {item.proficiency && (
-                    <p className="text-lg text-gray-600">{item.proficiency}</p>
+                    <div>
+                      <p className="text-lg text-gray-600 mb-2">
+                        {item.proficiency}
+                      </p>
+                      <ProgressBar value={item.progress} />
+                    </div>
                   )}
 
                   {item.role && (

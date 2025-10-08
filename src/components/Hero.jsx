@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import {
   HiArrowDown,
   HiDotsCircleHorizontal,
+  HiMailOpen,
   HiPlusCircle,
 } from "react-icons/hi";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -109,10 +110,10 @@ const Hero = () => {
             that people enjoy using.
           </p>
 
-          <div className="arrowBtn mx-auto mt-5 md:mt-10 relative w-10 h-10 flex items-center justify-center border border-[#192f3d] hover:border-none rounded-full overflow-hidden group cursor-pointer">
-            <div className="absolute inset-0 bg-[#005764] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]" />
+          <div className="arrowBtn mx-auto mt-5 md:mt-10 relative w-10 h-10 flex items-center justify-center border  border-[#192f3d] hover:border-none rounded-full overflow-hidden group cursor-pointer">
+            <div className="absolute inset-0 bg-gradient translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]" />
 
-            <HiArrowDown className="relative z-10 text-black group-hover:text-[#e9e9e9] transition-colors duration-500" />
+            <HiMailOpen className="relative z-10 text-[#192f3d]  group-hover:text-[#e9e9e9] transition-colors duration-500" />
           </div>
         </div>
       </div>

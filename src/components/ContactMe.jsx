@@ -56,7 +56,27 @@ tl.to(headerRef.current, {
   duration: 2,
   ease: "bounce.out",
 });
+    
+          tl.fromTo(
+            ".stagger-box",
+            { x: -2000, opacity: 0 },
+            {
+              x: 0,
+              opacity: 1,
+              duration: 2,
+
+              
+              stagger: {
+                amount: 1,
+                grid: [2,1],
+                axis: "y",
+                from: "end",
+              },
+            }
+          );
   });
+
+
 
 const [isOpen, setIsOpen] = useState(false);
 
@@ -115,10 +135,10 @@ const toggleModal = () => {
           Or hit my socials
         </p>
         <div className="text-2xl md:text-3xl lg:text-4xl flex gap-3 md:gap-4 mt-6">
-          <FaGithub className="transition ease-in-out cursor-pointer duration-300 hover:scale-130" />
-          <FaLinkedin className="transition ease-in-out cursor-pointer duration-300 hover:scale-130 text-[#0A66C2]" />
-          <FaXTwitter className="transition ease-in-out cursor-pointer duration-300 hover:scale-130" />
-          <FaInstagram className="transition ease-in-out cursor-pointer duration-300 hover:scale-130 text-[#E1306C]" />
+          <FaGithub className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-130" />
+          <FaLinkedin className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-130 text-[#0A66C2]" />
+          <FaXTwitter className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-130" />
+          <FaInstagram className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-130 text-[#E1306C]" />
         </div>
       </div>
 
