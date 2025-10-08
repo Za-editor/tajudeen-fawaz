@@ -5,6 +5,7 @@ import AboutSection from '../components/AboutSection'
 import Resume from '../components/Resume'
 import ContactMe from '../components/ContactMe'
 
+
 const Homepage = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const Homepage = () => {
       <AboutSection />
       <Resume />
       <ContactMe />
+
     </>
   )
 }

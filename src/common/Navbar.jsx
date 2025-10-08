@@ -47,7 +47,7 @@ const Navbar = () => {
         <nav className="container mx-auto flex items-center justify-between py-[14px] md:py-[26px] px-4 md:px-0 ">
           <div id="logo" className="flex items-center">
             <a href="/">
-              <h1 className="text-gradient font-bold text-3xl tracking-wide">
+              <h1 className="text-gradient font-bold text-3xl tracking-wide transition-all duration-300 ease-in-out hover:animate-pulse">
                 Xa_Plug
               </h1>
             </a>
