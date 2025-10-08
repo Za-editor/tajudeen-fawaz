@@ -182,7 +182,7 @@ const ProjectsSection = () => {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     informateRefs.current.forEach((el) => observer.observe(el));
