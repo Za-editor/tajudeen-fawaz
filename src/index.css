@@ -7,7 +7,6 @@ body {
   overflow-x: hidden;
 }
 
-
 body::before {
   content: "";
   position: fixed;
@@ -21,20 +20,29 @@ body::before {
 }
 
 @utility text-gradient {
-    background: linear-gradient(to right, #005f64, #192f3d);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  background: linear-gradient(to right, #005f64, #192f3d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-@utility bg-gradient{
+@utility bg-gradient {
   background: linear-gradient(to bottom, #005f64, #192f3d);
 }
 
 @keyframes scroll {
-  0% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(15px); opacity: 0.5; }
-  100% { transform: translateY(0); opacity: 1; }
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(15px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .animate-scroll {

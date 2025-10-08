@@ -20,7 +20,7 @@ function Loader() {
 
     if (textEl) {
       gsap.set(textEl, {
-        stroke: "url(#textGradient)",
+        stroke: "#e9e9e9",
         fill: "transparent",
         strokeWidth: 3,
         opacity: 0,
@@ -31,7 +31,7 @@ function Loader() {
 
     tl.to(middle, {
       yPercent: 0,
-      opacity: 1,
+      opacity: 0.5,
       duration: 2,
       ease: "power2.out",
 
@@ -56,8 +56,10 @@ function Loader() {
               duration: 2,
             })
             .to(textEl, {
-              fill: "url(#textGradient)",
+              fill: "#e9e9e9",
               stroke: "transparent",
+              scaleX: 1.03,
+              scaleY:1.03,
               strokeWidth: 0,
               duration: 2,
             });
@@ -67,7 +69,7 @@ function Loader() {
 
     tl.to(others, {
       yPercent: 0,
-      opacity: 1,
+      opacity: 0.5,
       duration: 2,
       ease: "power2.out",
       stagger: 0.2,
@@ -113,15 +115,9 @@ function Loader() {
       <div className="absolute inset-0 flex items-center justify-center z-[999] pointer-events-none">
         <svg
           viewBox="0 0 800 200"
-          className="w-[20rem] md:w-[40rem]"
+          className="w-[30rem] md:w-[50rem]"
           preserveAspectRatio="xMidYMid meet"
         >
-          <defs>
-            <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#005f64" />
-              <stop offset="100%" stopColor="#192f3d" />
-            </linearGradient>
-          </defs>
           <text
             ref={textRef}
             x="50%"
@@ -130,7 +126,7 @@ function Loader() {
             textAnchor="middle"
             fontSize="200"
             fontWeight="700"
-            letterSpacing="-6"
+            letterSpacing="6"
           >
             Xa_Plug
           </text>
