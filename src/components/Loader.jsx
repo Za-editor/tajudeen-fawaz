@@ -53,14 +53,17 @@ function Loader() {
             .to(textEl, {
               opacity: 1,
               strokeDashoffset: 0,
-              duration: 2,
+              duration: 3,
+              
             })
             .to(textEl, {
               fill: "url(#textGradient)",
               stroke: "transparent",
               strokeWidth: 0,
-              duration: 2,
+              duration: 3,
+             
             });
+           "-=1.5";
         }
       },
     });
