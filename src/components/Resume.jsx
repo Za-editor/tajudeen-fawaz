@@ -12,9 +12,12 @@ import {
   SiPostgresql,
   SiExpress,
   SiHtml5,
-  SiGithub
+  SiGithub,
 } from "react-icons/si";
 import ProgressBar from "./ProgressBar";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Resume = () => {
   const education = [
@@ -111,20 +114,43 @@ const Resume = () => {
     },
   ];
 
-    const [data, setData] = useState(skills);
-    const [activeTab, setActiveTab] = useState("Skills");
-    
-    const handleClick = (section) => { 
-        setActiveTab(section)
-        if (section === "Skills") setData(skills);
-        else if (section === "Experience") setData(experience);
-        else if (section === "Education") setData(education);
-    }
+  const [data, setData] = useState(skills);
+  const [activeTab, setActiveTab] = useState("Skills");
+
+  const handleClick = (section) => {
+    setActiveTab(section);
+    if (section === "Skills") setData(skills);
+    else if (section === "Experience") setData(experience);
+    else if (section === "Education") setData(education);
+  };
+
+useGSAP(() => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".resDetails").forEach((el) => {
+    gsap.fromTo(
+      el,
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 90%", 
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+  });
+});
+
 
   return (
     <section className="container mx-auto overflow-hidden px-4 md:px-0">
       <div className="">
-        <h2 className=" text-[2.9em] md:text-[4em] lg:text-[5.21em] my-4  font-bold text-gradient leading-[1.4] text-center">
+        <h2 id="resume" className=" text-[2.9em] md:text-[4em] lg:text-[5.21em] my-4  font-bold text-gradient leading-[1.4] text-center">
           Resume
         </h2>
         <ul className="flex gap-2 md:gap-3 lg:gap-10 justify-center mx-4 text-xs md:text-lg lg:text-xl text-gradient  ">
@@ -174,16 +200,14 @@ const Resume = () => {
       </div>
       <div className="my-20 px-4 md:px-10 lg:px-50">
         <div className="relative">
-
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-gray-300"></div>
-          
 
           {data.map((item, index) => {
             const Icons = item.icon;
             return (
               <div
                 key={index}
-                className={`mb-6 md:mb-12 flex w-full relative ${
+                className={`resDetails mb-6 md:mb-12 flex w-full relative ${
                   index % 2 === 0 ? "md:justify-end" : "md:justify-start"
                 } md:items-center`}
               >

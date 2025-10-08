@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import Button from "./Button";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EmailModal from "./EmailModal";
-import { FaGithub, FaInstagram, FaLinkedin, } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -35,54 +35,52 @@ const ContactMe = () => {
       repeat: -1,
       yoyo: true,
     });
-const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: headerRef.current,
-    start: "top top",
-    once: true, 
-  },
-});
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: headerRef.current,
+        start: "top top",
+        once: true,
+      },
+    });
 
+     tl.fromTo(
+       ".stagger-box",
+       { x: -2000, opacity: 0 },
+       {
+         x: 0,
+         opacity: 1,
+         duration: 1,
 
-tl.to(lineRef.current, {
-  y: 200,
-  duration: 2,
-  ease: "bounce.out",
-  delay: 1,
-});
+         stagger: {
+           amount: 1,
+           grid: [2, 1],
+           axis: "y",
+           from: "end",
+         },
+       }
+     );
 
-tl.to(headerRef.current, {
-  y: 195,
-  duration: 2,
-  ease: "bounce.out",
-});
-    
-          tl.fromTo(
-            ".stagger-box",
-            { x: -2000, opacity: 0 },
-            {
-              x: 0,
-              opacity: 1,
-              duration: 2,
+    tl.to(lineRef.current, {
+      y: 200,
+      duration: 2,
+      ease: "bounce.out",
+      delay: 1,
+    });
 
-              
-              stagger: {
-                amount: 1,
-                grid: [2,1],
-                axis: "y",
-                from: "end",
-              },
-            }
-          );
+    tl.to(headerRef.current, {
+      y: 195,
+      duration: 2,
+      ease: "bounce.out",
+    });
+
+   
   });
 
+  const [isOpen, setIsOpen] = useState(false);
 
-
-const [isOpen, setIsOpen] = useState(false);
-
-const toggleModal = () => {
-  setIsOpen((prev) => !prev);
-};
+  const toggleModal = () => {
+    setIsOpen((prev) => !prev);
+  };
   return (
     <section className="relative container mx-auto h-screen overflow-hidden flex flex-col px-4 md:px-0">
       <svg
@@ -135,10 +133,30 @@ const toggleModal = () => {
           Or hit my socials
         </p>
         <div className="text-2xl md:text-3xl lg:text-4xl flex gap-3 md:gap-4 mt-6">
-          <FaGithub className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-130" />
-          <FaLinkedin className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-130 text-[#0A66C2]" />
-          <FaXTwitter className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-130" />
-          <FaInstagram className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-130 text-[#E1306C]" />
+          <a
+            href="#"
+            className="transition ease-in-out cursor-pointer duration-300 hover:scale-110 "
+          >
+            <FaGithub className="stagger-box  " />
+          </a>
+          <a
+            href="#"
+            className="transition ease-in-out cursor-pointer duration-300 hover:scale-110 "
+          >
+            <FaLinkedin className="stagger-box transition-all duration-300 ease-in-out cursor-pointer duration-300 hover:scale-110 text-[#0A66C2] " />
+          </a>
+          <a
+            href="#"
+            className="transition ease-in-out cursor-pointer duration-300 hover:scale-110 "
+          >
+            <FaXTwitter className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-110" />
+          </a>
+          <a
+            href="#"
+            className="transition ease-in-out cursor-pointer duration-300 hover:scale-110 "
+          >
+            <FaInstagram className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-110 text-[#E1306C]" />
+          </a>
         </div>
       </div>
 

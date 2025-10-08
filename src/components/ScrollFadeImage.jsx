@@ -27,7 +27,7 @@ export default function ScrollSlideInImage({ src, alt }) {
       <img
         src={src}
         alt={alt}
-        className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-500"
+        className="rounded-lg shadow-lg hover:scale-100 scale-105 transition-transform duration-500"
       />
     </div>
   );
