@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaArrowRight } from "react-icons/fa";
@@ -15,6 +15,7 @@ import {
   SiGit,
   SiGithub,
 } from "react-icons/si";
+import ScrollSlideInImage from "./ScrollFadeImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,6 +110,7 @@ const ProjectsSection = () => {
   const timelineLineRef = useRef(null);
   const progressRef = useRef(null);
   const circleRef = useRef(null);
+  const informateRefs = useRef([]);
 
   useGSAP(() => {
     const text = textRef.current;
@@ -166,6 +168,26 @@ const ProjectsSection = () => {
         },
       });
     }
+  }, []);
+  useGSAP(() => {}, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("opacity-100", "translate-x-0");
+          } else {
+            entry.target.classList.remove("opacity-100", "translate-x-0");
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    informateRefs.current.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -227,8 +249,9 @@ const ProjectsSection = () => {
             <div className="space-y-20 py-20 px-4">
               {timelineData.map((item, index) => (
                 <div
+                  ref={(el) => (informateRefs.current[index] = el)}
                   key={index}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-x-15 md:gap-x-30 gap-y-6"
+                  className="grid grid-cols-1 md:grid-cols-2 gap-x-15 md:gap-x-30 gap-y-6 -translate-x-50 transition-all duration-700 ease-out opacity-0"
                 >
                   <div className="text-left pr-4 timeline-text">
                     <h3 className="text-[2.5em] font-bold text-gradient">
@@ -279,7 +302,7 @@ const ProjectsSection = () => {
                   </div>
 
                   <div className="overflow-hidden rounded-lg w-fit cursor-pointer">
-                    <img
+                    <ScrollSlideInImage
                       src={item.image}
                       alt={item.title}
                       className="transition-transform duration-700 scale-107 hover:scale-100"

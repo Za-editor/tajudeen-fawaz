@@ -115,7 +115,7 @@ function Loader() {
       <div className="absolute inset-0 flex items-center justify-center z-[999] pointer-events-none">
         <svg
           viewBox="0 0 800 200"
-          className="w-[30rem] md:w-[50rem]"
+          className="w-[20rem] md:w-[50rem]"
           preserveAspectRatio="xMidYMid meet"
         >
           <text
