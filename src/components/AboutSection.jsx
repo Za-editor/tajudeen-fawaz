@@ -116,7 +116,9 @@ export default function AboutSection() {
     window.addEventListener("load", () => {
       ScrollTrigger.refresh();
     });
-
+    setTimeout(() => {
+      ScrollTrigger.refresh(true);
+    }, 1000);
     return () => ctx.revert();
   }, []);
 

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import {
@@ -13,94 +13,98 @@ import { TextPlugin } from "gsap/TextPlugin";
 
 
 const Hero = () => {
-  gsap.registerPlugin(ScrollTrigger, TextPlugin);
-  const words = ["Designer", "FrontEnd Developer", "Creator", ];
-  const textRef = useRef(null);
+gsap.registerPlugin(ScrollTrigger, TextPlugin, SplitText);
 
-  useGSAP(() => {
-    const heroSplit = new SplitText(".title", { type: "chars, words" });
-    heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
-    const el = textRef.current;
-    const wordstl = gsap.timeline({
-      repeat: -1,
-      repeatDelay: 0.5,
-    });
-    const typingSpeed = 0.15;
-    const eraseSpeed = 0.1;
+useGSAP(() => {
+  const heroSplit = new SplitText(".title", { type: "chars, words" });
+  heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
-    words.forEach((word) => {
-      wordstl.to(el, {
-        text: word,
-        duration: word.length * typingSpeed,
-        ease: "none"
+
+  
+  const words = ["Designer", "FrontEnd Developer", "Creator"];
+  		
+
+     
+      let mainTimeline = gsap.timeline({
+        repeat: -1,
       });
-      wordstl.to({}, { duration: 2})
 
-      wordstl.to(el, {
-        text: "",
-        duration: word.length * eraseSpeed,
-      ease: "none"
-      })
+      
 
-    })
+      words.forEach((word) => {
+        let textTimeline = gsap.timeline({
+          repeat: 1,
+          yoyo: true,
+          repeatDelay: 2,
+        });
 
-    gsap.from(heroSplit.words, {
-      yPercent: 100,
-      duration: 1,
-      ease: "expo.out",
-      stagger: 0.05,
-    });
+        textTimeline.to("#typewriter", {
+          text: word,
+          duration: 2,
+        });
+        mainTimeline.add(textTimeline);
+      });
 
-    gsap.from("p", {
-      opacity: 0,
-      yPercent: 100,
-      duration: 1.8,
-      ease: "expo.out",
-      stagger: 0.06,
-      delay: 2,
-    });
+ 
 
-    gsap.from(".arrowBtn ", {
-      opacity: 0,
-      yPercent: 100,
-      duration: 1.8,
-      ease: "expo.out",
-      stagger: 0.06,
-      delay: 3,
-    });
-
-    const path = document.querySelector("#diamond");
-    const length = path.getTotalLength();
-
-    gsap.set(path, {
-      strokeDasharray: length,
-      strokeDashoffset: length,
-    });
-
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
-
-    tl.to(path, {
-      strokeDashoffset: 0,
-      duration: 3,
-      ease: "power2.inOut",
-    });
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      })
-      .to(
-        "#diamond",
-        { rotate: 45, scale: 1.4, transformOrigin: "center center" },
-        0
-      );
+  
+  gsap.from(heroSplit.words, {
+    yPercent: 100,
+    duration: 1,
+    ease: "expo.out",
+    stagger: 0.05,
   });
+
+  gsap.from("p", {
+    opacity: 0,
+    yPercent: 100,
+    duration: 1.8,
+    ease: "expo.out",
+    stagger: 0.06,
+    delay: 2,
+  });
+
+  gsap.from(".arrowBtn", {
+    opacity: 0,
+    yPercent: 100,
+    duration: 1.8,
+    ease: "expo.out",
+    stagger: 0.06,
+    delay: 3,
+  });
+
+  const path = document.querySelector("#diamond");
+  const length = path.getTotalLength();
+
+  gsap.set(path, {
+    strokeDasharray: length,
+    strokeDashoffset: length,
+  });
+
+  const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
+  tl.to(path, {
+    strokeDashoffset: 0,
+    duration: 3,
+    ease: "power2.inOut",
+  });
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#hero",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    })
+    .to(
+      "#diamond",
+      { rotate: 45, scale: 1.4, transformOrigin: "center center" },
+      0
+    );
+});
+
 
   return (
     <div
@@ -131,7 +135,7 @@ const Hero = () => {
         <div className="relative z-10 text-center font-semibold text-[#192f3d]">
           <p className="title text-[19px]">Hi, I'm Fawaz </p>
           <p className="title text-[30px] md:text-[35px] font-bold">
-            A <span ref={textRef} className="words"></span> <br />
+            A <span id="typewriter" className="words"></span> <br />
             driven by Creativity and Precision.
           </p>
           <p className="text-gradient mt-4 text-sm">

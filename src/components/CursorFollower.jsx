@@ -12,7 +12,7 @@ const CursorFollower = () => {
     window.addEventListener("mousemove", moveHandler);
 
     const animate = () => {
-      const ease = 0.08; // lower = smoother, higher = snappier
+      const ease = 0.08; 
       pos.current.x += (target.current.x - pos.current.x) * ease;
       pos.current.y += (target.current.y - pos.current.y) * ease;
 
