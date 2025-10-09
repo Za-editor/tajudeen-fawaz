@@ -116,8 +116,8 @@ const ProjectsSection = () => {
     const text = textRef.current;
     if (!text) return;
 
+    // Text drawing animation
     const length = text.getComputedTextLength();
-
     gsap.set(text, {
       strokeDasharray: length,
       strokeDashoffset: length,
@@ -134,13 +134,12 @@ const ProjectsSection = () => {
       repeat: -1,
     });
 
+    // Progress line + circle animation
     const line = timelineLineRef.current;
     const progressLine = progressRef.current;
     const circle = circleRef.current;
 
     if (line && progressLine && circle) {
-      const lineHeight = line.scrollHeight;
-
       gsap.set(progressLine, { height: 0 });
       gsap.set(circle, { y: 0 });
 
@@ -149,7 +148,9 @@ const ProjectsSection = () => {
         start: "top center",
         end: "bottom bottom",
         scrub: true,
+        invalidateOnRefresh: true, // ✅ key addition
         onUpdate: (self) => {
+          const lineHeight = line.scrollHeight; // ✅ recalc dynamically
           const progress = self.progress;
 
           gsap.to(progressLine, {
@@ -167,14 +168,12 @@ const ProjectsSection = () => {
       });
     }
 
+    // Fade-in observer
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100", "translate-x-0");
-          } else {
-            entry.target.classList.remove("opacity-100", "translate-x-0");
-          }
+          entry.target.classList.toggle("opacity-100", entry.isIntersecting);
+          entry.target.classList.toggle("translate-x-0", entry.isIntersecting);
         });
       },
       { threshold: 0.3 }
@@ -183,8 +182,23 @@ const ProjectsSection = () => {
     informateRefs.current.forEach((el) => observer.observe(el));
     imageRefs.current.forEach((el) => el && observer.observe(el));
 
-    return () => observer.disconnect();
-  });
+    // ✅ force re-measure after load
+    const refresh = () => ScrollTrigger.refresh(true);
+    const t1 = setTimeout(refresh, 500);
+    const t2 = setTimeout(refresh, 1200);
+    window.addEventListener("load", refresh);
+    window.addEventListener("resize", refresh);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      window.removeEventListener("load", refresh);
+      window.removeEventListener("resize", refresh);
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+      observer.disconnect();
+    };
+  }, []);
+
 
   return (
     <section className="min-h-[100vh] mx-auto container overflow-hidden px-4 md:px-0">
