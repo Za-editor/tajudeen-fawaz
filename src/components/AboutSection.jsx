@@ -112,6 +112,10 @@ export default function AboutSection() {
       }, 300);
     }, containerRef);
 
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh();
+    });
+
     return () => ctx.revert();
   }, []);
 
@@ -122,7 +126,11 @@ export default function AboutSection() {
 
   return (
     <section className="container min-h-screen mx-auto py-16 overflow-visible px-4 md:px-0">
-      <div ref={containerRef} className="relative overflow-visible">
+      <div
+        ref={containerRef}
+        className="relative overflow-visible will-change-transform"
+        style={{ transform: "none" }}
+      >
         <div className="flex flex-col items-center">
           <h2 className="text-[2.9em] md:text-[4em] lg:text-[5.21em] my-4 font-bold text-gradient leading-[1.4] text-center">
             Get to Know me

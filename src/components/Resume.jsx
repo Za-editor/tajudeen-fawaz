@@ -15,6 +15,9 @@ import {
   SiGithub,
 } from "react-icons/si";
 import ProgressBar from "./ProgressBar";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Resume = () => {
   const education = [
@@ -120,6 +123,32 @@ const Resume = () => {
     else if (section === "Experience") setData(experience);
     else if (section === "Education") setData(education);
   };
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const elements = gsap.utils.toArray(".resDetails");
+
+    elements.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    ScrollTrigger.refresh();
+  }, []);
 
   return (
     <section className="container mx-auto overflow-hidden px-4 md:px-0">

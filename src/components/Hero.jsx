@@ -35,7 +35,7 @@ const Hero = () => {
         duration: word.length * typingSpeed,
         ease: "none"
       });
-      wordstl.to({}, { duration: 1.5})
+      wordstl.to({}, { duration: 2})
 
       wordstl.to(el, {
         text: "",
