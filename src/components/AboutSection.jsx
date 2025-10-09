@@ -14,6 +14,7 @@ import {
   SiPostgresql,
   SiExpress,
 } from "react-icons/si";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,7 +46,7 @@ export default function AboutSection() {
     },
   ];
 
-  useEffect(() => {
+  useGSAP(() => {
     const ctx = gsap.context(() => {
       const panels = sectionsRef.current.filter(Boolean);
 
