@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+
 import {
   SiJavascript,
   SiReact,
@@ -45,7 +45,7 @@ export default function AboutSection() {
     },
   ];
 
-  useGSAP(() => {
+  useEffect(() => {
     const ctx = gsap.context(() => {
       const panels = sectionsRef.current.filter(Boolean);
 
