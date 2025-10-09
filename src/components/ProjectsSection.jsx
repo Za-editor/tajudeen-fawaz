@@ -1,4 +1,4 @@
-import React, {  useRef } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaArrowRight } from "react-icons/fa";
@@ -15,7 +15,6 @@ import {
   SiGit,
   SiGithub,
 } from "react-icons/si";
-import ScrollSlideInImage from "./ScrollFadeImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -111,6 +110,7 @@ const ProjectsSection = () => {
   const progressRef = useRef(null);
   const circleRef = useRef(null);
   const informateRefs = useRef([]);
+  const imageRefs = useRef([]);
 
   useGSAP(() => {
     const text = textRef.current;
@@ -181,6 +181,7 @@ const ProjectsSection = () => {
     );
 
     informateRefs.current.forEach((el) => observer.observe(el));
+    imageRefs.current.forEach((el) => el && observer.observe(el));
 
     return () => observer.disconnect();
   });
@@ -297,11 +298,16 @@ const ProjectsSection = () => {
                   </div>
 
                   <div className="overflow-hidden rounded-lg w-fit cursor-pointer">
-                    <ScrollSlideInImage
-                      src={item.image}
-                      alt={item.title}
-                      className="transition-transform duration-700 scale-107 hover:scale-100"
-                    />
+                    <div
+                      ref={(el) => (imageRefs.current[index] = el)}
+                      className="opacity-0 -translate-x-20 transition-all duration-700 ease-out"
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="rounded-lg shadow-lg hover:scale-100 scale-105 transition-transform duration-500"
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
