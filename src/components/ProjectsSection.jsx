@@ -116,7 +116,7 @@ const ProjectsSection = () => {
     const text = textRef.current;
     if (!text) return;
 
-    // Text drawing animation
+   
     const length = text.getComputedTextLength();
     gsap.set(text, {
       strokeDasharray: length,
@@ -134,7 +134,7 @@ const ProjectsSection = () => {
       repeat: -1,
     });
 
-    // Progress line + circle animation
+   
     const line = timelineLineRef.current;
     const progressLine = progressRef.current;
     const circle = circleRef.current;
@@ -148,9 +148,9 @@ const ProjectsSection = () => {
         start: "top center",
         end: "bottom bottom",
         scrub: true,
-        invalidateOnRefresh: true, // ✅ key addition
+        invalidateOnRefresh: true, 
         onUpdate: (self) => {
-          const lineHeight = line.scrollHeight; // ✅ recalc dynamically
+          const lineHeight = line.scrollHeight;
           const progress = self.progress;
 
           gsap.to(progressLine, {
@@ -168,7 +168,7 @@ const ProjectsSection = () => {
       });
     }
 
-    // Fade-in observer
+   
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -182,7 +182,7 @@ const ProjectsSection = () => {
     informateRefs.current.forEach((el) => observer.observe(el));
     imageRefs.current.forEach((el) => el && observer.observe(el));
 
-    // ✅ force re-measure after load
+   
     const refresh = () => ScrollTrigger.refresh(true);
     const t1 = setTimeout(refresh, 500);
     const t2 = setTimeout(refresh, 1200);
@@ -201,7 +201,7 @@ const ProjectsSection = () => {
 
 
   return (
-    <section className="min-h-[100vh] mx-auto container overflow-hidden px-4 md:px-0">
+    <section id="projects" className="min-h-[100vh] mx-auto container overflow-hidden px-4 md:px-0">
       <div className="relative ">
         <svg
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto"

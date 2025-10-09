@@ -128,7 +128,7 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section className="container min-h-screen mx-auto py-16 overflow-visible px-4 md:px-0">
+    <section id="aboutme" className="container min-h-screen mx-auto py-16 overflow-visible px-4 md:px-0">
       <div
         ref={containerRef}
         className="relative overflow-visible will-change-transform"

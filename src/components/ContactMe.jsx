@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EmailModal from "./EmailModal";
@@ -76,13 +76,26 @@ const ContactMe = () => {
    
   });
 
+    const toggleModal = () => {
+      setIsOpen((prev) => !prev);
+    };
+
+  useEffect(() => {
+    
+    window.addEventListener("openEmailModal", toggleModal);
+
+    return () => {
+      window.removeEventListener("openEmailModal", toggleModal);
+    };
+  }, []);
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleModal = () => {
-    setIsOpen((prev) => !prev);
-  };
+
   return (
-    <section className="relative container mx-auto h-screen overflow-hidden flex flex-col px-4 md:px-0">
+    <section
+      id="contactme"
+      className="relative container mx-auto h-screen overflow-hidden flex flex-col px-4 md:px-0"
+    >
       <svg
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-auto  pointer-events-none -z-40"
         viewBox="0 0 1000 300"
@@ -134,25 +147,29 @@ const ContactMe = () => {
         </p>
         <div className="text-2xl md:text-3xl lg:text-4xl flex gap-3 md:gap-4 mt-6">
           <a
-            href="#"
+            href="https://github.com/Za-editor"
+            target="_blank"
             className="transition ease-in-out cursor-pointer duration-300 hover:scale-110 "
           >
             <FaGithub className="stagger-box  " />
           </a>
           <a
-            href="#"
+            href="https://www.linkedin.com/in/fawas-tajudeen-a50763111/"
+            target="_blank"
             className="transition ease-in-out cursor-pointer duration-300 hover:scale-110 "
           >
-            <FaLinkedin className="stagger-box transition-all duration-300 ease-in-out cursor-pointer duration-300 hover:scale-110 text-[#0A66C2] " />
+            <FaLinkedin className="stagger-box transition-all duration-300 ease-in-out cursor-pointer  hover:scale-110 text-[#0A66C2] " />
           </a>
           <a
-            href="#"
+            href="https://x.com/zaa_editor"
+            target="_blank"
             className="transition ease-in-out cursor-pointer duration-300 hover:scale-110 "
           >
             <FaXTwitter className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-110" />
           </a>
           <a
-            href="#"
+            href="https://www.instagram.com/iam_fawa_z"
+            target="_blank"
             className="transition ease-in-out cursor-pointer duration-300 hover:scale-110 "
           >
             <FaInstagram className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-110 text-[#E1306C]" />

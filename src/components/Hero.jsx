@@ -92,7 +92,7 @@ useGSAP(() => {
   gsap
     .timeline({
       scrollTrigger: {
-        trigger: "#hero",
+        trigger: "#home",
         start: "top top",
         end: "bottom top",
         scrub: true,
@@ -108,7 +108,7 @@ useGSAP(() => {
 
   return (
     <div
-      id="hero"
+      id="home"
       className="h-screen container mx-auto flex items-center justify-center relative top-0 overflow-hidden px-4 md:px-0"
     >
       <div className=" flex justify-center items-center">
@@ -142,12 +142,20 @@ useGSAP(() => {
             Love turning ideas into scalable solutions <br />
             that people enjoy using.
           </p>
+          <a
+            href="#contactme"
+            onClick={() => {
+              setTimeout(() => {
+                window.dispatchEvent(new Event("openEmailModal"));
+              }, 800); 
+            }}
+          >
+            <div className="arrowBtn mx-auto mt-5 md:mt-10 relative w-10 h-10 flex items-center justify-center border  border-[#192f3d] hover:border-none rounded-full overflow-hidden group cursor-pointer">
+              <div className="absolute inset-0 bg-gradient translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]" />
 
-          <div className="arrowBtn mx-auto mt-5 md:mt-10 relative w-10 h-10 flex items-center justify-center border  border-[#192f3d] hover:border-none rounded-full overflow-hidden group cursor-pointer">
-            <div className="absolute inset-0 bg-gradient translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]" />
-
-            <HiMailOpen className="relative z-10 text-[#192f3d]  group-hover:text-[#e9e9e9] transition-colors duration-500" />
-          </div>
+              <HiMailOpen className="relative z-10 text-[#192f3d]  group-hover:text-[#e9e9e9] transition-colors duration-500" />
+            </div>
+          </a>
         </div>
       </div>
       <div className="arrowBtn absolute bottom-30 md:bottom-40 xl:bottom-30 right-4 md:right-0  mx-auto w-[35px] h-[55px] flex items-start justify-center border-1 border-[#192f3d] hover:border-none rounded-[50px] overflow-hidden group cursor-pointer">
