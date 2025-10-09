@@ -1,6 +1,7 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import {
   SiJavascript,
   SiReact,
@@ -13,7 +14,6 @@ import {
   SiPostgresql,
   SiExpress,
 } from "react-icons/si";
-import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,105 +22,107 @@ export default function AboutSection() {
   const sectionsRef = useRef([]);
   const lineRef = useRef(null);
 
-const about = [
-  {
-    title: "Who is Fawaz?",
-    text: "A curious mind turned frontend developer. I love bringing ideas to life through clean, interactive designs and smooth user experiences. What started as simple curiosity about how websites worked has grown into a full-blown passion for creating them.",
-  },
-  {
-    title: "Professional Background",
-    text: "I kicked off my journey with HTML and CSS, then found my groove in JavaScript, React, and Next.js. Since then, I’ve built projects focused on performance, usability, and great design.",
-  },
-  {
-    title: "Relevant Skills",
-    text: "I work mainly with React, TailwindCSS, GSAP, and Node.js and I’m always up for learning tools that make building better and faster.",
-  },
-  {
-    title: "Values",
-    text: "I’m all about clean code, thoughtful design, and making the web feel a little more human. Collaboration and attention to detail keep me grounded.",
-  },
-  {
-    title: "Conclusion",
-    text: "I’m constantly exploring, experimenting, and refining my craft. For me, development is more than code it’s creating something people genuinely enjoy using.",
-  },
-];
-
-
-
+  const about = [
+    {
+      title: "Who is Fawaz?",
+      text: "A curious mind turned frontend developer. I love bringing ideas to life through clean, interactive designs and smooth user experiences. What started as simple curiosity about how websites worked has grown into a full-blown passion for creating them.",
+    },
+    {
+      title: "Professional Background",
+      text: "I kicked off my journey with HTML and CSS, then found my groove in JavaScript, React, and Next.js. Since then, I’ve built projects focused on performance, usability, and great design.",
+    },
+    {
+      title: "Relevant Skills",
+      text: "I work mainly with React, TailwindCSS, GSAP, and Node.js and I’m always up for learning tools that make building better and faster.",
+    },
+    {
+      title: "Values",
+      text: "I’m all about clean code, thoughtful design, and making the web feel a little more human. Collaboration and attention to detail keep me grounded.",
+    },
+    {
+      title: "Conclusion",
+      text: "I’m constantly exploring, experimenting, and refining my craft. For me, development is more than code—it’s creating something people genuinely enjoy using.",
+    },
+  ];
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
       const panels = sectionsRef.current.filter(Boolean);
-      const totalPanels = panels.length;
-      const endValue = `+=${totalPanels * window.innerHeight * 1.2}`;
 
-      ScrollTrigger.matchMedia({
-       
-        "(min-width: 768px)": function () {
-          gsap.set(panels, { yPercent: 100, autoAlpha: 0 });
+      setTimeout(() => {
+        ScrollTrigger.matchMedia({
+          "(min-width: 768px)": () => {
+            gsap.set(panels, { yPercent: 100, autoAlpha: 0 });
 
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: " top",
-              end: endValue,
-              scrub: true,
-              pin: true,
-              anticipatePin: 1,
-            },
-          });
+            const tl = gsap.timeline({
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top top",
+                end: "+=5000",
+                scrub: true,
+                pin: true,
+                anticipatePin: 1,
+                invalidateOnRefresh: true,
+              },
+            });
 
-          panels.forEach((panel) => {
-            tl.to(panel, {
-              yPercent: -50,
-              autoAlpha: 1,
-              duration: 0.8,
-              ease: "power2.out",
-            })
-              .to({}, { duration: 0.5 })
-              .to(panel, {
-                yPercent: -200,
-                autoAlpha: 0,
+            panels.forEach((panel) => {
+              tl.to(panel, {
+                yPercent: -50,
+                autoAlpha: 1,
                 duration: 0.8,
-                ease: "power2.in",
-              });
-          });
+                ease: "power2.out",
+              })
+                .to({}, { duration: 0.5 })
+                .to(panel, {
+                  yPercent: -200,
+                  autoAlpha: 0,
+                  duration: 0.8,
+                  ease: "power2.in",
+                });
+            });
 
-          gsap.to(lineRef.current, {
-            height: "100%",
-            scrollTrigger: {
-              trigger: containerRef.current,
-              start: "top top",
-              end: "bottom bottom",
-              scrub: true,
-            },
-          });
-        },
+            gsap.to(lineRef.current, {
+              height: "100%",
+              scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top top",
+                end: "bottom bottom",
+                scrub: true,
+              },
+            });
+          },
 
-    
-        "(max-width: 767px)": function () {
-          gsap.set(panels, { clearProps: "all" });
-          gsap.set(lineRef.current, { clearProps: "all" });
-        },
-      });
+          "(max-width: 767px)": () => {
+            gsap.set(panels, { clearProps: "all" });
+            gsap.set(lineRef.current, { clearProps: "all" });
+          },
+        });
 
-      
-      gsap.to(".tech-icon", {
-        y: 25,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-        duration: 0.8,
-        stagger: 0.5,
-      });
+        gsap.to(".tech-icon", {
+          y: 25,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+          duration: 0.8,
+          stagger: 0.5,
+        });
+
+        ScrollTrigger.refresh();
+      }, 300);
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = "visible";
+    return () => (document.body.style.overflow = "auto");
+  }, []);
+
   return (
-    <section className="container min-h-screen mx-auto py-16 overflow-y-hidden px-4 md:px-0 ">
-      <div ref={containerRef} className="relative overflow-hidden">
+    <section className="container min-h-screen mx-auto py-16 overflow-visible px-4 md:px-0">
+      <div ref={containerRef} className="relative overflow-visible">
         <div className="flex flex-col items-center">
           <h2 className="text-[2.9em] md:text-[4em] lg:text-[5.21em] my-4 font-bold text-gradient leading-[1.4] text-center">
             Get to Know me
@@ -131,7 +133,7 @@ const about = [
           </p>
         </div>
 
-        <div className="flex flex-col-reverse md:flex-row items-center justify-center  lg:px-20">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-center lg:px-20">
           <div className="w-full md:w-1/2 flex flex-col justify-center text-gray-800 relative mt-10 md:mt-0">
             <div className="relative w-full md:h-[600px]">
               <div className="absolute left-2 md:left-10 top-0 bottom-0 w-[2px] bg-gray-200 min-h-full">
@@ -146,10 +148,7 @@ const about = [
                   <div
                     key={i}
                     ref={(el) => (sectionsRef.current[i] = el)}
-                    className={`${
-                      // relative for mobile stacked layout, absolute for desktop
-                      "relative md:absolute md:left-16 md:right-0 md:top-1/2 md:-translate-y-1/2"
-                    } pl-10 md:pl-14 mb-10 md:mb-0`}
+                    className="relative md:absolute md:left-16 md:right-0 md:top-1/2 md:-translate-y-1/2 pl-10 md:pl-14 mb-10 md:mb-0"
                   >
                     <div className="absolute left-1 md:-left-[1.8rem] w-3 h-3 rounded-full bg-gradient shadow-md top-2 md:top-auto"></div>
 
@@ -173,7 +172,7 @@ const about = [
                 <img src="/assets/avatar.png" alt="avatar" />
               </div>
 
-              <span className="tech-icon absolute -top-20 left-1 md:-top-15 md:left-0 bg-yellow-100 text-yellow-500 p-2 rounded-md text-xl shadow-sm ">
+              <span className="tech-icon absolute -top-20 left-1 md:-top-15 md:left-0 bg-yellow-100 text-yellow-500 p-2 rounded-md text-xl shadow-sm">
                 <SiJavascript className="hover:scale-120 transition-all duration-500 ease-in-out hover:-rotate-360" />
               </span>
               <span className="tech-icon absolute -top-25 left-1/2 bg-cyan-100 text-cyan-500 p-2 rounded-md text-xl shadow-sm">
