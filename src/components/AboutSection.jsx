@@ -51,6 +51,8 @@ const about = [
   useGSAP(() => {
     const ctx = gsap.context(() => {
       const panels = sectionsRef.current.filter(Boolean);
+      const totalPanels = panels.length;
+      const endValue = `+=${totalPanels * window.innerHeight * 1.2}`;
 
       ScrollTrigger.matchMedia({
        
@@ -61,7 +63,7 @@ const about = [
             scrollTrigger: {
               trigger: containerRef.current,
               start: " top",
-              end: `+=5000`,
+              end: endValue,
               scrub: true,
               pin: true,
               anticipatePin: 1,
@@ -117,7 +119,7 @@ const about = [
   }, []);
 
   return (
-    <section className="container mx-auto py-16 overflow-y-hidden px-4 md:px-0">
+    <section className="container min-h-screen mx-auto py-16 overflow-y-hidden px-4 md:px-0 ">
       <div ref={containerRef} className="relative overflow-hidden">
         <div className="flex flex-col items-center">
           <h2 className="text-[2.9em] md:text-[4em] lg:text-[5.21em] my-4 font-bold text-gradient leading-[1.4] text-center">
