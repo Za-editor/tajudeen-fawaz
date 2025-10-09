@@ -46,79 +46,96 @@ export default function AboutSection() {
   ];
 
   useGSAP(() => {
+    if (typeof window === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+
     const ctx = gsap.context(() => {
       const panels = sectionsRef.current.filter(Boolean);
 
-      setTimeout(() => {
-        ScrollTrigger.matchMedia({
-          "(min-width: 768px)": () => {
-            gsap.set(panels, { yPercent: 100, autoAlpha: 0 });
+      // Clear all ScrollTriggers to prevent duplicates
+      ScrollTrigger.getAll().forEach((t) => t.kill());
 
-            const tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top top",
-                end: "+=5000",
-                scrub: true,
-                pin: true,
-                anticipatePin: 1,
-                invalidateOnRefresh: true,
-              },
-            });
+      // Reset props when refresh starts (important for responsive behavior)
+      ScrollTrigger.addEventListener("refreshInit", () => {
+        gsap.set(panels, { clearProps: "all" });
+        gsap.set(lineRef.current, { clearProps: "all" });
+      });
 
-            panels.forEach((panel) => {
-              tl.to(panel, {
-                yPercent: -50,
-                autoAlpha: 1,
-                duration: 0.8,
-                ease: "power2.out",
-              })
-                .to({}, { duration: 0.5 })
-                .to(panel, {
-                  yPercent: -200,
-                  autoAlpha: 0,
+      // Wait for all images/fonts/layout to be ready
+      window.addEventListener("load", () => {
+        requestAnimationFrame(() => {
+          ScrollTrigger.matchMedia({
+            "(min-width: 768px)": () => {
+              gsap.set(panels, { yPercent: 100, autoAlpha: 0 });
+
+              const tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: containerRef.current,
+                  start: "top top",
+                  end: "+=5000",
+                  scrub: true,
+                  pin: true,
+                  anticipatePin: 1,
+                  invalidateOnRefresh: true,
+                },
+              });
+
+              panels.forEach((panel) => {
+                tl.to(panel, {
+                  yPercent: -50,
+                  autoAlpha: 1,
                   duration: 0.8,
-                  ease: "power2.in",
-                });
-            });
+                  ease: "power2.out",
+                })
+                  .to({}, { duration: 0.5 })
+                  .to(panel, {
+                    yPercent: -200,
+                    autoAlpha: 0,
+                    duration: 0.8,
+                    ease: "power2.in",
+                  });
+              });
 
-            gsap.to(lineRef.current, {
-              height: "100%",
-              scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top top",
-                end: "bottom bottom",
-                scrub: true,
-              },
-            });
-          },
+              // Line grow animation
+              gsap.to(lineRef.current, {
+                height: "100%",
+                scrollTrigger: {
+                  trigger: containerRef.current,
+                  start: "top top",
+                  end: "bottom bottom",
+                  scrub: true,
+                },
+              });
+            },
 
-          "(max-width: 767px)": () => {
-            gsap.set(panels, { clearProps: "all" });
-            gsap.set(lineRef.current, { clearProps: "all" });
-          },
+            "(max-width: 767px)": () => {
+              // Reset everything for mobile
+              gsap.set(panels, { clearProps: "all" });
+              gsap.set(lineRef.current, { clearProps: "all" });
+            },
+          });
+
+          // Floating tech icons animation
+          gsap.to(".tech-icon", {
+            y: 25,
+            repeat: -1,
+            yoyo: true,
+            ease: "power1.inOut",
+            duration: 0.8,
+            stagger: 0.5,
+          });
+
+          // ✅ Final refresh after everything is mounted and painted
+          ScrollTrigger.refresh(true);
         });
-
-        gsap.to(".tech-icon", {
-          y: 25,
-          repeat: -1,
-          yoyo: true,
-          ease: "power1.inOut",
-          duration: 0.8,
-          stagger: 0.5,
-        });
-
-        ScrollTrigger.refresh();
-      }, 300);
+      });
     }, containerRef);
 
-    window.addEventListener("load", () => {
-      ScrollTrigger.refresh();
-    });
-
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      ScrollTrigger.removeEventListener("refreshInit", () => {});
+    };
   }, []);
-
   useEffect(() => {
     document.body.style.overflow = "visible";
     return () => (document.body.style.overflow = "auto");

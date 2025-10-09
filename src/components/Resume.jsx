@@ -16,8 +16,6 @@ import {
 } from "react-icons/si";
 import ProgressBar from "./ProgressBar";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 
 const Resume = () => {
   const education = [
