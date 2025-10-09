@@ -124,32 +124,6 @@ const Resume = () => {
     else if (section === "Education") setData(education);
   };
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    const elements = gsap.utils.toArray(".resDetails");
-
-    elements.forEach((el) => {
-      gsap.fromTo(
-        el,
-        { y: 100, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-
-    ScrollTrigger.refresh();
-  }, []);
-
   return (
     <section className="container mx-auto overflow-hidden px-4 md:px-0">
       <div className="">
@@ -204,7 +178,7 @@ const Resume = () => {
           </a>
         </ul>
       </div>
-      <div className="my-10 md:my-20 px-4 md:px-10 lg:px-50">
+      <div className="my-20 px-4 md:px-10 lg:px-50">
         <div className="relative">
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full border-l-4 border-gray-300"></div>
 
