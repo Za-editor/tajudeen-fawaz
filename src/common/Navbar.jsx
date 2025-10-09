@@ -65,7 +65,7 @@ const Navbar = () => {
         <div className="fixed inset-0 z-40 blur-lg pointer-events-auto"></div>
       )}
       <div
-        className={`fixed z-40 w-full md:w-3/4  lg:w-2/4 top-0 right-0 bg-gray-400 md:rounded-l-[50px] backdrop-blur-sm h-full border-l border-white/20  transition-all duration-700 delay-400 ${
+        className={`fixed z-40 w-full md:w-3/4  lg:w-2/4 top-0 right-0 bg-[#e9e9e9] md:rounded-l-[50px] backdrop-blur-sm h-full border-l border-white/20  transition-all duration-700 delay-400 ${
           isOpen
             ? "translate-x-[0] opacity-100 "
             : "translate-x-[100%] opacity-0"
@@ -80,7 +80,7 @@ const Navbar = () => {
             >
               <li className="flex items-center justify-between w-full uppercase">
                 <span
-                  className={`relative text-3xl ${
+                  className={`relative text-xl  md:text-2xl ${
                     item === "Home"
                       ? "after:w-full after:bg-[#005f64]"
                       : "after:w-0 after:bg-[#005f64]"

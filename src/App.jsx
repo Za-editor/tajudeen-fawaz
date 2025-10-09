@@ -7,14 +7,23 @@ import SmoothScrollWrapper from "./components/SmoothScrollWrapper";
 function App() {
   const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-      
-      const timer = setTimeout(() => {
+  useEffect(() => {
+    const handlePageLoad = () => {
+      const timeout = setTimeout(() => {
         setLoading(false);
       }, 9000);
 
-      return () => clearTimeout(timer);
-    }, []);
+      return () => clearTimeout(timeout);
+    };
+
+    if (document.readyState === "complete") {
+      handlePageLoad();
+    } else {
+      window.addEventListener("load", handlePageLoad);
+    }
+
+    return () => window.removeEventListener("load", handlePageLoad);
+  }, []);
   return (
     <>
       {loading ? (

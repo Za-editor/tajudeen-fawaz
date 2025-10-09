@@ -69,7 +69,7 @@ function Loader() {
 
     tl.to(others, {
       yPercent: 0,
-      opacity: 0.5,
+      opacity: 0.8,
       duration: 2,
       ease: "power2.out",
       stagger: 0.2,
@@ -101,7 +101,7 @@ function Loader() {
   }, []);
 
   return (
-    <div className="loader relative w-full h-screen overflow-hidden bg-black">
+    <div className="loader relative w-full h-screen overflow-hidden bg-gray-800">
       <div className="absolute inset-0 grid grid-cols-5 justify-between z-0">
         {[...Array(5)].map((_, i) => (
           <div

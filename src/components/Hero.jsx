@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import {
@@ -9,13 +9,42 @@ import {
 } from "react-icons/hi";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/all";
-import { FaDotCircle } from "react-icons/fa";
+import { TextPlugin } from "gsap/TextPlugin";
+
 
 const Hero = () => {
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, TextPlugin);
+  const words = ["Designer", "FrontEnd Developer", "Creator", ];
+  const textRef = useRef(null);
+
   useGSAP(() => {
     const heroSplit = new SplitText(".title", { type: "chars, words" });
     heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+
+    const el = textRef.current;
+    const wordstl = gsap.timeline({
+      repeat: -1,
+      repeatDelay: 0.5,
+    });
+    const typingSpeed = 0.15;
+    const eraseSpeed = 0.1;
+
+    words.forEach((word) => {
+      wordstl.to(el, {
+        text: word,
+        duration: word.length * typingSpeed,
+        ease: "none"
+      });
+      wordstl.to({}, { duration: 1.5})
+
+      wordstl.to(el, {
+        text: "",
+        duration: word.length * eraseSpeed,
+      ease: "none"
+      })
+
+    })
+
     gsap.from(heroSplit.words, {
       yPercent: 100,
       duration: 1,
@@ -102,7 +131,7 @@ const Hero = () => {
         <div className="relative z-10 text-center font-semibold text-[#192f3d]">
           <p className="title text-[19px]">Hi, I'm Fawaz </p>
           <p className="title text-[30px] md:text-[35px] font-bold">
-            A Frontend Developer <br />
+            A <span ref={textRef} className="words"></span> <br />
             driven by Creativity and Precision.
           </p>
           <p className="text-gradient mt-4 text-sm">

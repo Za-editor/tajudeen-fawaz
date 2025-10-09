@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, {  useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaArrowRight } from "react-icons/fa";
@@ -133,9 +133,7 @@ const ProjectsSection = () => {
       yoyo: true,
       repeat: -1,
     });
-  });
 
-  useGSAP(() => {
     const line = timelineLineRef.current;
     const progressLine = progressRef.current;
     const circle = circleRef.current;
@@ -168,10 +166,7 @@ const ProjectsSection = () => {
         },
       });
     }
-  }, []);
-  useGSAP(() => {}, []);
 
-  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -188,7 +183,7 @@ const ProjectsSection = () => {
     informateRefs.current.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, []);
+  });
 
   return (
     <section className="min-h-[100vh] mx-auto container overflow-hidden px-4 md:px-0">
