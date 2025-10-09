@@ -36,7 +36,7 @@ const Footer = () => {
           ))}
         </ul>
       </div>
-
+<a href="#aboutme">
       <div className="flex items-center gap-2 group relative cursor-pointer">
         <span className="uppercase tracking-wider font-light text-sm md:text-base">
           Creator
@@ -53,7 +53,8 @@ const Footer = () => {
             text-lg md:text-xl text-[#192f3d]
           "
         />
-      </div>
+        </div>
+        </a>
 
       <div className="text-center md:text-right">
         <ul className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6">

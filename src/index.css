@@ -49,9 +49,9 @@ body::before {
   animation: scroll 3s ease-in-out infinite;
 }
 
-.words::after {
-  content: "|";
+#line {
   animation: blink 3s infinite;
+  color: #2081C3 important
 }
 
 @keyframes blink {
@@ -65,5 +65,3 @@ body::before {
     opacity: 0;
   }
 }
-
-

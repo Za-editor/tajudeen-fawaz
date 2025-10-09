@@ -11,100 +11,88 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/all";
 import { TextPlugin } from "gsap/TextPlugin";
 
-
 const Hero = () => {
-gsap.registerPlugin(ScrollTrigger, TextPlugin, SplitText);
+  gsap.registerPlugin(ScrollTrigger, TextPlugin, SplitText);
 
+  useGSAP(() => {
+    const heroSplit = new SplitText(".title", { type: "chars, words" });
+    heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
-useGSAP(() => {
-  const heroSplit = new SplitText(".title", { type: "chars, words" });
-  heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
+    const words = ["Designer", "FrontEnd Developer", "Creator"];
 
+    let mainTimeline = gsap.timeline({
+      repeat: -1,
+    });
 
-  
-  const words = ["Designer", "FrontEnd Developer", "Creator"];
-  		
-
-     
-      let mainTimeline = gsap.timeline({
-        repeat: -1,
+    words.forEach((word) => {
+      let textTimeline = gsap.timeline({
+        repeat: 1,
+        yoyo: true,
+        repeatDelay: 2,
       });
 
-      
-
-      words.forEach((word) => {
-        let textTimeline = gsap.timeline({
-          repeat: 1,
-          yoyo: true,
-          repeatDelay: 2,
-        });
-
-        textTimeline.to("#typewriter", {
-          text: word,
-          duration: 2,
-        });
-        mainTimeline.add(textTimeline);
+      textTimeline.to("#typewriter", {
+        text: word,
+        duration: 2,
       });
+      mainTimeline.add(textTimeline);
+    });
 
- 
+    gsap.from(heroSplit.words, {
+      yPercent: 100,
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.05,
+    });
 
-  
-  gsap.from(heroSplit.words, {
-    yPercent: 100,
-    duration: 1,
-    ease: "expo.out",
-    stagger: 0.05,
+    gsap.from("p", {
+      opacity: 0,
+      yPercent: 100,
+      duration: 1.8,
+      ease: "expo.out",
+      stagger: 0.06,
+      delay: 2,
+    });
+
+    gsap.from(".arrowBtn", {
+      opacity: 0,
+      yPercent: 100,
+      duration: 1.8,
+      ease: "expo.out",
+      stagger: 0.06,
+      delay: 3,
+    });
+
+    const path = document.querySelector("#diamond");
+    const length = path.getTotalLength();
+
+    gsap.set(path, {
+      strokeDasharray: length,
+      strokeDashoffset: length,
+    });
+
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
+    tl.to(path, {
+      strokeDashoffset: 0,
+      duration: 3,
+      ease: "power2.inOut",
+    });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#home",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+      })
+      .to(
+        "#diamond",
+        { rotate: 45, scale: 1.4, transformOrigin: "center center" },
+        0
+      );
   });
-
-  gsap.from("p", {
-    opacity: 0,
-    yPercent: 100,
-    duration: 1.8,
-    ease: "expo.out",
-    stagger: 0.06,
-    delay: 2,
-  });
-
-  gsap.from(".arrowBtn", {
-    opacity: 0,
-    yPercent: 100,
-    duration: 1.8,
-    ease: "expo.out",
-    stagger: 0.06,
-    delay: 3,
-  });
-
-  const path = document.querySelector("#diamond");
-  const length = path.getTotalLength();
-
-  gsap.set(path, {
-    strokeDasharray: length,
-    strokeDashoffset: length,
-  });
-
-  const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true });
-  tl.to(path, {
-    strokeDashoffset: 0,
-    duration: 3,
-    ease: "power2.inOut",
-  });
-
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: "#home",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    })
-    .to(
-      "#diamond",
-      { rotate: 45, scale: 1.4, transformOrigin: "center center" },
-      0
-    );
-});
-
 
   return (
     <div
@@ -134,9 +122,13 @@ useGSAP(() => {
 
         <div className="relative z-10 text-center font-semibold text-[#192f3d]">
           <p className="title text-[19px]">Hi, I'm Fawaz </p>
-          <p className="title text-[30px] md:text-[35px] font-bold">
-            A <span id="typewriter" className="words"></span> <br />
-            driven by Creativity and Precision.
+          <p className=" text-[30px] md:text-[35px] font-bold text-gradient">
+            A <span id="typewriter" className="words text-[#2081C3]"></span>
+            <span id="line" className="  text-[#2081C3]">
+              |
+            </span>
+            <br />
+            <p className="title">driven by Creativity and Precision.</p>
           </p>
           <p className="text-gradient mt-4 text-sm">
             Love turning ideas into scalable solutions <br />
@@ -147,7 +139,7 @@ useGSAP(() => {
             onClick={() => {
               setTimeout(() => {
                 window.dispatchEvent(new Event("openEmailModal"));
-              }, 800); 
+              }, 800);
             }}
           >
             <div className="arrowBtn mx-auto mt-5 md:mt-10 relative w-10 h-10 flex items-center justify-center border  border-[#192f3d] hover:border-none rounded-full overflow-hidden group cursor-pointer">

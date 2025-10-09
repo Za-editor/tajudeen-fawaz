@@ -73,9 +73,9 @@ const Navbar = () => {
       >
         <ul className="flex flex-col gap-8 p-10 mt-30">
           {navitems.map((item, index) => (
-            <a
+            <a onClick={toggleSideBar}
               key={index}
-              href="#"
+              href={`#${item.toLowerCase().replace(/\s+/g, "")}`}
               className="group text-[#192f3d] text-[18px] font-medium hover:text-[#005f64] flex items-center gap-1"
             >
               <li className="flex items-center justify-between w-full uppercase">
