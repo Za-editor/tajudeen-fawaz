@@ -20,19 +20,19 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const Resume = () => {
   const education = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      institution: "University of Lagos",
-      duration: "2018 - 2022",
+      degree: "Bachelor of Technology in Surveying and Geoinformatics",
+      institution: "Federal University Of Technology, Minna, Niger State",
+      duration: "2018 - 2024",
     },
     {
-      degree: "Frontend Web Development Certification",
-      institution: "FreeCodeCamp / TechStudio Academy",
-      duration: "2022",
+      degree: "Full Stack Developer Career Path",
+      institution: "Udemy",
+      duration: "2024 - 2025",
     },
     {
-      degree: "High School Diploma",
-      institution: "Queens College, Lagos",
-      duration: "2012 - 2018",
+      degree: "JavaScript Algorithms and Data Structures Certification",
+      institution: "freeCodeCamp",
+      duration: "2025",
     },
   ];
 
@@ -40,37 +40,36 @@ const Resume = () => {
     {
       role: "Frontend Developer",
       company: "Freelance / Self-Employed",
-      duration: "2023 - Present",
+      duration: "2024 - Present",
       description:
         "Developed modern, responsive websites and web apps with React, Tailwind, and GSAP animations. Focused on user experience and performance optimization.",
     },
     {
-      role: "Web Developer Intern",
-      company: "TechStudio Academy",
-      duration: "2022 - 2023",
+      role: "Surveyor",
+      company: "Bomtrack Nigeria Limited",
+      duration: "2022 - Present",
       description:
-        "Collaborated on several real-world projects, building dynamic UIs, integrating REST APIs, and participating in code reviews.",
+        "Responsible for field surveys, data analysis, and creating accurate site maps. My role blends precision, teamwork, and problem solving to bring real world projects to life.",
     },
     {
-      role: "Junior Developer",
+      role: "Project Assistant",
       company: "Creative Minds Hub",
       duration: "2021 - 2022",
-      description:
-        "Assisted in the development of landing pages and corporate websites using HTML, CSS, and JavaScript. Implemented reusable UI components.",
+      description: "Helped manage field logistics, organize data, and keep communication flowing between site and office teams."
     },
   ];
 
   const skills = [
     {
       name: "JavaScript",
-      proficiency: "Advanced",
+      proficiency: "Intermediate",
       icon: SiJavascript,
       color: "#F7DF1E",
       progress: 80,
     },
     {
       name: "React",
-      proficiency: "Advanced",
+      proficiency: "Intermediate",
       icon: SiReact,
       color: "#61DAFB",
       progress: 80,
@@ -105,7 +104,7 @@ const Resume = () => {
     },
     {
       name: "Github",
-      proficiency: "Advanced",
+      proficiency: "Intermediate",
       icon: SiGithub,
       color: "black",
       progress: 80,

@@ -1,11 +1,7 @@
-import React, { useState } from "react";
+import React  from "react";
 
-const ToggleSwitch = ({ onToggle }) => {
-  const [isOn, setIsOn] = useState(false);
-  const checkState = () => {
-    onToggle();
-    setIsOn((prev) => !prev);
-  };
+const ToggleSwitch = ({ isOn, onToggle }) => {
+
 
   return (
     <div className="relative z-50">
@@ -14,7 +10,7 @@ const ToggleSwitch = ({ onToggle }) => {
         id="toggle-switch"
         className="hidden"
         checked={isOn}
-        onChange={checkState}
+        onChange={onToggle}
       />
 
       <label

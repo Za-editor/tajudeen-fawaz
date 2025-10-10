@@ -5,7 +5,7 @@ import Button from "./Button";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EmailModal from "./EmailModal";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaWhatsapp, FaXTwitter } from "react-icons/fa6";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,14 +61,14 @@ const ContactMe = () => {
      );
 
     tl.to(lineRef.current, {
-      y: 195,
+      y: 190,
       duration: 2,
       ease: "bounce.out",
       delay: 1,
     });
 
     tl.to(headerRef.current, {
-      y: 190,
+      y: 185,
       duration: 2,
       ease: "bounce.out",
     });
@@ -166,6 +166,13 @@ const ContactMe = () => {
             className="transition ease-in-out cursor-pointer duration-300 hover:scale-110 "
           >
             <FaXTwitter className="stagger-box transition ease-in-out cursor-pointer duration-300 hover:scale-110" />
+          </a>
+          <a
+            href="https://wa.me/2348105709670"
+            target="_blank"
+            className="transition ease-in-out cursor-pointer duration-300 hover:scale-110 "
+          >
+            <FaWhatsapp className="stagger-box transition ease-in-out text-[#25D366] cursor-pointer duration-300 hover:scale-110" />
           </a>
           <a
             href="https://www.instagram.com/iam_fawa_z"

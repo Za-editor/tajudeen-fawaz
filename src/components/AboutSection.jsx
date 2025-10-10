@@ -26,7 +26,7 @@ export default function AboutSection() {
   const about = [
     {
       title: "Who is Fawaz?",
-      text: "A curious mind turned frontend developer. I love bringing ideas to life through clean, interactive designs and smooth user experiences. What started as simple curiosity about how websites worked has grown into a full-blown passion for creating them.",
+      text: "A curious mind turned front - end engineer. I love bringing ideas to life through clean, interactive designs and smooth user experiences. What started as simple curiosity about how websites worked has grown into a full-blown passion for creating them.",
     },
     {
       title: "Professional Background",
@@ -41,8 +41,8 @@ export default function AboutSection() {
       text: "I’m all about clean code, thoughtful design, and making the web feel a little more human. Collaboration and attention to detail keep me grounded.",
     },
     {
-      title: "Conclusion",
-      text: "I’m constantly exploring, experimenting, and refining my craft. For me, development is more than code—it’s creating something people genuinely enjoy using.",
+      title: "Beyond the Code",
+      text: "I’m a surveyor who loves a good game of football, hitting the gym, exploring new places, and diving into video games. I believe creativity flows best when life has a healthy mix of work, play, and discovery.",
     },
   ];
 

@@ -10,6 +10,7 @@ import {
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/all";
 import { TextPlugin } from "gsap/TextPlugin";
+import { FaLocationDot } from "react-icons/fa6";
 
 const Hero = () => {
   gsap.registerPlugin(ScrollTrigger, TextPlugin, SplitText);
@@ -18,7 +19,7 @@ const Hero = () => {
     const heroSplit = new SplitText(".title", { type: "chars, words" });
     heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
 
-    const words = ["Designer", "FrontEnd Developer", "Creator"];
+    const words = ["Front-end Engineer", "Designer", "Creative"];
 
     let mainTimeline = gsap.timeline({
       repeat: -1,
@@ -128,11 +129,11 @@ const Hero = () => {
               |
             </span>
             <br />
-            <p className="title">driven by Creativity and Precision.</p>
+            <p className="title">Crafting Digital Art with Purpose.</p>
           </p>
           <p className="text-gradient mt-4 text-sm">
-            Love turning ideas into scalable solutions <br />
-            that people enjoy using.
+            Design meets performance. <br />
+            Creative web design and development in a nutshell.
           </p>
           <a
             href="#contactme"
@@ -145,7 +146,7 @@ const Hero = () => {
             <div className="arrowBtn mx-auto mt-5 md:mt-10 relative w-10 h-10 flex items-center justify-center border  border-[#192f3d] hover:border-none rounded-full overflow-hidden group cursor-pointer">
               <div className="absolute inset-0 bg-gradient translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]" />
 
-              <HiMailOpen className="relative z-10 text-[#192f3d]  group-hover:text-[#e9e9e9] transition-colors duration-500" />
+              <HiMailOpen className="relative z-10 text-[#192f3d] animate-bounce delay-200  group-hover:text-[#e9e9e9] transition-colors duration-500" />
             </div>
           </a>
         </div>
@@ -153,6 +154,10 @@ const Hero = () => {
       <div className="arrowBtn absolute bottom-30 md:bottom-40 xl:bottom-30 right-4 md:right-0  mx-auto w-[35px] h-[55px] flex items-start justify-center border-1 border-[#192f3d] hover:border-none rounded-[50px] overflow-hidden group cursor-pointer">
         <div className="absolute inset-0 bg-[#005764] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out [mask-image:radial-gradient(ellipse_at_center,black_70%,transparent_100%)]" />
         <div className="relative z-10 w-[6px] h-[6px] bg-[#192f3d] rounded-full mt-3 animate-scroll group-hover:bg-[#e9e9e9] transition-colors duration-500" />
+      </div>
+      <div className="absolute text-gradient bottom-30 md:bottom-40 xl:bottom-30 left-4 md:left-0  mx-auto  flex gap-2  flex-col justify-center items-center  group cursor-pointer text-sm md:text-lg">
+        <FaLocationDot className="text-[#192f3d] animate-pulse" />
+        <p className="text-gradient">Abuja, Nigeria</p>
       </div>
     </div>
   );

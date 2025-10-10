@@ -18,7 +18,7 @@ const Navbar = () => {
     });
   });
 
-  const navitems = ["Home", "Projects", "About Me", "Contact Me", "Resume"];
+  const navitems = ["Home", "Projects", "About Me", "Resume", "Contact Me"];
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,6 +26,9 @@ const Navbar = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const checkState = () => {
+    setIsOpen(false);
+  };
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -54,6 +57,7 @@ const Navbar = () => {
           </div>
 
           <ToggleSwitch
+            isOn={isOpen}
             onToggle={toggleSideBar}
             label="Enable Notifications"
             onText="ON"
@@ -73,7 +77,8 @@ const Navbar = () => {
       >
         <ul className="flex flex-col gap-8 p-10 mt-30">
           {navitems.map((item, index) => (
-            <a onClick={toggleSideBar}
+            <a
+              onClick={checkState}
               key={index}
               href={`#${item.toLowerCase().replace(/\s+/g, "")}`}
               className="group text-[#192f3d] text-[18px] font-medium hover:text-[#005f64] flex items-center gap-1"
