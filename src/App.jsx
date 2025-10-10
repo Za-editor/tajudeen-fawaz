@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage";
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import SmoothScrollWrapper from "./components/SmoothScrollWrapper";
+import SpecificProject from "./pages/SpecificProject";
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -30,11 +31,12 @@ function App() {
         <Loader />
       ) : (
         <SmoothScrollWrapper>
-          {" "}
+          
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Layout />}>
-                <Route index element={<Homepage />} />
+                  <Route index element={<Homepage />} />
+                  <Route path="project/name" element={<SpecificProject />}/>
               </Route>
             </Routes>
           </BrowserRouter>

@@ -201,7 +201,10 @@ const ProjectsSection = () => {
 
 
   return (
-    <section id="projects" className="min-h-[100vh] mx-auto container overflow-hidden px-4 md:px-0">
+    <section
+      id="projects"
+      className="min-h-[100vh] mx-auto container overflow-hidden px-4 md:px-0"
+    >
       <div className="relative ">
         <svg
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-auto"
@@ -290,12 +293,15 @@ const ProjectsSection = () => {
                       })}
                     </div>
                     <div className=" flex flex-wrap gap-4">
-                      <Button
-                        text={"About Project"}
-                        className={
-                          "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
-                        }
-                      />
+                      <Link to="">
+                        <Button
+                          text={"About Project"}
+                          className={
+                            "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+                          }
+                        />
+                      </Link>
+
                       <Link
                         to={item.link}
                         target="_blank"

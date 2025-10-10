@@ -61,14 +61,14 @@ const ContactMe = () => {
      );
 
     tl.to(lineRef.current, {
-      y: 190,
+      y: 185,
       duration: 2,
       ease: "bounce.out",
       delay: 1,
     });
 
     tl.to(headerRef.current, {
-      y: 185,
+      y: 180,
       duration: 2,
       ease: "bounce.out",
     });
