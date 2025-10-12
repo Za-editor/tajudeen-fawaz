@@ -5,42 +5,46 @@ import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
 import SmoothScrollWrapper from "./components/SmoothScrollWrapper";
 import SpecificProject from "./pages/SpecificProject";
+import Project from "./pages/Project";
+import { DataProvider } from "../context/Data";
 function App() {
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const handlePageLoad = () => {
-      const timeout = setTimeout(() => {
-        setLoading(false);
-      }, 9000);
+  // useEffect(() => {
+  //   const handlePageLoad = () => {
+  //     const timeout = setTimeout(() => {
+  //       setLoading(false);
+  //     }, 9000);
 
-      return () => clearTimeout(timeout);
-    };
+  //     return () => clearTimeout(timeout);
+  //   };
 
-    if (document.readyState === "complete") {
-      handlePageLoad();
-    } else {
-      window.addEventListener("load", handlePageLoad);
-    }
+  //   if (document.readyState === "complete") {
+  //     handlePageLoad();
+  //   } else {
+  //     window.addEventListener("load", handlePageLoad);
+  //   }
 
-    return () => window.removeEventListener("load", handlePageLoad);
-  }, []);
+  //   return () => window.removeEventListener("load", handlePageLoad);
+  // }, []);
   return (
     <>
-      {loading ? (
+      {/* {loading ? (
         <Loader />
-      ) : (
-        <SmoothScrollWrapper>
-          
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Layout />}>
+      ) : ( */}
+        <DataProvider>
+          <SmoothScrollWrapper>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Layout />}>
                   <Route index element={<Homepage />} />
-                  <Route path="project/name" element={<SpecificProject />}/>
-              </Route>
-            </Routes>
-          </BrowserRouter>
-        </SmoothScrollWrapper>
+                  <Route path="project/:name" element={<SpecificProject />} />
+                  <Route path="project" element={<Project />} />
+                </Route>
+              </Routes>
+            </BrowserRouter>
+          </SmoothScrollWrapper>
+        </DataProvider>
       )}
     </>
   );

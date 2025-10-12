@@ -1,0 +1,505 @@
+[
+  {
+    "name": "Azura",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Html", "Css", "javaScript"],
+    "category": "Landing Page",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "A clean, modern landing page for a real estate management platform.",
+    "description": [
+      "Azura’s landing page introduces a real estate platform with clarity and modern elegance, highlighting efficiency and usability.",
+      "The layout guides users through a smooth narrative from value proposition to pricing and testimonials.",
+      "Its minimalist design and strong visual hierarchy make it both professional and conversion ready."
+    ],
+    "highlights": [
+      "Hero section with clear call to action",
+      "Feature overview and pricing sections",
+      "Client testimonials and trust indicators",
+      "Responsive, visually consistent design"
+    ],
+    "links": {
+      "live": "https://azura-recreate.vercel.app/",
+      "github": "https://github.com/Za-editor/Azura-recreate"
+    }
+  },
+  {
+    "name": "Furnico",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Html", "Css"],
+    "category": "Landing Page",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "A modern, sustainability-focused furniture brand landing page.",
+    "description": [
+      "Furnico’s landing page introduces its mission of blending timeless design with eco-conscious materials to furnish homes elegantly.",
+      "The layout flows through collections, brand values, testimonials, and calls to action, guiding users toward exploring and purchasing.",
+      "With clean typography, strong visuals, and responsive design, the page emphasizes both style and trust."
+    ],
+    "highlights": [
+      "Hero section with headline, subtext, and dual CTAs (Shop / Explore)",
+      "Section for featured collections (e.g. Whitehaven, Pebble Lounge, Luna Lounge)",
+      "Client testimonial section enhancing trust",
+      "Newsletter signup & footer with company / resources links"
+    ],
+    "links": {
+      "live": "https://furnico-nine.vercel.app/",
+      "github": "https://github.com/Za-editor/Furnico"
+    }
+  },
+  {
+    "name": "Social",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Html", "Css"],
+    "category": "Side Projects",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "A stylish personal social link aggregator page.",
+    "description": [
+      "This project creates a clean profile page that aggregates a person’s social media links, making them easily accessible in one place.",
+      "It features a hero area with name, location, short bio, and icons linking to GitHub, LinkedIn, Twitter, Instagram.",
+      "Designed for simplicity and clarity, it focuses on UI layout, responsive design, and minimal distractions."
+    ],
+    "highlights": [
+      "Central profile header with name, tagline and location",
+      "Social media icons linking to multiple platforms",
+      "Clean, minimal UI with vertical link layout",
+      "Responsive design for mobile and desktop"
+    ],
+    "links": {
+      "live": "https://social-tdfv.vercel.app/",
+      "github": "https://github.com/Za-editor/Social"
+    }
+  },
+  {
+    "name": "Recipe Page",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Html", "Css"],
+    "category": "Landing Page",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "A clean and functional recipe display page.",
+    "description": [
+      "This recipe page presents a classic omelette recipe with clear sections for ingredients, instructions, and nutrition.",
+      "It’s designed for readability and usability, with a focus on structured content and simple layout.",
+      "The page emphasizes clarity, accessibility, and elegance in presenting cooking information."
+    ],
+    "highlights": [
+      "Ingredient list and clear measurements section",
+      "Step-by-step instructions with numbered ordering",
+      "Nutrition facts table per serving",
+      "Minimal design emphasizing readability and structure"
+    ],
+    "links": {
+      "live": "https://recipe-page-sandy-beta.vercel.app/",
+      "github": "https://github.com/Za-editor/Recipe-page"
+    }
+  },
+  {
+    "name": "Bento Grid",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Html", "Css"],
+    "category": "Side Projects",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "A polished UI for AI-powered social media scheduling tool.",
+    "description": [
+      "Bento Grid’s landing interface highlights features like AI content generation, automated posting schedules, and multi-account management.",
+      "It presents compelling metrics (e.g. “56% faster audience growth”) and visual storytelling to encourage signups or exploration.",
+      "The design is clean and modern, with strong imagery, bold headlines, and an intuitive layout guiding user focus."
+    ],
+    "highlights": [
+      "Hero section with prominent headline and subheadline",
+      "Illustrative feature blocks (AI writing, scheduling, analytics)",
+      "Statistic / trust indicator (e.g. “56% faster audience growth”)",
+      "Clean responsive layout with imagery supporting messaging"
+    ],
+    "links": {
+      "live": "https://bento-grid-wheat.vercel.app/",
+      "github": "https://github.com/Za-editor/Bento-Grid"
+    }
+  },
+  {
+    "name": "Four Card Feature",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Html", "Css"],
+    "category": "Side Projects",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "A clean, card-based feature display section.",
+    "description": [
+      "This project displays a section with four feature cards highlighting different modules like Supervisor, Team Builder, Karma, and Calculator.",
+      "It uses concise headlines and descriptive text under each card to communicate distinct value propositions clearly.",
+      "The design is minimal and responsive, focusing on readability, layout symmetry, and visual hierarchy."
+    ],
+    "highlights": [
+      "Four feature cards with title, icon/image, and text",
+      "Hero heading with “Reliable, efficient delivery powered by technology”",
+      "Responsive layout adapting to mobile and desktop",
+      "Consistent typography, spacing, and visual alignment"
+    ],
+    "links": {
+      "live": "https://four-card-feature-section-five-indol.vercel.app/",
+      "github": "https://github.com/Za-editor/Four-card-feature-section"
+    }
+  },
+  {
+    "name": "Flylo",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Html", "Css", "JavaScript"],
+    "category": "Landing Page",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "Secure file storage and collaboration landing page.",
+    "description": [
+      "The landing page introduces Fylo with a clear headline touting secure, cloud-based file access from anywhere.",
+      "It walks users through core benefits accessibility, security, collaboration, and file type support in a clean, structured layout.",
+      "The design emphasizes trust and conversion, using testimonials, CTAs, and concise content to guide visitors."
+    ],
+    "highlights": [
+      "Hero section with headline, subtext, and primary CTA (“Get Started”)",
+      "Core benefits section: Access Anywhere, Security, Collaboration, File Support",
+      "Customer testimonials with images and quotes",
+      "Newsletter / early access signup with convincing prompt"
+    ],
+    "links": {
+      "live": "https://flylo-landing-page.vercel.app/",
+      "github": "https://github.com/Za-editor/flylo-landing-page"
+    }
+  },
+  {
+    "name": "AudioPhile",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Tailwind", "React"],
+    "category": "Full Website",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "A premium e-commerce experience for high-end audio products.",
+    "description": [
+      "AudioPhile is a fully functional e-commerce platform designed for audio enthusiasts, featuring a clean modern UI and a seamless shopping flow.",
+      "It includes category-based product listings, detailed product pages, cart and checkout functionalities, and dynamic routing for a smooth user experience.",
+      "The design emphasizes luxury and usability, creating a professional retail feel across all devices with responsive layouts and polished animations."
+    ],
+    "features": [
+      "Dynamic product catalog with filtering and category navigation",
+      "Product detail pages with image galleries, descriptions, and specs",
+      "Add-to-cart and quantity management system",
+      "Persistent shopping cart with live updates",
+      "Checkout flow with customer details, payment summary, and confirmation",
+      "Responsive and accessible design optimized for mobile and desktop",
+      "Reusable component-based structure for scalability",
+      "Integrated local storage or API-based data handling for cart persistence",
+      "Interactive UI elements and smooth page transitions"
+    ],
+    "links": {
+      "live": "https://audiophile-seven-beryl.vercel.app/",
+      "github": "https://github.com/Za-editor/audiophile"
+    },
+    "layout": "col-span-3 row-span-4 md:col-span-3 md:row-span-7"
+  },
+  {
+    "name": "Space Tourism",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Html", "Css", "JavaScript"],
+    "category": "Full Website",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "An immersive multi-page space tourism experience website.",
+    "description": [
+      "This full website guides users through destinations, crew, and technology in an immersive space travel narrative.",
+      "Each section (Home, Destination, Crew, Technology) is rich with visual storytelling, interactive elements, and content depth.",
+      "The design balances aesthetics and usability with animations, responsive layout, and intuitive navigation."
+    ],
+    "features": [
+      "Multi-page site: Home, Destination, Crew, Technology",
+      "Dynamic content per destination (images, descriptions, distance, travel time)",
+      "Interactive crew profiles and technology details",
+      "Responsive navigation bar with active link highlighting",
+      "Smooth transitions and animated content per section"
+    ],
+    "links": {
+      "live": "https://space-tourism-six-xi.vercel.app/",
+      "github": "https://github.com/Za-editor/space-tourism"
+    },
+    "layout": "col-span-3 row-span-4 md:col-span-1 md:row-span-3"
+  },
+  {
+    "name": "Zentrip",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Html", "Tailwind", "JavaScript"],
+    "category": "Full Website",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "A full-stack travel exploration and booking platform.",
+    "description": [
+      "Zentrip allows users to discover destinations, plan custom trips, and book adventures with ease.",
+      "The site showcases featured destinations, a trip-planning form, photo gallery, testimonials, and subscription section.",
+      "Its design emphasizes inspiration, trust, and usability through coherent layout, image storytelling, and clear CTAs."
+    ],
+    "features": [
+      "Search/trip planner form (location, date, guests)",
+      "Featured destinations section with pricing",
+      "Photo gallery of traveler images",
+      "Testimonials section with user quotes and images",
+      "Newsletter subscription / footer links section",
+      "Responsive design across devices",
+      "Smooth navigation between page sections"
+    ],
+    "links": {
+      "live": "https://zentrip-io.vercel.app/",
+      "github": "https://github.com/Za-editor/zentrip"
+    },
+    "layout": "col-span-3 row-span-4 md:col-span-1 md:row-span-3"
+  },
+
+  {
+    "name": "Silque",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Tailwind", "NodeJs", "MongoDb", "React", "Express", "Redux"],
+    "category": "Full Website",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "A fully functional e-commerce storefront with polished UI and checkout flow.",
+    "description": [
+      "Silque is a complete online store that showcases product collections, detailed product pages, and a streamlined shopping experience from browsing to checkout.",
+      "The site includes core e-commerce flows—product listing and filtering, cart management, secure checkout, and order confirmation designed with conversion and UX in mind.",
+      "Polished visual design, responsive layouts, and purchase-focused CTAs create a credible retail experience across desktop and mobile."
+    ],
+    "features": [
+      "Product catalog with categories and collection pages",
+      "Product detail pages with images, descriptions, options (variants) and pricing",
+      "Search and filtering (by category, price, or attributes)",
+      "Persistent shopping cart with add/remove and quantity controls",
+      "Guest and authenticated checkout flow (shipping, billing, order summary)",
+      "Payment integration (card checkout / third-party payment provider)",
+      "Order confirmation and basic order history UI",
+      "Responsive layout and mobile-friendly interactions",
+      "Basic inventory/stock handling and price display",
+      "SEO-friendly product metadata and structured content"
+    ],
+    "links": {
+      "live": "https://silque-9zns.vercel.app/",
+      "github": "https://github.com/Za-editor/Silque"
+    },
+    "layout": "col-span-3 row-span-4 md:col-span-2 md:row-span-4"
+  },
+  {
+    "name": "Prime Haven",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Tailwind", "React"],
+    "category": "Landing Page",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "A polished landing page for Prime Haven property platform.",
+    "description": [
+      "Prime Haven’s landing page introduces its property services with clarity and refined aesthetics, highlighting trust and premium offerings.",
+      "The layout flows through core sections like Featured Listings, Services, Testimonials, and Call to Action prompts to drive engagement.",
+      "With responsive design, strong visual hierarchy, and compelling imagery, the page is crafted to convert visitors into leads."
+    ],
+    "highlights": [
+      "Hero banner with headline, subtext, and primary call-to-action",
+      "Featured properties or listings section",
+      "Services or mechanism section explaining platform value",
+      "Trust/testimonial section and contact/CTA footer"
+    ],
+    "links": {
+      "live": "https://prime-haven-gamma.vercel.app/",
+      "github": "https://github.com/Za-editor/Prime-Haven"
+    }
+  },
+
+  {
+    "name": "Portfolio",
+    "images": {
+      "main": "https://picsum.photos/id/1018/800/500",
+      "screenshots": [
+        "https://picsum.photos/id/1011/800/500",
+        "https://picsum.photos/id/1012/800/500",
+        "https://picsum.photos/id/1013/800/500",
+        "https://picsum.photos/id/1014/800/500",
+        "https://picsum.photos/id/1015/800/500",
+        "https://picsum.photos/id/1016/800/500",
+        "https://picsum.photos/id/1017/800/500",
+        "https://picsum.photos/id/1019/800/500"
+      ]
+    },
+    "techStack": ["Tailwind", "React"],
+    "category": "Side Projects",
+    "creator": {
+      "name": "Xa_Plug"
+    },
+    "miniDescription": "Personal portfolio showcasing projects, skills and UI/UX work.",
+    "description": [
+      "This portfolio site presents your full stack of work, combining your best full websites, landing pages, and side projects in one clean interface.",
+      "It features project overviews, live demos, GitHub links, and visual highlights, allowing visitors to explore your design and coding capability seamlessly.",
+      "With responsive layout, modern styling, and strong focus on visual clarity and interactivity, it serves both as a showcase and as a personal brand hub."
+    ],
+    "features": [
+      "Project gallery with live version previews and links",
+      "Detailed project entries including description, features / highlights, tech stack",
+      "Responsive design ensuring good experience on mobile and desktop",
+      "Easy navigation between home, contact, and project sections",
+      "Strong visual identity and consistent design system"
+    ],
+    "links": {
+      "live": "https://fawaz-tj.vercel.app/",
+      "github": "https://github.com/Za-editor/tajudeen-fawaz"
+    }
+  }
+]
