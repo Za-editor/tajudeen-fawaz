@@ -3,6 +3,20 @@ import { FaArrowRight } from "react-icons/fa";
 import Button from "../components/Button";
 import { DataContext } from "../../context/Data";
 import { Link } from "react-router-dom";
+import {
+  FaCss3Alt,
+  FaExternalLinkAlt,
+  FaHtml5,
+  FaNodeJs,
+  FaReact,
+} from "react-icons/fa";
+import {
+  SiExpress,
+  SiJavascript,
+  SiMongodb,
+  SiRedux,
+  SiTailwindcss,
+} from "react-icons/si";
 
 const Project = () => {
   const { products } = useContext(DataContext);
@@ -10,6 +24,45 @@ const Project = () => {
   const [landingPages, setLandingPages] = useState([]);
   const [fullWebsites, setFullWebsites] = useState([]);
   const [sideProjects, setSideProjects] = useState([]);
+
+   const techIcons = {
+      Html: {
+        icon: <FaHtml5 className="text-orange-500 text-2xl" />,
+        name: "HTML",
+      },
+      Css: {
+        icon: <FaCss3Alt className="text-blue-500 text-2xl" />,
+        name: "CSS",
+      },
+      JavaScript: {
+        icon: <SiJavascript className="text-yellow-400 text-2xl" />,
+        name: "JavaScript",
+      },
+      Tailwind: {
+        icon: <SiTailwindcss className="text-cyan-400 text-2xl" />,
+        name: "Tailwind CSS",
+      },
+      React: {
+        icon: <FaReact className="text-blue-400 text-2xl" />,
+        name: "React",
+      },
+      NodeJs: {
+        icon: <FaNodeJs className="text-green-500 text-2xl" />,
+        name: "Node.js",
+      },
+      Express: {
+        icon: <SiExpress className="text-gray-500 text-2xl" />,
+        name: "Express",
+      },
+      MongoDb: {
+        icon: <SiMongodb className="text-green-600 text-2xl" />,
+        name: "MongoDB",
+      },
+      Redux: {
+        icon: <SiRedux className="text-purple-500 text-2xl" />,
+        name: "Redux",
+      },
+    };
 
   useEffect(() => {
     if (Array.isArray(products)) {
@@ -47,20 +100,21 @@ const Project = () => {
                   {project.name}
                 </p>
 
-                {project.techStack.length > 0 && (
-                  <div className="text-sm md:text-lg text-white space-x-2 mb-3">
-                    {project.techStack.map((stack, i) => (
-                      <span
+                <div className="flex flex-wrap gap-4">
+                  {project.techStack.map((tech, i) => {
+                    const techData = techIcons[tech] || { name: tech };
+                    return (
+                      <div
                         key={i}
-                        className={`inline-block px-2 ${
-                          i > 0 ? "border-l border-gray-300 pl-2" : ""
-                        }`}
+                        className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 transition-all shadow-sm px-3 py-2 rounded-lg"
                       >
-                        {stack}
-                      </span>
-                    ))}
-                  </div>
-                )}
+                        {techData.icon && (
+                          <span className="text-xs">{techData.icon}</span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
 
                 <Button
                   text="See details"
@@ -96,15 +150,19 @@ const Project = () => {
                   <p className="text-xl text-gradient font-semibold">
                     {item.name}
                   </p>
-                  <div className="flex gap-2">
-                    {item.techStack.map((stack, i) => {
+                  <div className="flex flex-wrap gap-4">
+                    {item.techStack.map((tech, i) => {
+                      const techData = techIcons[tech] || { name: tech };
                       return (
-                        <p
+                        <div
                           key={i}
-                          className="text-sm bg-gray-200 text-gradient px-4 py-1 my-3 shadow-lg transition-all ease-in-out duration-300 cursor-pointer hover:scale-105 rounded-md w-fit"
+                          className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 transition-all shadow-sm px-3 py-2 rounded-lg"
                         >
-                          {stack}
-                        </p>
+                          {techData.icon && <span className="">{techData.icon}</span>}
+                          <span className="text-gray-500 text-xs font-medium">
+                            {techData.name}
+                          </span>
+                        </div>
                       );
                     })}
                   </div>
@@ -137,15 +195,19 @@ const Project = () => {
                   <p className="text-xl text-gradient font-semibold">
                     {item.name}
                   </p>
-                  <div className="flex gap-2">
-                    {item.techStack.map((stack, i) => {
+                  <div className="flex flex-wrap gap-4">
+                    {item.techStack.map((tech, i) => {
+                      const techData = techIcons[tech] || { name: tech };
                       return (
-                        <p
+                        <div
                           key={i}
-                          className="text-sm bg-gray-200 text-gradient px-4 py-1 my-3 shadow-lg transition-all ease-in-out duration-300 cursor-pointer hover:scale-105 rounded-md w-fit"
+                          className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 transition-all shadow-sm px-3 py-2 rounded-lg"
                         >
-                          {stack}
-                        </p>
+                          {techData.icon && <span>{techData.icon}</span>}
+                          <span className="text-gray-500 text-xs font-medium">
+                            {techData.name}
+                          </span>
+                        </div>
                       );
                     })}
                   </div>

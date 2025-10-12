@@ -1,25 +1,88 @@
 import React, { useContext, useEffect, useState } from "react";
 import Button from "../components/Button";
-import { FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
+import { FaArrowRight, FaCss3Alt, FaExternalLinkAlt, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
+import {SiExpress, SiJavascript, SiMongodb, SiRedux, SiTailwindcss} from "react-icons/si"
 import SwiperSlider from "../Utilities/SwiperSlider";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { DataContext } from "../../context/Data";
 
 const SpecificProject = () => {
+
+
+  const techIcons = {
+    Html: {
+      icon: <FaHtml5 className="text-orange-500 text-2xl" />,
+      name: "HTML",
+    },
+    Css: {
+      icon: <FaCss3Alt className="text-blue-500 text-2xl" />,
+      name: "CSS",
+    },
+    JavaScript: {
+      icon: <SiJavascript className="text-yellow-400 text-2xl" />,
+      name: "JavaScript",
+    },
+    Tailwind: {
+      icon: <SiTailwindcss className="text-cyan-400 text-2xl" />,
+      name: "Tailwind CSS",
+    },
+    React: {
+      icon: <FaReact className="text-blue-400 text-2xl" />,
+      name: "React",
+    },
+    NodeJs: {
+      icon: <FaNodeJs className="text-green-500 text-2xl" />,
+      name: "Node.js",
+    },
+    Express: {
+      icon: <SiExpress className="text-gray-500 text-2xl" />,
+      name: "Express",
+    },
+    MongoDb: {
+      icon: <SiMongodb className="text-green-600 text-2xl" />,
+      name: "MongoDB",
+    },
+    Redux: {
+      icon: <SiRedux className="text-purple-500 text-2xl" />,
+      name: "Redux",
+    },
+  };
   const { products } = useContext(DataContext);
   const { name } = useParams();
+
   const [project, setProject] = useState();
+  const [more, setMore] = useState([]);
+  const [landingPages, setLandingPages] = useState([]);
+  const [fullWebsites, setFullWebsites] = useState([]);
+  const [sideProjects, setSideProjects] = useState([]);
 
   useEffect(() => {
     if (Array.isArray(products)) {
       setProject(products.find((item) => item.name === name));
+      setLandingPages(products.filter((p) => p.category === "Landing Page"));
+      setFullWebsites(products.filter((p) => p.category === "Full Website"));
+      setSideProjects(products.filter((p) => p.category === "Side Projects"));
     }
   }, [products, name]);
 
+  useEffect(() => {
+    if (!project) return;
+
+    if (project.category === "Landing Page") {
+      setMore(sideProjects);
+    } else if (project.category === "Full Website") {
+      setMore(landingPages);
+    } else if (project.category === "Side Projects") {
+      setMore(fullWebsites);
+    }
+  }, [project, landingPages, fullWebsites, sideProjects]);
+
   if (!project) {
-    return <p className="text-center mt-10">Loading project...</p>;
+    return (
+      <p className="text-center mt-10 text-gray-500">Loading project...</p>
+    );
   }
-  console.log(project.images);
+
   return (
     <section className="container mx-auto min-h-screen py-[50px] md:py-[100px]">
       <div className="">
@@ -115,35 +178,21 @@ const SpecificProject = () => {
             <div className="flex items-center justify-between px-5 py-5 border-b-3 border-gray-300">
               <p className="">Tech Stack</p>
             </div>
-            <div className="py-4 px-4 max-h-100">
-              <p className="text-gradient  text-sm md:text-[17px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                sed praesentium mollitia? Sapiente nemo nihil, quia, voluptatem
-                ad eaque minima incidunt cumque, explicabo minus dolor eos odit
-                fugiat suscipit ratione.
-              </p>
-              <ol className="mt-4">
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Odit, quia.
-                </li>
-                <li>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Odit, quia.
-                </li>
-              </ol>
-              <ol className="mt-4">
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Odit, quia.
-                </li>
-                <li>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Odit, quia.
-                </li>
-              </ol>
+            <div className="flex flex-wrap gap-4 px-4 py-5">
+              {project.techStack.map((tech, i) => {
+                const techData = techIcons[tech] || { name: tech };
+                return (
+                  <div
+                    key={i}
+                    className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 transition-all shadow-sm px-3 py-2 rounded-lg"
+                  >
+                    {techData.icon && <span>{techData.icon}</span>}
+                    <span className="text-gray-700 font-medium">
+                      {techData.name}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -152,36 +201,28 @@ const SpecificProject = () => {
             <p className="">Discover More</p>
             <FaArrowRight className="text-gray-500 hover:scale-105 hover:shadow-2xl" />
           </div>
-          <div className="mt-4 flex gap-4 py-4 px-4 hover:bg-gray-200 hover:shadow-lg transition-all ease-in-out duration-300 cursor-pointer">
-            <div className="w-[80px]  rounded-lg">
-              <img
-                className="rounded-lg"
-                src="https://picsum.photos/id/10/150/200"
-                alt=""
-              />
-            </div>
-            <div className="flex flex-col">
-              <p className="text-xl text-gradient">Zentrip</p>
-              <p className="text-sm bg-gray-200 text-gradient px-4 py-1 my-3 shadow-lg transition-all ease-in-out duration-300 cursor-pointer hover:scale-105">
-                Webflow
-              </p>
-            </div>
-          </div>
-          <div className="mt-4 flex gap-4 py-4 px-4 hover:bg-gray-200 hover:shadow-lg transition-all ease-in-out duration-300 cursor-pointer">
-            <div className="w-[80px]  rounded-lg">
-              <img
-                className="rounded-lg"
-                src="https://picsum.photos/id/10/150/200"
-                alt=""
-              />
-            </div>
-            <div className="flex flex-col">
-              <p className="text-xl text-gradient">Zentrip</p>
-              <p className="text-sm bg-gray-200 text-gradient px-4 py-1 my-3 shadow-lg transition-all ease-in-out duration-300 cursor-pointer hover:scale-105">
-                Webflow
-              </p>
-            </div>
-          </div>
+          {more.map((item, i) => (
+            <Link to={`/project/${item.name}`}>
+              <div
+                key={i}
+                className="mt-4 flex gap-4 py-4 px-4 hover:bg-gray-200 hover:shadow-lg transition-all ease-in-out duration-300 cursor-pointer"
+              >
+                <div className="w-[80px]   rounded-lg">
+                  <img
+                    className="rounded-lg h-full"
+                    src={item.images.main}
+                    alt=""
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-xl text-gradient">{item.name}</p>
+                  <p className="text-sm bg-gray-200 text-gradient px-4 py-1 my-3 shadow-lg transition-all ease-in-out duration-300 cursor-pointer hover:scale-105">
+                    Webflow
+                  </p>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
