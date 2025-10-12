@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Button from "../components/Button";
-import { FaArrowRight, FaCss3Alt, FaExternalLinkAlt, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
+import { FaArrowRight, FaCss3Alt, FaExternalLinkAlt, FaHtml5, FaNodeJs, FaReact, FaGithub } from "react-icons/fa";
 import {SiExpress, SiJavascript, SiMongodb, SiRedux, SiTailwindcss} from "react-icons/si"
 import SwiperSlider from "../Utilities/SwiperSlider";
 import { Link, useParams } from "react-router-dom";
@@ -118,12 +118,34 @@ const SpecificProject = () => {
             {project.miniDescription}
           </p>
           <div className="flex gap-4 items-center">
-            <Button
-              text={"Live Version"}
-              className={
-                "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
-              }
-            />
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                text={"Live Version"}
+                className={
+                  "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+                }
+              />
+            </a>
+            <a
+              href={project.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                text={
+                  <div className="flex items-center gap-2">
+                    GitHub <FaGithub />
+                  </div>
+                }
+                className={
+                  "inline-block mt-2 px-4 py-2 rounded-lg text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+                }
+              />
+            </a>
             <FaExternalLinkAlt className="text-gray-500 hover:scale-105 hover:shadow-2xl " />
           </div>
         </div>
@@ -162,12 +184,8 @@ const SpecificProject = () => {
               <p className="">Features</p>
             </div>
             <div className="py-4 px-4 max-h-100">
-              <p className="text-gradient  text-sm md:text-[17px]">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-                sed praesentium mollitia?
-              </p>
               <ol className="mt-4 list-disc list-inside text-gray-500 flex flex-col gap-2">
-                {project.description.map((desc, index) => (
+                {project.features.map((desc, index) => (
                   <li key={index}>{desc}</li>
                 ))}
               </ol>
@@ -197,17 +215,19 @@ const SpecificProject = () => {
           </div>
         </div>
         <div className="w-full md:w-4/12">
-          <div className="px-5 py-5 border-b-3 border-gray-300 flex gap-2 items-center  bg-gray-200 text-gradient shadow-xl rounded-lg  h-fit">
-            <p className="">Discover More</p>
-            <FaArrowRight className="text-gray-500 hover:scale-105 hover:shadow-2xl" />
-          </div>
+          <Link to={"/project"} className="cursor-pointer">
+            <div className="px-5 py-5 border-b-3 border-gray-300 flex gap-2 items-center  bg-gray-200 text-gradient shadow-xl rounded-lg  h-fit">
+              <p className="">Discover More</p>
+              <FaArrowRight className="text-gray-500 hover:scale-105 hover:shadow-2xl" />
+            </div>
+          </Link>
           {more.map((item, i) => (
             <Link to={`/project/${item.name}`}>
               <div
                 key={i}
                 className="mt-4 flex gap-4 py-4 px-4 hover:bg-gray-200 hover:shadow-lg transition-all ease-in-out duration-300 cursor-pointer"
               >
-                <div className="w-[80px]   rounded-lg">
+                <div className="w-[80px]    rounded-lg">
                   <img
                     className="rounded-lg h-full"
                     src={item.images.main}
@@ -215,10 +235,25 @@ const SpecificProject = () => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-xl text-gradient">{item.name}</p>
-                  <p className="text-sm bg-gray-200 text-gradient px-4 py-1 my-3 shadow-lg transition-all ease-in-out duration-300 cursor-pointer hover:scale-105">
-                    Webflow
+                  <p className="text-xl text-gradient font-medium">
+                    {item.name}
                   </p>
+                  <div className="flex flex-wrap gap-4">
+                    {item.techStack.map((tech, i) => {
+                      const techData = techIcons[tech] || { name: tech };
+                      return (
+                        <div
+                          key={i}
+                          className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 transition-all shadow-sm px-3 py-2 rounded-lg"
+                        >
+                          {techData.icon && <span>{techData.icon}</span>}
+                          <span className="text-gray-500 text-xs font-medium">
+                            {techData.name}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </Link>

@@ -2,16 +2,13 @@
   {
     "name": "Azura",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/azuramain.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/azura1.png",
+        "/assets/azura2.png",
+        "/assets/azura3.png",
+        "/assets/azura4.png",
+        "/assets/azura5.png"
       ]
     },
     "techStack": ["Html", "Css", "JavaScript"],
@@ -25,7 +22,7 @@
       "The layout guides users through a smooth narrative from value proposition to pricing and testimonials.",
       "Its minimalist design and strong visual hierarchy make it both professional and conversion ready."
     ],
-    "highlights": [
+    "features": [
       "Hero section with clear call to action",
       "Feature overview and pricing sections",
       "Client testimonials and trust indicators",
@@ -39,16 +36,13 @@
   {
     "name": "Furnico",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/furnicomain.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/furnico1.png",
+        "/assets/furnico2.png",
+        "/assets/furnico3.png",
+        "/assets/furnico4.png",
+        "/assets/furnico5.png"
       ]
     },
     "techStack": ["Html", "Css"],
@@ -62,7 +56,7 @@
       "The layout flows through collections, brand values, testimonials, and calls to action, guiding users toward exploring and purchasing.",
       "With clean typography, strong visuals, and responsive design, the page emphasizes both style and trust."
     ],
-    "highlights": [
+    "features": [
       "Hero section with headline, subtext, and dual CTAs (Shop / Explore)",
       "Section for featured collections (e.g. Whitehaven, Pebble Lounge, Luna Lounge)",
       "Client testimonial section enhancing trust",
@@ -76,16 +70,12 @@
   {
     "name": "Social",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/socialmain.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/social1.png",
+        "/assets/social2.png",
+        "/assets/social3.png",
+        "/assets/social4.png"
       ]
     },
     "techStack": ["Html", "Css"],
@@ -99,7 +89,7 @@
       "It features a hero area with name, location, short bio, and icons linking to GitHub, LinkedIn, Twitter, Instagram.",
       "Designed for simplicity and clarity, it focuses on UI layout, responsive design, and minimal distractions."
     ],
-    "highlights": [
+    "features": [
       "Central profile header with name, tagline and location",
       "Social media icons linking to multiple platforms",
       "Clean, minimal UI with vertical link layout",
@@ -113,16 +103,12 @@
   {
     "name": "Recipe Page",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/recipemain.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/recipe1.png",
+        "/assets/recipe2.png",
+        "/assets/recipe3.png",
+        "/assets/recipe4.png"
       ]
     },
     "techStack": ["Html", "Css"],
@@ -136,7 +122,7 @@
       "It’s designed for readability and usability, with a focus on structured content and simple layout.",
       "The page emphasizes clarity, accessibility, and elegance in presenting cooking information."
     ],
-    "highlights": [
+    "features": [
       "Ingredient list and clear measurements section",
       "Step-by-step instructions with numbered ordering",
       "Nutrition facts table per serving",
@@ -150,16 +136,12 @@
   {
     "name": "Bento Grid",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/bento.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/bento1.png",
+        "/assets/bento2.png",
+        "/assets/bento3.png",
+        "/assets/bento4.png"
       ]
     },
     "techStack": ["Html", "Css"],
@@ -173,7 +155,7 @@
       "It presents compelling metrics (e.g. “56% faster audience growth”) and visual storytelling to encourage signups or exploration.",
       "The design is clean and modern, with strong imagery, bold headlines, and an intuitive layout guiding user focus."
     ],
-    "highlights": [
+    "features": [
       "Hero section with prominent headline and subheadline",
       "Illustrative feature blocks (AI writing, scheduling, analytics)",
       "Statistic / trust indicator (e.g. “56% faster audience growth”)",
@@ -187,16 +169,11 @@
   {
     "name": "Four Card Feature",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/fourcardmain.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/fourcard1.png",
+        "/assets/fourcard2.png",
+        "/assets/fourcard3.png"
       ]
     },
     "techStack": ["Html", "Css"],
@@ -210,7 +187,7 @@
       "It uses concise headlines and descriptive text under each card to communicate distinct value propositions clearly.",
       "The design is minimal and responsive, focusing on readability, layout symmetry, and visual hierarchy."
     ],
-    "highlights": [
+    "features": [
       "Four feature cards with title, icon/image, and text",
       "Hero heading with “Reliable, efficient delivery powered by technology”",
       "Responsive layout adapting to mobile and desktop",
@@ -224,16 +201,13 @@
   {
     "name": "Flylo",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/flylomain.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/flylo1.png",
+        "/assets/flylo2.png",
+        "/assets/flylo3.png",
+        "/assets/flylo4.png",
+        "/assets/flylo5.png"
       ]
     },
     "techStack": ["Html", "Css", "JavaScript"],
@@ -247,7 +221,7 @@
       "It walks users through core benefits accessibility, security, collaboration, and file type support in a clean, structured layout.",
       "The design emphasizes trust and conversion, using testimonials, CTAs, and concise content to guide visitors."
     ],
-    "highlights": [
+    "features": [
       "Hero section with headline, subtext, and primary CTA (“Get Started”)",
       "Core benefits section: Access Anywhere, Security, Collaboration, File Support",
       "Customer testimonials with images and quotes",
@@ -261,16 +235,14 @@
   {
     "name": "AudioPhile",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/audiophilemain.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/audiophile1.png",
+        "/assets/audiophile2.png",
+        "/assets/audiophile3.png",
+        "/assets/audiophile4.png",
+        "/assets/audiophile5.png",
+        "/assets/audiophile6.png"
       ]
     },
     "techStack": ["Tailwind", "React"],
@@ -304,16 +276,13 @@
   {
     "name": "Space Tourism",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/spacetourismmain.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/spacetourism1.png",
+        "/assets/spacetourism2.png",
+        "/assets/spacetourism3.png",
+        "/assets/spacetourism4.png",
+        "/assets/spacetourism5.png"
       ]
     },
     "techStack": ["Html", "Css", "JavaScript"],
@@ -343,16 +312,14 @@
   {
     "name": "Zentrip",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/zentripmain.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/zentrip1.png",
+        "/assets/zentrip2.png",
+        "/assets/zentrip3.png",
+        "/assets/zentrip4.png",
+        "/assets/zentrip5.png",
+        "/assets/zentrip6.png"
       ]
     },
     "techStack": ["Html", "Tailwind", "JavaScript"],
@@ -385,16 +352,14 @@
   {
     "name": "Silque",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/silquemain.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/silque1.png",
+        "/assets/silque2.png",
+        "/assets/silque3.png",
+        "/assets/silque4.png",
+        "/assets/silque5.png",
+        "/assets/silque6.png"
       ]
     },
     "techStack": ["Tailwind", "NodeJs", "MongoDb", "React", "Express", "Redux"],
@@ -429,16 +394,13 @@
   {
     "name": "Prime Haven",
     "images": {
-      "main": "https://picsum.photos/id/1018/800/500",
+      "main": "/assets/primehavenmain.png",
       "screenshots": [
-        "https://picsum.photos/id/1011/800/500",
-        "https://picsum.photos/id/1012/800/500",
-        "https://picsum.photos/id/1013/800/500",
-        "https://picsum.photos/id/1014/800/500",
-        "https://picsum.photos/id/1015/800/500",
-        "https://picsum.photos/id/1016/800/500",
-        "https://picsum.photos/id/1017/800/500",
-        "https://picsum.photos/id/1019/800/500"
+        "/assets/primehaven1.png",
+        "/assets/primehaven2.png",
+        "/assets/primehaven3.png",
+        "/assets/primehaven4.png",
+        "/assets/primehaven5.png"
       ]
     },
     "techStack": ["Tailwind", "React"],
@@ -452,7 +414,7 @@
       "The layout flows through core sections like Featured Listings, Services, Testimonials, and Call to Action prompts to drive engagement.",
       "With responsive design, strong visual hierarchy, and compelling imagery, the page is crafted to convert visitors into leads."
     ],
-    "highlights": [
+    "features": [
       "Hero banner with headline, subtext, and primary call-to-action",
       "Featured properties or listings section",
       "Services or mechanism section explaining platform value",
@@ -487,7 +449,7 @@
     "miniDescription": "Personal portfolio showcasing projects, skills and UI/UX work.",
     "description": [
       "This portfolio site presents your full stack of work, combining your best full websites, landing pages, and side projects in one clean interface.",
-      "It features project overviews, live demos, GitHub links, and visual highlights, allowing visitors to explore your design and coding capability seamlessly.",
+      "It features project overviews, live demos, GitHub links, and visual features, allowing visitors to explore your design and coding capability seamlessly.",
       "With responsive layout, modern styling, and strong focus on visual clarity and interactivity, it serves both as a showcase and as a personal brand hub."
     ],
     "features": [

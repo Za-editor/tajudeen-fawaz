@@ -293,7 +293,7 @@ const ProjectsSection = () => {
                       })}
                     </div>
                     <div className=" flex flex-wrap gap-4">
-                      <Link to="">
+                      <Link to={`/project/${item.title}`}>
                         <Button
                           text={"About Project"}
                           className={
@@ -335,10 +335,10 @@ const ProjectsSection = () => {
           </div>
         </div>
         <div className="flex items-end text-lg justify-end  mr-5">
-          <a href="#" className="group flex items-center  text-[#192f3d]">
+          <Link to="/project" className="group flex items-center  text-[#192f3d]">
             View More{" "}
             <FaArrowRight className="inline-block ml-2 bounce-arrow" />
-          </a>
+          </Link>
 
           <style>
             {`

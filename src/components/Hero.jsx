@@ -129,8 +129,8 @@ const Hero = () => {
               |
             </span>
             <br />
-            <p className="title">Crafting Digital Art with Purpose.</p>
           </p>
+          <p className="title">Crafting Digital Art with Purpose.</p>
           <p className="text-gradient mt-4 text-sm">
             Design meets performance. <br />
             Creative web design and development in a nutshell.

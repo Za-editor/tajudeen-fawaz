@@ -1,50 +1,53 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Layout from "./layouts/Layout";
 import Homepage from "./pages/Homepage";
-import { useEffect, useState } from "react";
-import Loader from "./components/Loader";
-import SmoothScrollWrapper from "./components/SmoothScrollWrapper";
 import SpecificProject from "./pages/SpecificProject";
 import Project from "./pages/Project";
+import Loader from "./components/Loader";
+import SmoothScrollWrapper from "./components/SmoothScrollWrapper";
 import { DataProvider } from "../context/Data";
+
 function App() {
-  // const [loading, setLoading] = useState(true);
+  return (
+    <DataProvider>
+      <SmoothScrollWrapper>
+        <BrowserRouter>
+          <AppContent />
+        </BrowserRouter>
+      </SmoothScrollWrapper>
+    </DataProvider>
+  );
+}
 
-  // useEffect(() => {
-  //   const handlePageLoad = () => {
-  //     const timeout = setTimeout(() => {
-  //       setLoading(false);
-  //     }, 9000);
+function AppContent() {
+  const location = useLocation();
+  const [loading, setLoading] = useState(false);
 
-  //     return () => clearTimeout(timeout);
-  //   };
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setLoading(true);
+      const timeout = setTimeout(() => {
+        setLoading(false);
+      }, 9000);
+      return () => clearTimeout(timeout);
+    } else {
+      setLoading(false);
+    }
+  }, [location.pathname]);
 
-  //   if (document.readyState === "complete") {
-  //     handlePageLoad();
-  //   } else {
-  //     window.addEventListener("load", handlePageLoad);
-  //   }
-
-  //   return () => window.removeEventListener("load", handlePageLoad);
-  // }, []);
   return (
     <>
-      {/* {loading ? (
+      {loading ? (
         <Loader />
-      ) : ( */}
-        <DataProvider>
-          <SmoothScrollWrapper>
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Layout />}>
-                  <Route index element={<Homepage />} />
-                  <Route path="project/:name" element={<SpecificProject />} />
-                  <Route path="project" element={<Project />} />
-                </Route>
-              </Routes>
-            </BrowserRouter>
-          </SmoothScrollWrapper>
-        </DataProvider>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Homepage />} />
+            <Route path="project" element={<Project />} />
+            <Route path="project/:name" element={<SpecificProject />} />
+          </Route>
+        </Routes>
       )}
     </>
   );
