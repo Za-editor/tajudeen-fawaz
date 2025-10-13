@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import ToggleSwitch from "../components/ToggleSwitch";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   useGSAP(() => {
@@ -21,6 +22,8 @@ const Navbar = () => {
   const navitems = ["Home", "Projects", "About Me", "Resume", "Contact Me"];
 
   const [isOpen, setIsOpen] = useState(false);
+      const location = useLocation();
+      const isHome = location.pathname === "/";
 
   const toggleSideBar = () => {
     setIsOpen((prev) => !prev);
@@ -76,30 +79,40 @@ const Navbar = () => {
         }`}
       >
         <ul className="flex flex-col gap-8 p-10 mt-30">
-          {navitems.map((item, index) => (
-            <a
-              onClick={checkState}
-              key={index}
-              href={`#${item.toLowerCase().replace(/\s+/g, "")}`}
-              className="group text-[#192f3d] text-[18px] font-medium hover:text-[#005f64] flex items-center gap-1"
-            >
-              <li className="flex items-center justify-between w-full uppercase">
-                <span
-                  className={`relative text-xl  md:text-2xl ${
-                    item === "Home"
-                      ? "after:w-full after:bg-[#005f64]"
-                      : "after:w-0 after:bg-[#005f64]"
-                  }  after:absolute after:left-0 after:bottom-0 after:h-[1px] after:transition-all after:duration-500 ease-in-out hover:after:w-full`}
-                >
-                  {item}
-                </span>
+          {navitems.map((item, index) => {
+            const sectionId = item.toLowerCase().replace(/\s+/g, "");
+            const isProjects = sectionId === "projects";
 
-                <span className=" transform -translate-x-1 translate-y-1 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
-                  <MdNorthEast className="h-[11px]" />
-                </span>
-              </li>
-            </a>
-          ))}
+            const linkTarget = isProjects
+              ? "/projects"
+              : isHome
+              ? `#${sectionId}`
+              : `/#${sectionId}`;
+            return (
+              <a
+                onClick={checkState}
+                key={index}
+                href={linkTarget}
+                className="group text-[#192f3d] text-[18px] font-medium hover:text-[#005f64] flex items-center gap-1"
+              >
+                <li className="flex items-center justify-between w-full uppercase">
+                  <span
+                    className={`relative text-xl  md:text-2xl ${
+                      item === "Home"
+                        ? "after:w-full after:bg-[#005f64]"
+                        : "after:w-0 after:bg-[#005f64]"
+                    }  after:absolute after:left-0 after:bottom-0 after:h-[1px] after:transition-all after:duration-500 ease-in-out hover:after:w-full`}
+                  >
+                    {item}
+                  </span>
+
+                  <span className=" transform -translate-x-1 translate-y-1 opacity-0 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-in-out">
+                    <MdNorthEast className="h-[11px]" />
+                  </span>
+                </li>
+              </a>
+            );
+          })}
         </ul>
       </div>
     </div>

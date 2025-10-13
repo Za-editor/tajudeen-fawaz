@@ -84,108 +84,113 @@ const EmailModal = ({ isOpen, toggleModal }) => {
       return () => (document.body.style.overflow = "auto");
     }, [isOpen]);
   return (
-    <div
-      className={`right-0 absolute bottom-0 w-full md:w-3/4 lg:w-2/4 transition-all duration-700 ease-in-out  ${
-        isOpen ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
-      }`}
-    >
-      <div className="bg-gradient text-white flex justify-between items-center px-4 py-3">
-        <h2 className="text-white text-sm md:text-lg lg:text-xl  ">
-          Work with us
-        </h2>
-        <span onClick={handleCancel} className="cur hover:scale-110">
-          <FaTimes />
-        </span>
-      </div>
-
-      <form
-        onSubmit={handleSubmit}
-        className="   p-4 flex flex-col gap-4  shadow-2xl backdrop-blur-[5px] "
+    <div className="">
+      {isOpen && (
+        <div className="fixed inset-0 bg-black/10 backdrop-blur-sm z-[5000] transition-opacity duration-500"></div>
+      )}
+      <div
+        className={`fixed left-2/3 bottom-20 transform -translate-x-2/3 w-full md:w-3/4 lg:w-2/4 transition-all duration-700 ease-in-out z-[6000] ${
+          isOpen ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+        }`}
       >
-        <div className="flex items-center w-full">
-          <label
-            className="mr-4 whitespace-nowrap text-gradient"
-            htmlFor="name"
-          >
-            Full Name:
-          </label>
-          <input
-            className={`flex-1 border-b border-gray-400 focus:outline-none p-2 ${
-              errors.name ? "border-red-500" : ""
-            }`}
-            type="text"
-            id="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="Your full name"
-          />
+        <div className="bg-gradient text-white flex justify-between items-center px-4 py-3">
+          <h2 className="text-white text-sm md:text-lg lg:text-xl  ">
+            Work with us
+          </h2>
+          <span onClick={handleCancel} className="cur hover:scale-110">
+            <FaTimes />
+          </span>
         </div>
 
-        <div className="flex items-center w-full">
-          <label
-            className="mr-4 whitespace-nowrap text-gradient"
-            htmlFor="Email"
-          >
-            Email:
-          </label>
-          <input
-            className={`flex-1 border-b border-gray-400 focus:outline-none p-2 ${
-              errors.email ? "border-red-500" : ""
-            }`}
-            value={formData.email}
-            onChange={handleChange}
-            type="text"
-            id="email"
-            placeholder="Email Address"
-          />
-        </div>
-
-        <div className="flex items-center w-full">
-          <label
-            className="mr-4 whitespace-nowrap text-gradient"
-            htmlFor="subject"
-          >
-            Subject:
-          </label>
-          <input
-            className={`flex-1 border-b border-gray-400 focus:outline-none p-2 ${
-              errors.subject ? "border-red-500" : ""
-            }`}
-            value={formData.subject}
-            onChange={handleChange}
-            type="text"
-            id="subject"
-            placeholder="Subject"
-          />
-        </div>
-
-        <div className="flex flex-col w-full h-[150px] ">
-          <textarea
-            className={`flex-1 border-b border-gray-400 focus:outline-none p-2 ${
-              errors.message ? "border-red-500" : ""
-            }`}
-            value={formData.message}
-            onChange={handleChange}
-            id="message"
-            placeholder="Your message"
-          />
-        </div>
-
-        <div className="flex gap-4 justify-end">
-          <div onClick={handleCancel} className="">
-            <Button
-              text={"Cancel"}
-              className="inline-block mt-2 px-6 shadow-2xl py-3 rounded-2xl text-sm font-medium transition hover:text-gradient  text-gradient  cursor-pointer"
+        <form
+          onSubmit={handleSubmit}
+          className="   p-4 flex flex-col gap-4  shadow-2xl backdrop-blur-[5px] "
+        >
+          <div className="flex items-center w-full">
+            <label
+              className="mr-4 whitespace-nowrap text-gradient"
+              htmlFor="name"
+            >
+              Full Name:
+            </label>
+            <input
+              className={`flex-1 border-b border-gray-400 focus:outline-none p-2 ${
+                errors.name ? "border-red-500" : ""
+              }`}
+              type="text"
+              id="name"
+              value={formData.name}
+              onChange={handleChange}
+              placeholder="Your full name"
             />
           </div>
 
-          <Button
-            type="submit"
-            text={"Send"}
-            className="inline-block mt-2 px-6 py-3 rounded-2xl text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
-          />
-        </div>
-      </form>
+          <div className="flex items-center w-full">
+            <label
+              className="mr-4 whitespace-nowrap text-gradient"
+              htmlFor="Email"
+            >
+              Email:
+            </label>
+            <input
+              className={`flex-1 border-b border-gray-400 focus:outline-none p-2 ${
+                errors.email ? "border-red-500" : ""
+              }`}
+              value={formData.email}
+              onChange={handleChange}
+              type="text"
+              id="email"
+              placeholder="Email Address"
+            />
+          </div>
+
+          <div className="flex items-center w-full">
+            <label
+              className="mr-4 whitespace-nowrap text-gradient"
+              htmlFor="subject"
+            >
+              Subject:
+            </label>
+            <input
+              className={`flex-1 border-b border-gray-400 focus:outline-none p-2 ${
+                errors.subject ? "border-red-500" : ""
+              }`}
+              value={formData.subject}
+              onChange={handleChange}
+              type="text"
+              id="subject"
+              placeholder="Subject"
+            />
+          </div>
+
+          <div className="flex flex-col w-full h-[150px] ">
+            <textarea
+              className={`flex-1 border-b border-gray-400 focus:outline-none p-2 ${
+                errors.message ? "border-red-500" : ""
+              }`}
+              value={formData.message}
+              onChange={handleChange}
+              id="message"
+              placeholder="Your message"
+            />
+          </div>
+
+          <div className="flex gap-4 justify-end">
+            <div onClick={handleCancel} className="">
+              <Button
+                text={"Cancel"}
+                className="inline-block mt-2 px-6 shadow-2xl py-3 rounded-2xl text-sm font-medium transition hover:text-gradient  text-gradient  cursor-pointer"
+              />
+            </div>
+
+            <Button
+              type="submit"
+              text={"Send"}
+              className="inline-block mt-2 px-6 py-3 rounded-2xl text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+            />
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

@@ -44,8 +44,8 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Homepage />} />
-            <Route path="project" element={<Project />} />
-            <Route path="project/:name" element={<SpecificProject />} />
+            <Route path="projects" element={<Project />} />
+            <Route path="projects/:name" element={<SpecificProject />} />
           </Route>
         </Routes>
       )}

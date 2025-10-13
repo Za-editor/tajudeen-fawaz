@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Button from "./Button";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import EmailModal from "./EmailModal";
@@ -43,22 +43,22 @@ const ContactMe = () => {
       },
     });
 
-     tl.fromTo(
-       ".stagger-box",
-       { x: -2000, opacity: 0 },
-       {
-         x: 0,
-         opacity: 1,
-         duration: 1,
+    tl.fromTo(
+      ".stagger-box",
+      { x: -2000, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1,
 
-         stagger: {
-           amount: 1,
-           grid: [2, 1],
-           axis: "y",
-           from: "end",
-         },
-       }
-     );
+        stagger: {
+          amount: 1,
+          grid: [2, 1],
+          axis: "y",
+          from: "end",
+        },
+      }
+    );
 
     tl.to(lineRef.current, {
       y: 185,
@@ -72,24 +72,7 @@ const ContactMe = () => {
       duration: 2,
       ease: "bounce.out",
     });
-
-   
   });
-
-    const toggleModal = () => {
-      setIsOpen((prev) => !prev);
-    };
-
-  useEffect(() => {
-    
-    window.addEventListener("openEmailModal", toggleModal);
-
-    return () => {
-      window.removeEventListener("openEmailModal", toggleModal);
-    };
-  }, []);
-  const [isOpen, setIsOpen] = useState(false);
-
 
   return (
     <section
@@ -135,7 +118,13 @@ const ContactMe = () => {
           Looking for a modern, powerful website for your business or yourself?
           I’d love to help you create it.
         </p>
-        <div onClick={toggleModal}>
+        <div
+          onClick={() => {
+            setTimeout(() => {
+              window.dispatchEvent(new Event("openEmailModal"));
+            }, 800);
+          }}
+        >
           <Button
             text={"Email Me"}
             className="inline-block mt-2 px-6 py-3 rounded-2xl text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
@@ -183,8 +172,6 @@ const ContactMe = () => {
           </a>
         </div>
       </div>
-
-      <EmailModal toggleModal={toggleModal} isOpen={isOpen} />
     </section>
   );
 };

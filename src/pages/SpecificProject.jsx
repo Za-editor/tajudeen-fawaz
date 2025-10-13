@@ -1,14 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
 import Button from "../components/Button";
-import { FaArrowRight, FaCss3Alt, FaExternalLinkAlt, FaHtml5, FaNodeJs, FaReact, FaGithub } from "react-icons/fa";
-import {SiExpress, SiJavascript, SiMongodb, SiRedux, SiTailwindcss} from "react-icons/si"
+import {
+  FaArrowRight,
+  FaCss3Alt,
+  FaExternalLinkAlt,
+  FaHtml5,
+  FaNodeJs,
+  FaReact,
+  FaGithub,
+} from "react-icons/fa";
+import {
+  SiExpress,
+  SiJavascript,
+  SiMongodb,
+  SiRedux,
+  SiTailwindcss,
+} from "react-icons/si";
 import SwiperSlider from "../Utilities/SwiperSlider";
 import { Link, useParams } from "react-router-dom";
 import { DataContext } from "../../context/Data";
 
 const SpecificProject = () => {
-
-
   const techIcons = {
     Html: {
       icon: <FaHtml5 className="text-orange-500 text-2xl" />,
@@ -84,8 +96,8 @@ const SpecificProject = () => {
   }
 
   return (
-    <section className="container mx-auto min-h-screen py-[50px] md:py-[100px]">
-      <div className="">
+    <section className="container mx-auto min-h-screen pt-[75px] md:pt-[100px]">
+      <div className="px-4">
         <div className="mt-5 md:mt-10 flex flex-col md:flex-row items-center  gap-4">
           <div className="">
             <img
@@ -156,7 +168,6 @@ const SpecificProject = () => {
           <div className="text-gradient shadow-lg rounded-lg ">
             <div className="flex items-center justify-between px-5 py-5 border-b-3 border-gray-300">
               <p className="">Screenshots</p>
-              <FaArrowRight className="text-gray-500 hover:scale-105 hover:shadow-2xl" />
             </div>
             <div className="mt-4 px-4 max-h-100">
               <SwiperSlider images={project.images.screenshots} />
@@ -215,21 +226,18 @@ const SpecificProject = () => {
           </div>
         </div>
         <div className="w-full md:w-4/12">
-          <Link to={"/project"} className="cursor-pointer">
+          <Link to={"/projects"} className="cursor-pointer">
             <div className="px-5 py-5 border-b-3 border-gray-300 flex gap-2 items-center  bg-gray-200 text-gradient shadow-xl rounded-lg  h-fit">
               <p className="">Discover More</p>
               <FaArrowRight className="text-gray-500 hover:scale-105 hover:shadow-2xl" />
             </div>
           </Link>
           {more.map((item, i) => (
-            <Link to={`/project/${item.name}`}>
-              <div
-                key={i}
-                className="mt-4 flex gap-4 py-4 px-4 hover:bg-gray-200 hover:shadow-lg transition-all ease-in-out duration-300 cursor-pointer"
-              >
-                <div className="w-[80px]    rounded-lg">
+            <Link key={i} to={`/projects/${item.name}`}>
+              <div className="mt-4 flex gap-4 py-4 px-4 hover:bg-gray-200 hover:shadow-lg transition-all ease-in-out duration-300 cursor-pointer">
+                <div className="w-[80px] h-[80px]    rounded-lg">
                   <img
-                    className="rounded-lg h-full"
+                    className="rounded-lg w-full h-full object-cover"
                     src={item.images.main}
                     alt=""
                   />
@@ -259,6 +267,19 @@ const SpecificProject = () => {
             </Link>
           ))}
         </div>
+      </div>
+      <div
+        onClick={() => {
+          setTimeout(() => {
+            window.dispatchEvent(new Event("openEmailModal"));
+          }, 800);
+        }}
+        className="flex justify-end my-5 mx-4"
+      >
+        <Button
+          text={"Lets chat"}
+          className="inline-block mt-2 px-6 py-3 rounded-xl text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+        />
       </div>
     </section>
   );

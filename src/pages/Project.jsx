@@ -73,7 +73,7 @@ const Project = () => {
   }, [products]);
 
   return (
-    <section className="container mx-auto min-h-screen py-[50px] md:py-[100px] px-4">
+    <section className="container mx-auto min-h-screen pt-[50px] md:pt-[100px] px-4">
       <div className="grid grid-cols-3 md:grid-cols-5 grid-rows-16 md:grid-rows-7 gap-4 md:gap-6">
         {fullWebsites.map((project, index) => (
           <div
@@ -158,7 +158,9 @@ const Project = () => {
                           key={i}
                           className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 transition-all shadow-sm px-3 py-2 rounded-lg"
                         >
-                          {techData.icon && <span className="">{techData.icon}</span>}
+                          {techData.icon && (
+                            <span className="">{techData.icon}</span>
+                          )}
                           <span className="text-gray-500 text-xs font-medium">
                             {techData.name}
                           </span>
@@ -216,6 +218,19 @@ const Project = () => {
             </Link>
           ))}
         </div>
+      </div>
+      <div
+        onClick={() => {
+          setTimeout(() => {
+            window.dispatchEvent(new Event("openEmailModal"));
+          }, 800);
+        }}
+        className="flex justify-end my-5 mx-4"
+      >
+        <Button
+          text={"Lets chat"}
+          className="inline-block mt-2 px-6 py-3 rounded-xl text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+        />
       </div>
     </section>
   );
