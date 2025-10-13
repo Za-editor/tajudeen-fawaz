@@ -7,12 +7,14 @@ import Project from "./pages/Project";
 import Loader from "./components/Loader";
 import SmoothScrollWrapper from "./components/SmoothScrollWrapper";
 import { DataProvider } from "../context/Data";
+import ScrollToTop from "./Utilities/ScrollToTop";
 
 function App() {
   return (
     <DataProvider>
       <SmoothScrollWrapper>
         <BrowserRouter>
+          <ScrollToTop />
           <AppContent />
         </BrowserRouter>
       </SmoothScrollWrapper>
@@ -25,12 +27,24 @@ function AppContent() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    const now = Date.now();
+    const lastVisit = localStorage.getItem("homeVisitTimestamp");
+
+    const tenMinutes = 10 * 60 * 1000;
+
     if (location.pathname === "/") {
-      setLoading(true);
-      const timeout = setTimeout(() => {
+      if (!lastVisit || now - parseInt(lastVisit) > tenMinutes) {
+        setLoading(true);
+        localStorage.setItem("homeVisitTimestamp", now.toString());
+
+        const timeout = setTimeout(() => {
+          setLoading(false);
+        }, 9000);
+
+        return () => clearTimeout(timeout);
+      } else {
         setLoading(false);
-      }, 9000);
-      return () => clearTimeout(timeout);
+      }
     } else {
       setLoading(false);
     }

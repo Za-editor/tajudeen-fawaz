@@ -31,7 +31,8 @@
     "links": {
       "live": "https://azura-recreate.vercel.app/",
       "github": "https://github.com/Za-editor/Azura-recreate"
-    }
+    },
+    "tags": ["Landing Page", "Frontend Development", "UI Recreation"]
   },
   {
     "name": "Furnico",
@@ -65,7 +66,8 @@
     "links": {
       "live": "https://furnico-nine.vercel.app/",
       "github": "https://github.com/Za-editor/Furnico"
-    }
+    },
+    "tags": ["Landing Page", "Frontend Development", "UI Recreation"]
   },
   {
     "name": "Social",
@@ -98,7 +100,8 @@
     "links": {
       "live": "https://social-tdfv.vercel.app/",
       "github": "https://github.com/Za-editor/Social"
-    }
+    },
+    "tags": ["Mini Project", "Frontend Development", "Personal Links"]
   },
   {
     "name": "Recipe Page",
@@ -131,7 +134,8 @@
     "links": {
       "live": "https://recipe-page-sandy-beta.vercel.app/",
       "github": "https://github.com/Za-editor/Recipe-page"
-    }
+    },
+    "tags": ["Static Page", "Frontend Development", "UI Recreation"]
   },
   {
     "name": "Bento Grid",
@@ -164,7 +168,8 @@
     "links": {
       "live": "https://bento-grid-wheat.vercel.app/",
       "github": "https://github.com/Za-editor/Bento-Grid"
-    }
+    },
+    "tags": ["UI Concept", "Frontend Development", "Responsive Design"]
   },
   {
     "name": "Four Card Feature",
@@ -196,7 +201,8 @@
     "links": {
       "live": "https://four-card-feature-section-five-indol.vercel.app/",
       "github": "https://github.com/Za-editor/Four-card-feature-section"
-    }
+    },
+    "tags": ["Component Layout", "Frontend Development", "UI Recreation"]
   },
   {
     "name": "Flylo",
@@ -230,7 +236,8 @@
     "links": {
       "live": "https://flylo-landing-page.vercel.app/",
       "github": "https://github.com/Za-editor/flylo-landing-page"
-    }
+    },
+    "tags": ["Landing Page", "Frontend Development", "UI Recreation"]
   },
   {
     "name": "AudioPhile",
@@ -271,7 +278,8 @@
       "live": "https://audiophile-seven-beryl.vercel.app/",
       "github": "https://github.com/Za-editor/audiophile"
     },
-    "layout": "col-span-3 row-span-4 md:col-span-3 md:row-span-7"
+    "layout": "col-span-3 row-span-4 md:col-span-3 md:row-span-7",
+    "tags": ["E-commerce", "Frontend Development", "Multi-Page Site"]
   },
   {
     "name": "Space Tourism",
@@ -307,7 +315,8 @@
       "live": "https://space-tourism-six-xi.vercel.app/",
       "github": "https://github.com/Za-editor/space-tourism"
     },
-    "layout": "col-span-3 row-span-4 md:col-span-1 md:row-span-3"
+    "layout": "col-span-3 row-span-4 md:col-span-1 md:row-span-3",
+    "tags": ["Multi-Page Website", "Frontend Development", "UI Recreation"]
   },
   {
     "name": "Zentrip",
@@ -346,7 +355,8 @@
       "live": "https://zentrip-io.vercel.app/",
       "github": "https://github.com/Za-editor/zentrip"
     },
-    "layout": "col-span-3 row-span-4 md:col-span-1 md:row-span-3"
+    "layout": "col-span-3 row-span-4 md:col-span-1 md:row-span-3",
+    "tags": ["Full Website", "Design & Development", "Travel Platform"]
   },
 
   {
@@ -389,7 +399,8 @@
       "live": "https://silque-9zns.vercel.app/",
       "github": "https://github.com/Za-editor/Silque"
     },
-    "layout": "col-span-3 row-span-4 md:col-span-2 md:row-span-4"
+    "layout": "col-span-3 row-span-4 md:col-span-2 md:row-span-4",
+    "tags": ["E-commerce", "Fullstack Development", "MERN Stack"]
   },
   {
     "name": "Prime Haven",
@@ -423,7 +434,8 @@
     "links": {
       "live": "https://prime-haven-gamma.vercel.app/",
       "github": "https://github.com/Za-editor/Prime-Haven"
-    }
+    },
+    "tags": ["Landing Page", "Frontend Development", "UI Recreation"]
   },
 
   {
@@ -462,6 +474,7 @@
     "links": {
       "live": "https://fawaz-tj.vercel.app/",
       "github": "https://github.com/Za-editor/tajudeen-fawaz"
-    }
+    },
+    "tags": ["Personal Website", "Frontend Development", "Showcase"]
   }
 ]

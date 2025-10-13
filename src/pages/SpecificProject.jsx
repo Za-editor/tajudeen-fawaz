@@ -96,8 +96,8 @@ const SpecificProject = () => {
   }
 
   return (
-    <section className="container mx-auto min-h-screen pt-[75px] md:pt-[100px]">
-      <div className="px-4">
+    <section className="container mx-auto  pt-[75px] md:pt-[100px] px-4 md:px-0">
+      <div className="">
         <div className="mt-5 md:mt-10 flex flex-col md:flex-row items-center  gap-4">
           <div className="">
             <img
@@ -114,15 +114,17 @@ const SpecificProject = () => {
             <p className="text-md  text-gradient   cursor-pointer ">
               Za_editor
             </p>
-            <div className="text-sm md:text-lg text-gradient cursor-pointer">
-              <span>Website Design </span>{" "}
-              <span className="inline-block px-1 border-l-4 border-gray-300">
-                Webflow Development
-              </span>
-              <span className="inline-block px-1 border-l-4 border-gray-300">
-                Ecommerce
-              </span>
-            </div>
+            {project.tags?.length >= 3 && (
+              <div className="text-sm md:text-lg text-gradient cursor-pointer">
+                <span className="pr-1">{project.tags[0]}</span>
+                <span className="inline-block px-1 border-l-4 border-gray-300">
+                  {project.tags[1]}
+                </span>
+                <span className="inline-block px-1 border-l-4 border-gray-300">
+                  {project.tags[2]}
+                </span>
+              </div>
+            )}
           </div>
         </div>
         <div className="w-full  text-center md:text-start flex flex-col items-center md:items-start md:w-2/5 mt-3 md:mt-5">
@@ -194,7 +196,7 @@ const SpecificProject = () => {
             <div className="flex items-center justify-between px-5 py-5 border-b-3 border-gray-300">
               <p className="">Features</p>
             </div>
-            <div className="py-4 px-4 max-h-100">
+            <div className="py-4 px-4">
               <ol className="mt-4 list-disc list-inside text-gray-500 flex flex-col gap-2">
                 {project.features.map((desc, index) => (
                   <li key={index}>{desc}</li>
@@ -225,7 +227,7 @@ const SpecificProject = () => {
             </div>
           </div>
         </div>
-        <div className="w-full md:w-4/12">
+        <div className="w-full md:w-4/12 mt-10 md:mt-0">
           <Link to={"/projects"} className="cursor-pointer">
             <div className="px-5 py-5 border-b-3 border-gray-300 flex gap-2 items-center  bg-gray-200 text-gradient shadow-xl rounded-lg  h-fit">
               <p className="">Discover More</p>
