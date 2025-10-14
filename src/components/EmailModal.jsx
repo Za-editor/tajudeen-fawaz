@@ -90,7 +90,9 @@ const EmailModal = ({ isOpen, toggleModal }) => {
       )}
       <div
         className={`fixed left-2/3 bottom-20 transform -translate-x-2/3 w-full md:w-3/4 lg:w-2/4 transition-all duration-700 ease-in-out z-[6000] ${
-          isOpen ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+          isOpen
+            ? "translate-y-0 opacity-100 pointer-events-auto"
+            : "translate-y-full opacity-0 pointer-events-none"
         }`}
       >
         <div className="bg-gradient text-white flex justify-between items-center px-4 py-3">
@@ -104,7 +106,7 @@ const EmailModal = ({ isOpen, toggleModal }) => {
 
         <form
           onSubmit={handleSubmit}
-          className="   p-4 flex flex-col gap-4  shadow-2xl backdrop-blur-[5px] "
+          className="   p-4 flex flex-col gap-4  shadow-2xl bg-white backdrop-blur-[5px] "
         >
           <div className="flex items-center w-full">
             <label

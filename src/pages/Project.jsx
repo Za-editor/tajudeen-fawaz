@@ -229,7 +229,7 @@ const Project = () => {
       >
         <Button
           text={"Lets chat"}
-          className="inline-block mt-2 px-6 py-3 rounded-xl text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
+          className="animate-bounce inline-block mt-2 px-6 py-3 rounded-xl text-sm font-medium transition bg-gradient text-white hover:bg-gray-600 cursor-pointer"
         />
       </div>
     </section>

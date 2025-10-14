@@ -91,7 +91,7 @@ const Footer = () => {
               item === "Github"
                 ? "https://github.com/Za-editor"
                 : item === "Linkedin"
-                ? "https://www.linkedin.com/in/fawas-tajudeen-a50763111/"
+                ? "https://www.linkedin.com/in/fawas-tajudeen"
                 : item === "Twitter"
                 ? "https://x.com/zaa_editor"
                 : item === "Instagram"

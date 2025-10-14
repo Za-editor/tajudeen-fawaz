@@ -22,8 +22,8 @@ const Navbar = () => {
   const navitems = ["Home", "Projects", "About Me", "Resume", "Contact Me"];
 
   const [isOpen, setIsOpen] = useState(false);
-      const location = useLocation();
-      const isHome = location.pathname === "/";
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
   const toggleSideBar = () => {
     setIsOpen((prev) => !prev);
@@ -35,8 +35,28 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    setIsScrolled(true);
+
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      const currentScrollY = window.scrollY;
+
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (currentScrollY > lastScrollY && currentScrollY > 50) {
+            setIsScrolled(false);
+          } else if (currentScrollY < lastScrollY) {
+            setIsScrolled(true);
+          }
+
+          lastScrollY = currentScrollY;
+          ticking = false;
+        });
+
+        ticking = true;
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -46,8 +66,10 @@ const Navbar = () => {
   return (
     <div>
       <div
-        className={` w-full fixed z-1000 ${
-          isScrolled ? "backdrop-blur-[3px] fixed" : ""
+        className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-900 ease-in-out ${
+          isScrolled
+            ? "translate-y-0 opacity-100 backdrop-blur-[6px]"
+            : "-translate-y-full opacity-0"
         }`}
       >
         <nav className="container mx-auto flex items-center justify-between py-[14px] md:py-[26px] px-4 md:px-0 ">
@@ -69,7 +91,10 @@ const Navbar = () => {
         </nav>
       </div>
       {isOpen && (
-        <div className="fixed inset-0 z-40 blur-lg pointer-events-auto"></div>
+        <div
+          onClick={checkState}
+          className="fixed inset-0 z-40 bg-black/2 backdrop-blur-sm transition-opacity duration-500 pointer-events-auto"
+        ></div>
       )}
       <div
         className={`fixed z-40 w-full md:w-3/4  lg:w-2/4 top-0 right-0 bg-[#e9e9e9] md:rounded-l-[50px] backdrop-blur-sm h-full border-l border-white/20  transition-all duration-700 delay-400 ${

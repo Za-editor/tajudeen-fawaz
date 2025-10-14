@@ -167,8 +167,7 @@ const Resume = () => {
             Education
           </li>
           <a
-            href="/assets/fawaz.pdf"
-            download="Fawaz"
+            href="/assets/fawas.pdf"
             className=" px-2 py-2 md:px-5 lg:px-10 lg:py-3  border-x-1 border-gray-300 rounded-lg border-b-1 hover:bg-gradient hover:text-white duration-500 cursor-pointer flex items-center gap-2"
           >
             Download CV
