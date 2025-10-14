@@ -195,7 +195,6 @@ const EmailModal = ({ isOpen, toggleModal }) => {
               <option value="Frontend Development">Frontend Development</option>
               <option value="UI/UX Design">UI/UX Design</option>
               <option value="Website Optimization">Website Optimization</option>
-              <option value="Portfolio Website">Portfolio Website</option>
               <option value="Maintenance & Support">
                 Maintenance & Support
               </option>
